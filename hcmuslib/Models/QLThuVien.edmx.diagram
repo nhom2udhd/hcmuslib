@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ec4eec73d1ea4dd4a4fbf444a64e259c" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="QLTHUVIENModel.BMNXB" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BMNHANDECHINH" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BMSOPHANLOAI" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BMTACGIA" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BMTENDEMUC" Width="1.5" PointX="0.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BOITHUONGTHIETHAI" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.DOCGIA" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.DONHANG" Width="1.5" PointX="10.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.LEARNCOMMONS" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.LUUHANHSACH" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.MUONPHONG" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.MUONTAICHO" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.NHANVIEN" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.PHONG" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.SACH" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.TAPHUAN" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.THIETBI_DICHVU" Width="1.5" PointX="6" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.USER_PASSWORD" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.CT_DONHANG" Width="1.5" PointX="13" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__SACH__NHA_XUAT_B__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__SACH__NHAN_DE_CH__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__SACH__SO_PHAN_LO__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__SACH__TAC_GIA__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__SACH__TEN_DE_MUC__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__BOITHUONG__DOC_G__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__LEARNCOMM__DOC_G__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__LUUHANHSA__DOC_G__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__MUONPHONG__DOC_G__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__MUONTAICH__DOC_G__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__CT_DONHAN__ID_DO__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__LEARNCOMM__ID_TH__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__LUUHANHSA__ID_SA__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__MUONPHONG__ID_PH__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__MUONTAICH__ID_SA__38996AB5" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
