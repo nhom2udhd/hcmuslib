@@ -22,7 +22,7 @@
         <EntityTypeShape EntityType="QLTHUVIENModel.SACH" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="QLTHUVIENModel.TAPHUAN" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLTHUVIENModel.THIETBI_DICHVU" Width="1.5" PointX="6" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.USER_PASSWORD" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.USER_PASSWORD" Width="1.5" PointX="9.625" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="QLTHUVIENModel.CT_DONHANG" Width="1.5" PointX="13" PointY="1.375" IsExpanded="true" />
         <AssociationConnector Association="QLTHUVIENModel.FK__SACH__NHA_XUAT_B__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__SACH__NHAN_DE_CH__30F848ED" ManuallyRouted="false" />
@@ -39,7 +39,7 @@
         <AssociationConnector Association="QLTHUVIENModel.FK__LUUHANHSA__ID_SA__3C69FB99" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__MUONPHONG__ID_PH__24927208" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__MUONTAICH__ID_SA__38996AB5" ManuallyRouted="false" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

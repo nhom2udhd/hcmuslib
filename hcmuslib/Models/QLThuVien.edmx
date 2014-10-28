@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QLTHUVIENModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QLTHUVIENModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BMNXB">
           <Key>
             <PropertyRef Name="ID_NXB" />
@@ -202,7 +202,7 @@ warning 6002: The table/view 'QLTHUVIEN.dbo.CT_DONHANG' does not have a primary 
           <Key>
             <PropertyRef Name="ID_USER" />
           </Key>
-          <Property Name="ID_USER" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ID_USER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="USER_NAME" Type="varchar" MaxLength="50" />
           <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
           <Property Name="ROLE" Type="nvarchar" MaxLength="50" />
@@ -475,8 +475,7 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
             <End Role="SACH" EntitySet="SACH" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLTHUVIENModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -695,7 +694,7 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
           <Key>
             <PropertyRef Name="ID_USER" />
           </Key>
-          <Property Name="ID_USER" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_USER" Type="Int32" Nullable="false" />
           <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ROLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -890,7 +889,7 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLTHUVIENEntitié" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLTHUVIENEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BMNXB" EntityType="Self.BMNXB" />
           <EntitySet Name="BMNHANDECHINH" EntityType="Self.BMNHANDECHINH" />
           <EntitySet Name="BMSOPHANLOAI" EntityType="Self.BMSOPHANLOAI" />
@@ -976,7 +975,7 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLTHUVIENModelStoreContainer" CdmEntityContainer="QLTHUVIENEntitié">
+        <EntityContainerMapping StorageEntityContainer="QLTHUVIENModelStoreContainer" CdmEntityContainer="QLTHUVIENEntities">
           <EntitySetMapping Name="BMNXB">
             <EntityTypeMapping TypeName="QLTHUVIENModel.BMNXB">
               <MappingFragment StoreEntitySet="BMNXB">
@@ -1196,7 +1195,7 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

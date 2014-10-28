@@ -68,12 +68,19 @@ namespace hcmuslib.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
+        public LoginModel() { }
+        public LoginModel(string name, string pass, bool remember)
+        {
+            UserName = name;
+            Password = pass;
+            RememberMe = remember;
+        }
     }
 
     public class RegisterModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [Display(Name = "Tên Đăng Nhập")]
         public string UserName { get; set; }
 
         [Required]
@@ -83,9 +90,10 @@ namespace hcmuslib.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Xác nhận Password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
     }
 
     public class ExternalLogin

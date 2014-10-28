@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -188,9 +190,94 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BMNHANDECHINH.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BMNXB.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BMSOPHANLOAI.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BMTACGIA.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BMTENDEMUC.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BOITHUONGTHIETHAI.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CT_DONHANG.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DOCGIA.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DONHANG.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LEARNCOMMONS.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LUUHANHSACH.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUONPHONG.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MUONTAICHO.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NHANVIEN.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PHONG.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLThuVien.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLThuVien.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLThuVien.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QLThuVien.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLThuVien.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SACH.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TAPHUAN.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\THIETBI_DICHVU.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USER_PASSWORD.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\mystyle.css" />
+    <Content Include="Content\prettyPhoto.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -247,12 +334,149 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="Models\QLThuVien.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLThuVien.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Images\ads\ad1.png" />
+    <Content Include="Images\ads\ad2.png" />
+    <Content Include="Images\ads\ad3.png" />
+    <Content Include="Images\ads\ad4.png" />
+    <Content Include="Images\blog\avatar.jpg" />
+    <Content Include="Images\blog\avatar1.png" />
+    <Content Include="Images\blog\avatar2.png" />
+    <Content Include="Images\blog\avatar3.png" />
+    <Content Include="Images\blog\blog1.jpg" />
+    <Content Include="Images\blog\blog2.jpg" />
+    <Content Include="Images\blog\thumb1.jpg" />
+    <Content Include="Images\blog\thumb2.jpg" />
+    <Content Include="Images\blog\thumb3.jpg" />
+    <Content Include="Images\book\cover1.jpg" />
+    <Content Include="Images\book\cover2.jpg" />
+    <Content Include="Images\book\cover3.jpg" />
+    <Content Include="Images\book\thumb\cover1.jpg" />
+    <Content Include="Images\book\thumb\cover2.jpg" />
+    <Content Include="Images\book\thumb\cover3.jpg" />
+    <Content Include="Images\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Images\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Images\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Images\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Images\ico\favicon.ico" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\portfolio\full\item1.jpg" />
+    <Content Include="Images\portfolio\full\item2.jpg" />
+    <Content Include="Images\portfolio\full\item3.jpg" />
+    <Content Include="Images\portfolio\full\item4.jpg" />
+    <Content Include="Images\portfolio\full\item5.jpg" />
+    <Content Include="Images\portfolio\full\item6.jpg" />
+    <Content Include="Images\portfolio\full\item7.jpg" />
+    <Content Include="Images\portfolio\full\test_item.jpg" />
+    <Content Include="Images\portfolio\recent\item1.png" />
+    <Content Include="Images\portfolio\recent\item2.png" />
+    <Content Include="Images\portfolio\recent\item3.png" />
+    <Content Include="Images\portfolio\recent\test_item.jpg" />
+    <Content Include="Images\portfolio\thumb\item1.jpg" />
+    <Content Include="Images\portfolio\thumb\item2.jpg" />
+    <Content Include="Images\portfolio\thumb\item3.jpg" />
+    <Content Include="Images\portfolio\thumb\item4.jpg" />
+    <Content Include="Images\portfolio\thumb\item5.jpg" />
+    <Content Include="Images\portfolio\thumb\item6.jpg" />
+    <Content Include="Images\portfolio\thumb\item7.jpg" />
+    <Content Include="Images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Images\prettyPhoto\default\loader.gif" />
+    <Content Include="Images\prettyPhoto\default\sprite.png" />
+    <Content Include="Images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Images\slider\custom_bg1.jpg" />
+    <Content Include="Images\slider\custom_bg2.jpg" />
+    <Content Include="Images\slider\custom_bg3.jpg" />
+    <Content Include="Images\team-member.jpg" />
+    <Content Include="Models\QLThuVien.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLThuVien.edmx</DependentUpon>
+      <LastGenOutput>QLThuVien.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QLThuVien.edmx.diagram">
+      <DependentUpon>QLThuVien.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\QLThuVien.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLThuVien.edmx</DependentUpon>
+      <LastGenOutput>QLThuVien.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\ads\desktop.ini" />
+    <Content Include="Images\blog\desktop.ini" />
+    <Content Include="Images\book\desktop.ini" />
+    <Content Include="Images\book\thumb\desktop.ini" />
+    <Content Include="Images\ico\desktop.ini" />
+    <Content Include="Images\portfolio\desktop.ini" />
+    <Content Include="Images\portfolio\full\desktop.ini" />
+    <Content Include="Images\portfolio\recent\desktop.ini" />
+    <Content Include="Images\portfolio\thumb\desktop.ini" />
+    <Content Include="Images\prettyPhoto\dark_rounded\desktop.ini" />
+    <Content Include="Images\prettyPhoto\dark_square\desktop.ini" />
+    <Content Include="Images\prettyPhoto\default\desktop.ini" />
+    <Content Include="Images\prettyPhoto\desktop.ini" />
+    <Content Include="Images\prettyPhoto\facebook\desktop.ini" />
+    <Content Include="Images\prettyPhoto\light_rounded\desktop.ini" />
+    <Content Include="Images\prettyPhoto\light_square\desktop.ini" />
+    <Content Include="Images\slider\desktop.ini" />
+    <Content Include="Content\fonts\desktop.ini" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\html5shiv.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.isotope.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.prettyPhoto.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -261,8 +485,14 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Scripts\modernizr.js" />
+    <Content Include="Scripts\myscript.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -307,6 +537,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

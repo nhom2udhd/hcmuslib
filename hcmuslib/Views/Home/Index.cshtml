@@ -1,45 +1,250 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Trang Chủ";
 }
-@section featured {
-    <section class="featured">
-        <div class="content-wrapper">
-            <hgroup class="title">
-                <h1>@ViewBag.Title.</h1>
-                <h2>@ViewBag.Message</h2>
-            </hgroup>
-            <p>
-                To learn more about ASP.NET MVC visit
-                <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-                The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET MVC.
-                If you have any questions about ASP.NET MVC visit
-                <a href="http://forums.asp.net/1146.aspx/1?MVC" title="ASP.NET MVC Forum">our forums</a>.
-            </p>
+<section id="main-slider" class="no-margin">
+    <div class="carousel slide wet-asphalt">
+        <ol class="carousel-indicators">
+            <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+            <li data-target="#main-slider" data-slide-to="1"></li>
+            <li data-target="#main-slider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active" style="background-image: url(../../Images/slider/custom_bg1.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="carousel-content centered">
+                                <h2 class="boxed animation animated-item-1">Thư viện trường ĐH Khoa học Tự Nhiên TPHCM</h2>
+                                <p class="boxed animation animated-item-2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                </br>
+                                <a class="btn btn-md animation animated-item-3" href="#">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item" style="background-image: url(../../Images/slider/custom_bg2.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="carousel-content center centered">
+                                <h2 class="boxed animation animated-item-1">Thư viện trường ĐH Khoa học Tự Nhiên TPHCM</h2>
+                                <p class="boxed animation animated-item-2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                                <br>
+                                <a class="btn btn-md animation animated-item-3" href="#">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+            <div class="item" style="background-image: url(../../Images/slider/custom_bg3.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="carousel-content centered">
+                                <h2 class="boxed animation animated-item-1">Thư viện trường ĐH Khoa học Tự Nhiên TPHCM</h2>
+                                <p class="boxed animation animated-item-2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames</p>
+                                <a class="btn btn-md animation animated-item-3" href="#">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 hidden-xs animation animated-item-4">
+                            <div class="centered">
+                                <div class="embed-container">
+                                    <iframe src="//player.vimeo.com/video/69421653?title=0&amp;byline=0&amp;portrait=0&amp;color=a22c2f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.item-->
+        </div><!--/.carousel-inner-->
+    </div><!--/.carousel-->
+    <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+        <i class="icon-angle-left"></i>
+    </a>
+    <a class="next hidden-xs" href="#main-slider" data-slide="next">
+        <i class="icon-angle-right"></i>
+    </a>
+</section><!--/#main-slider-->
+<section id="services" class="emerald">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6">
+
+
+                <div class="gly-link"><a href="@Url.Action("Login","Account")"><h3><span class="glyphicon glyphicon-user gly-bigger"></span> Đăng nhập</h3></a></div>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+
+
+            </div><!--/.col-md-4-->
+            <div class="col-md-4 col-sm-6">
+
+
+
+
+
+                <div class="gly-link" id="search-btn"><h3><span class="glyphicon glyphicon-search gly-bigger"></span> Tìm kiếm</h3></div>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+                <div class="widget search">
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="button"><i class="icon-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div><!--/.search-->
+
+
+            </div><!--/.col-md-4-->
+            <div class="col-md-4 col-sm-6">
+                <div class="gly-link"><a href="contact-us.html"><h3><span class="glyphicon glyphicon-envelope gly-bigger"></span> Liên hệ</h3></a></div>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>
+            </div><!--/.col-md-4-->
         </div>
-    </section>
-}
-<h3>We suggest the following:</h3>
-<ol class="round">
-    <li class="one">
-        <h5>Getting Started</h5>
-        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-        enables a clean separation of concerns and that gives you full control over markup
-        for enjoyable, agile development. ASP.NET MVC includes many features that enable
-        fast, TDD-friendly development for creating sophisticated applications that use
-        the latest web standards.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245151">Learn more…</a>
-    </li>
+    </div>
+</section><!--/#services-->
+<section id="recent-works">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h3>Sách mới</h3>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <div class="btn-group">
+                    <a class="btn btn-danger" href="#scroller" data-slide="prev"><i class="icon-angle-left"></i></a>
+                    <a class="btn btn-danger" href="#scroller" data-slide="next"><i class="icon-angle-right"></i></a>
+                </div>
+                <p class="gap"></p>
+            </div>
+            <div class="col-md-9">
+                <div id="scroller" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="portfolio-item">
+                                        <div class="item-inner">
+                                            <img class="img-responsive" src="~/images/book/cover1.jpg" alt="">
+                                            <h5>
+                                                Harry Potter and the Philosopher 's Stone
+                                            </h5>
+                                            <div class="overlay">
+                                                <a class="preview btn btn-danger" title="Malesuada fames ac turpis egestas" href="images/portfolio/full/test_item.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="portfolio-item">
+                                        <div class="item-inner">
+                                            <img class="img-responsive" src="~/images/book/cover2.jpg" alt="">
+                                            <h5>
+                                                The Complete Sherlock Holmes
+                                            </h5>
+                                            <div class="overlay">
+                                                <a class="preview btn btn-danger" title="Malesuada fames ac turpis egestas" href="~/images/portfolio/full/item1.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="portfolio-item">
+                                        <div class="item-inner">
+                                            <img class="img-responsive" src="~/images/book/cover3.jpg" alt="">
+                                            <h5>
+                                                One Piece vol 19
+                                            </h5>
+                                            <div class="overlay">
+                                                <a class="preview btn btn-danger" title="Malesuada fames ac turpis egestas" href="~/images/portfolio/full/item1.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--/.row-->
+                        </div><!--/.item-->
+                        <div class="item">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="portfolio-item">
+                                        <div class="item-inner">
+                                            <img class="img-responsive" src="~/images/book/cover3.jpg" alt="">
+                                            <h5>
+                                                One Piece vol 19
+                                            </h5>
+                                            <div class="overlay">
+                                                <a class="preview btn btn-danger" title="Malesuada fames ac turpis egestas" href="~/images/portfolio/full/item1.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="portfolio-item">
+                                        <div class="item-inner">
+                                            <img class="img-responsive" src="~/images/book/cover2.jpg" alt="">
+                                            <h5>
+                                                The Complete Sherlock Holmes
+                                            </h5>
+                                            <div class="overlay">
+                                                <a class="preview btn btn-danger" title="Malesuada fames ac turpis egestas" href="~/images/portfolio/full/item1.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4">
+                                    <div class="portfolio-item">
+                                        <div class="item-inner">
+                                            <img class="img-responsive" src="~/images/book/cover1.jpg" alt="">
+                                            <h5>
+                                                Harry Potter and the Philosopher 's Stone
+                                            </h5>
+                                            <div class="overlay">
+                                                <a class="preview btn btn-danger" title="Malesuada fames ac turpis egestas" href="~/images/portfolio/full/item1.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--/.item-->
+                    </div>
+                </div>
+            </div>
+        </div><!--/.row-->
+    </div>
+</section><!--/#recent-works-->
+<section id="testimonial" class="alizarin">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="center">
+                    <h2>Các dịch vụ chính</h2>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                </div>
+                <div class="gap"></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                    </div>
+                    <div class="col-md-6">
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                        <blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!--/#testimonial-->
 
-    <li class="two">
-        <h5>Add NuGet packages and jump-start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245153">Learn more…</a>
-    </li>
-
-    <li class="three">
-        <h5>Find Web Hosting</h5>
-        You can easily find a web hosting company that offers the right mix of features
-        and price for your applications.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
-    </li>
-</ol>

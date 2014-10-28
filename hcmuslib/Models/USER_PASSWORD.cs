@@ -14,7 +14,7 @@ namespace hcmuslib.Models
     
     public partial class USER_PASSWORD
     {
-        public string ID_USER { get; set; }
+        public int ID_USER { get; set; }
         public string USER_NAME { get; set; }
         public string PASSWORD { get; set; }
         public string ROLE { get; set; }

@@ -38,7 +38,7 @@ namespace hcmuslib.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection("DefaultConnection", "USER_PASSWORD", "ID_USER", "USER_NAME", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

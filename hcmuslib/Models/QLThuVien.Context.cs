@@ -13,10 +13,10 @@ namespace hcmuslib.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLTHUVIENEntitié : DbContext
+    public partial class QLTHUVIENEntities : DbContext
     {
-        public QLTHUVIENEntitié()
-            : base("name=QLTHUVIENEntitié")
+        public QLTHUVIENEntities()
+            : base("name=QLTHUVIENEntities")
         {
         }
     
