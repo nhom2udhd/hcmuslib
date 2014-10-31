@@ -33,3 +33,8 @@
 .form-group-border {
 	border: 1px solid ;
 }
+.validation-summary-errors {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
