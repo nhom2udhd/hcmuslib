@@ -35,14 +35,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="~/images/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="@Url.Action("index","home")"><img src="~/images/logo.png" alt="logo"></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html">Trang chủ</a></li>
-                    <li><a href="about-us.html">Giới thiệu</a></li>
+                    <li class="active"><a href="@Url.Action("index","home")">Trang chủ</a></li>
+                    <li><a href="@Url.Action("about","home")">Giới thiệu</a></li>
                     <li><a href="services.html">Thư viện</a></li>
-                    <li><a href="contact-us.html">Liên hệ - Góp ý</a></li>
+                    <li><a href="@Url.Action("contact","home")">Liên hệ - Góp ý</a></li>
                 </ul>
             </div>
         </div>
