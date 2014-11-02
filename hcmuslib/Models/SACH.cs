@@ -11,7 +11,9 @@ namespace hcmuslib.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using OnBarcode.Barcode;
+    using OnBarcode.Barcode.ASPNET;
+
     public partial class SACH
     {
         public SACH()
@@ -50,5 +52,17 @@ namespace hcmuslib.Models
         public virtual BMTENDEMUC BMTENDEMUC { get; set; }
         public virtual ICollection<LUUHANHSACH> LUUHANHSACH { get; set; }
         public virtual ICollection<MUONTAICHO> MUONTAICHO { get; set; }
+
+        public void BarcodeGenerator_Code39()
+        {
+            Linear barcode = new Linear();
+            barcode.Type = BarcodeType.CODE128B;
+            barcode.Data = MA_VACH;
+            barcode.drawBarcode("hcmuslib//Images//barcode//"+MA_VACH+".png");
+        }       
+        public void BarcodeReader()
+        {
+
+        }
     }
 }
