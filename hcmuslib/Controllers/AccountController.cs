@@ -41,7 +41,7 @@ namespace hcmuslib.Controllers
             }
 
             // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect. ");
+            ModelState.AddModelError("", "Tài khoản hoặc mật khẩu không hợp lệ. ");
             return View(model);
         }
 
