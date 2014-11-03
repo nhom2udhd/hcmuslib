@@ -28,6 +28,7 @@ namespace hcmuslib.Models
         public string TINH_TRANG { get; set; }
         public string EMAIL { get; set; }
         public string LOAI_DOC_GIA { get; set; }
+        public string IMAGE_URL { get; set; }
     
         public virtual ICollection<BOITHUONGTHIETHAI> BOITHUONGTHIETHAI { get; set; }
         public virtual ICollection<LEARNCOMMONS> LEARNCOMMONS { get; set; }

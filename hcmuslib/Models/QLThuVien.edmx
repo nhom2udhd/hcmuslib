@@ -77,6 +77,7 @@ warning 6002: The table/view 'QLTHUVIEN.dbo.CT_DONHANG' does not have a primary 
           <Property Name="TINH_TRANG" Type="nvarchar" MaxLength="50" />
           <Property Name="EMAIL" Type="varchar" MaxLength="100" />
           <Property Name="LOAI_DOC_GIA" Type="nvarchar" MaxLength="20" />
+          <Property Name="IMAGE_URL" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="DONHANG">
           <Key>
@@ -551,6 +552,7 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
           <NavigationProperty Name="LUUHANHSACH" Relationship="Self.FK__LUUHANHSA__DOC_G__3B75D760" FromRole="DOCGIA" ToRole="LUUHANHSACH" />
           <NavigationProperty Name="MUONPHONG" Relationship="Self.FK__MUONPHONG__DOC_G__239E4DCF" FromRole="DOCGIA" ToRole="MUONPHONG" />
           <NavigationProperty Name="MUONTAICHO" Relationship="Self.FK__MUONTAICH__DOC_G__37A5467C" FromRole="DOCGIA" ToRole="MUONTAICHO" />
+          <Property Name="IMAGE_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="DONHANG">
           <Key>
@@ -1037,6 +1039,7 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
           <EntitySetMapping Name="DOCGIA">
             <EntityTypeMapping TypeName="QLTHUVIENModel.DOCGIA">
               <MappingFragment StoreEntitySet="DOCGIA">
+                <ScalarProperty Name="IMAGE_URL" ColumnName="IMAGE_URL" />
                 <ScalarProperty Name="MS_THE" ColumnName="MS_THE" />
                 <ScalarProperty Name="HO_TEN" ColumnName="HO_TEN" />
                 <ScalarProperty Name="TINH_TRANG" ColumnName="TINH_TRANG" />
