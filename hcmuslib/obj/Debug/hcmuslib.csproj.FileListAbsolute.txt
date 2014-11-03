@@ -249,3 +249,4 @@ D:\Study\hcmuslib\hcmuslib\bin\zh-Hant\System.Spatial.resources.dll
 D:\Study\hcmuslib\hcmuslib\obj\Debug\hcmuslib.csprojResolveAssemblyReference.cache
 D:\Study\hcmuslib\hcmuslib\obj\Debug\hcmuslib.dll
 D:\Study\hcmuslib\hcmuslib\obj\Debug\hcmuslib.pdb
+F:\UNIVERSITY\PTUD\project\hcmuslib\hcmuslib\bin\OnBarcode.Barcode.ASPNET.dll

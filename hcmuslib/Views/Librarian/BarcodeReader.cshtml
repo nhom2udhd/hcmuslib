@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "BarcodeReader";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Đọc mã</h1>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Đọc mã</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!--/#title-->    
+
+    <section class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Camera</h3>
+					</div>
+					<div class="panel-body">
+						<div class="camera" style="height:320px;">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5 col-md-offset-1">
+				<div class="col-md-6">
+					<img src="@Url.Content("~/images/team-member.jpg")" alt="" class="img-thumbnail">
+				</div>
+				<div class="col-md-6">
+					<p><strong>Mã DG:</strong> DG00001</p>
+					<p><strong>Thông tin:</strong> Thông tin</p>
+				</div>
+			</div>
+		</div>
+    </section><!--/#terms-->
