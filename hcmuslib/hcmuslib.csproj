@@ -478,6 +478,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="build\compil.sh" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -486,6 +487,7 @@
     <Content Include="Scripts\adapters\standalone-framework.js" />
     <Content Include="Scripts\adapters\standalone-framework.src.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\ga.js" />
     <Content Include="Scripts\highcharts-3d.js" />
     <Content Include="Scripts\highcharts-3d.src.js" />
     <Content Include="Scripts\highcharts-all.js" />
@@ -501,13 +503,18 @@
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
     <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\jquery.scannerdetection.compatibility.js" />
+    <Content Include="Scripts\jquery.scannerdetection.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.webcamqrcode.js" />
+    <Content Include="Scripts\jquery.webcamqrcode.min.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\main.js" />
@@ -530,6 +537,7 @@
     <Content Include="Scripts\modules\solid-gauge.js" />
     <Content Include="Scripts\modules\solid-gauge.src.js" />
     <Content Include="Scripts\myscript.js" />
+    <Content Include="Scripts\pygment_trac.css" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\themes\dark-blue.js" />
     <Content Include="Scripts\themes\dark-green.js" />
@@ -539,6 +547,7 @@
     <Content Include="Scripts\themes\grid.js" />
     <Content Include="Scripts\themes\sand-signika.js" />
     <Content Include="Scripts\themes\skies.js" />
+    <Content Include="swf\webcamqrcode.swf" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -584,6 +593,17 @@
     <Content Include="Views\Librarian\ManageReaderImage.cshtml" />
     <Content Include="Views\Librarian\BarcodeReader.cshtml" />
     <Content Include="Views\Librarian\Analytics.cshtml" />
+    <Content Include="src\com\logosware\event\QRdecoderEvent.as" />
+    <Content Include="src\com\logosware\event\QRreaderEvent.as" />
+    <Content Include="src\com\logosware\utils\LabelingClass.as" />
+    <Content Include="src\com\logosware\utils\QRcode\G4Num.as" />
+    <Content Include="src\com\logosware\utils\QRcode\G8Num.as" />
+    <Content Include="src\com\logosware\utils\QRcode\GetQRimage.as" />
+    <Content Include="src\com\logosware\utils\QRcode\GFstatic.as" />
+    <Content Include="src\com\logosware\utils\QRcode\QRCodeDetecter.as" />
+    <Content Include="src\com\logosware\utils\QRcode\QRdecode.as" />
+    <EmbeddedResource Include="src\fr\marcbuils\WebcamQRCode\WebcamQRCode.as" />
+    <Content Include="Scripts\scannerdetection.jquery.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
