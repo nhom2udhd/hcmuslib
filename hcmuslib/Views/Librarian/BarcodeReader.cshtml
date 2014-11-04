@@ -2,7 +2,10 @@
     ViewBag.Title = "BarcodeReader";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script src="./Jquery.webcamqrcode by marcbuils_files/jquery.min.js"></script>
+<script src="./Jquery.webcamqrcode by marcbuils_files/jquery.webcamqrcode.min.js"></script>
+<script src="~/Scripts/jquery.scannerdetection.js"></script>
+<script src="~/Scripts/jquery.scannerdetection.compatibility.js"></script>
  <section id="title" class="emerald">
         <div class="container">
             <div class="row">
@@ -24,12 +27,31 @@
     <section class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<div class="panel panel-primary">
+				<div class="panel panel-primary" style="width:380px">
 					<div class="panel-heading">
 						<h3 class="panel-title">Camera</h3>
 					</div>
 					<div class="panel-body">
-						<div class="camera" style="height:320px;">
+						<div class="camera" style="height:360px;">                         
+                            <script>
+                                (function ($) {
+                                    $('document').ready(function () {
+                                    //    $('#qrcodebox').onQRCodeDecode({
+                                    //        onQRCodeDecode: function (p_data) {
+                                    //            $('#qrcode_result').html(p_data);
+                                    //        }
+                                        //    });
+                                        $('#qrcodebox').scannerDetection(function () {
+                                            $('#qrcode_result')
+                                        });
+                                    });
+                                    
+                                })(jQuery);
+                            </script>
+                            <div style="width: 350px; height: 350px;" id="qrcodebox"><object type="application/x-shockwave-flash" data="../../swf/webcamqrcode.swf?ID=1"></object></div>
+                            <p>
+                                Last QRCode value: <span id="qrcode_result">none</span>
+                            </p>
 						</div>
 					</div>
 				</div>
