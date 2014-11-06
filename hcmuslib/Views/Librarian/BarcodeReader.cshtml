@@ -2,68 +2,94 @@
     ViewBag.Title = "BarcodeReader";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script src="./Jquery.webcamqrcode by marcbuils_files/jquery.min.js"></script>
-<script src="./Jquery.webcamqrcode by marcbuils_files/jquery.webcamqrcode.min.js"></script>
-<script src="~/Scripts/jquery.scannerdetection.js"></script>
-<script src="~/Scripts/jquery.scannerdetection.compatibility.js"></script>
- <section id="title" class="emerald">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h1>Đọc mã</h1>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+<script src="~/Scripts/jquery.min.js"></script>
+@*<script src="~/Scripts/jquery.scannerdetection.js"></script>*@
+<script src="~/Scripts/jquery.webcamqrcode.js"></script>
+@*<script src="~/Scripts/jquery.scannerdetection.compatibility.js"></script>*@
+@*<section id="title" class="emerald">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Đọc mã</h1>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+            </div>
+            <div class="col-sm-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li class="active">Đọc mã</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section><!--/#title-->
+
+<section class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary" style="width:380px">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Camera</h3>
                 </div>
-                <div class="col-sm-6">
-                    <ul class="breadcrumb pull-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li class="active">Đọc mã</li>
-                    </ul>
+                <div class="panel-body">
+                    <div class="camera" style="height:360px;">
+
+                        <div style="width: 350px; height: 350px;" id="qrcodebox"><object type="application/x-shockwave-flash" data="../../swf/webcamqrcode.swf?ID=1"></object></div>
+                        <p>
+                            Last QRCode value: <span id="qrcode_result">none</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section><!--/#title-->    
+        <div class="col-md-5 col-md-offset-1">
+            <div class="col-md-6">
+                <img src="@Url.Content("~/images/team-member.jpg")" alt="" class="img-thumbnail">
+            </div>
+            <div class="col-md-6">
+                <p><strong>Mã DG:</strong> DG00001</p>
+                <p><strong>Thông tin:</strong> Thông tin</p>
+            </div>
+        </div>
+    </div>
+</section><!--/#terms-->*@
+@*<section class="container">
+    <script>
+        scannerDetection();
+        $(document).ready(function () {
+            $('#qrcodebox').scannerDetection();
+            alert(1);
+            $('#qrcodebox').bind('scannerDetectionComplete', function (e, data) {
+                console.log(data);
+            });
+        });
 
-    <section class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="panel panel-primary" style="width:380px">
-					<div class="panel-heading">
-						<h3 class="panel-title">Camera</h3>
-					</div>
-					<div class="panel-body">
-						<div class="camera" style="height:360px;">                         
-                            <script>
-                                (function ($) {
-                                    $('document').ready(function () {
-                                    //    $('#qrcodebox').onQRCodeDecode({
-                                    //        onQRCodeDecode: function (p_data) {
-                                    //            $('#qrcode_result').html(p_data);
-                                    //        }
-                                        //    });
-                                        $('#qrcodebox').scannerDetection(function () {
-                                            $('#qrcode_result')
-                                        });
-                                    });
-                                    
-                                })(jQuery);
-                            </script>
-                            <div style="width: 350px; height: 350px;" id="qrcodebox"><object type="application/x-shockwave-flash" data="../../swf/webcamqrcode.swf?ID=1"></object></div>
-                            <p>
-                                Last QRCode value: <span id="qrcode_result">none</span>
-                            </p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-5 col-md-offset-1">
-				<div class="col-md-6">
-					<img src="@Url.Content("~/images/team-member.jpg")" alt="" class="img-thumbnail">
-				</div>
-				<div class="col-md-6">
-					<p><strong>Mã DG:</strong> DG00001</p>
-					<p><strong>Thông tin:</strong> Thông tin</p>
-				</div>
-			</div>
-		</div>
-    </section><!--/#terms-->
+    </script>
+    <div id="qrcodebox"></div>
+</section>*@
+<script>
+    (barcodereader=function ($) {
+        $('document').ready(function () {
+            $('#qrcodebox').WebcamQRCode({
+                onQRCodeDecode: function (p_data) {
+                    $('#qrcode_result').html(p_data);
+                }
+            });
+
+            $('#btn_start').click(function () {
+                $('#qrcodebox').WebcamQRCode().start();
+            });
+
+            $('#btn_stop').click(function () {
+                $('#qrcodebox').WebcamQRCode().stop();
+            });
+        });
+    })(jQuery);
+</script>
+<script>$('#qrcode').barcodereader()</script>
+<div style="width: 350px; height: 350px;" id="qrcodebox"_webcam_qrcode_id="1"><object type="application/x-shockwave-flash" data="~/swf/webcamqrcode.swf" width="100%" height="100%"><p>L'animation flash n'est pas prise en charge</p></object></div>
+<input type="button" value="Start" id="btn_start">
+<input type="button" value="Stop" id="btn_stop">
+<p>
+    Last QRCode value: <span id="qrcode_result">none</span>
+</p>

@@ -33,7 +33,7 @@
 		            
 		// Set flash object information
 		_flash.attr( 'type', "application/x-shockwave-flash" );
-		_flash.attr( 'data', __options.path + "../../swf/webcamqrcode.swf?ID=" + $this.attr( '_webcam_qrcode_id' ) );
+		_flash.attr( 'data', __options.path + "~/swf/webcamqrcode.swf?ID=" + $this.attr( '_webcam_qrcode_id' ) );
 		_flash.attr( 'width', "100%" );
 		_flash.attr( 'height', "100%" );
 		_flash.append( _messageNoFlash );
