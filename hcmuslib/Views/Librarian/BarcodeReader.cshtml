@@ -3,10 +3,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script src="~/Scripts/jquery.min.js"></script>
-@*<script src="~/Scripts/jquery.scannerdetection.js"></script>*@
+
 <script src="~/Scripts/jquery.webcamqrcode.js"></script>
-@*<script src="~/Scripts/jquery.scannerdetection.compatibility.js"></script>*@
-@*<section id="title" class="emerald">
+
+<section id="title" class="emerald">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
@@ -33,8 +33,28 @@
                 </div>
                 <div class="panel-body">
                     <div class="camera" style="height:360px;">
+                        <script>
+                            (barcodereader = function ($) {
+                                $('document').ready(function () {
+                                    
+                                    $('#qrcodebox').WebcamQRCode({
+                                        onQRCodeDecode: function (p_data) {
+                                            
+                                            $('#qrcode_result').html(p_data);
+                                        }
+                                    });
 
-                        <div style="width: 350px; height: 350px;" id="qrcodebox"><object type="application/x-shockwave-flash" data="../../swf/webcamqrcode.swf?ID=1"></object></div>
+                                    $('#btn_start').click(function () {
+                                        $('#qrcodebox').WebcamQRCode().start();
+                                    });
+
+                                    $('#btn_stop').click(function () {
+                                        $('#qrcodebox').WebcamQRCode().stop();
+                                    });
+                                });
+                            })(jQuery);
+                        </script>
+                        <div style="width: 350px; height: 350px;" id="qrcodebox"><object type="application/x-shockwave-flash" data="~/swf/webcamqrcode.swf" width="100%" height="100%"></object></div>
                         <p>
                             Last QRCode value: <span id="qrcode_result">none</span>
                         </p>
@@ -52,44 +72,4 @@
             </div>
         </div>
     </div>
-</section><!--/#terms-->*@
-@*<section class="container">
-    <script>
-        scannerDetection();
-        $(document).ready(function () {
-            $('#qrcodebox').scannerDetection();
-            alert(1);
-            $('#qrcodebox').bind('scannerDetectionComplete', function (e, data) {
-                console.log(data);
-            });
-        });
-
-    </script>
-    <div id="qrcodebox"></div>
-</section>*@
-<script>
-    (barcodereader=function ($) {
-        $('document').ready(function () {
-            $('#qrcodebox').WebcamQRCode({
-                onQRCodeDecode: function (p_data) {
-                    $('#qrcode_result').html(p_data);
-                }
-            });
-
-            $('#btn_start').click(function () {
-                $('#qrcodebox').WebcamQRCode().start();
-            });
-
-            $('#btn_stop').click(function () {
-                $('#qrcodebox').WebcamQRCode().stop();
-            });
-        });
-    })(jQuery);
-</script>
-<script>$('#qrcode').barcodereader()</script>
-<div style="width: 350px; height: 350px;" id="qrcodebox"_webcam_qrcode_id="1"><object type="application/x-shockwave-flash" data="~/swf/webcamqrcode.swf" width="100%" height="100%"><p>L'animation flash n'est pas prise en charge</p></object></div>
-<input type="button" value="Start" id="btn_start">
-<input type="button" value="Stop" id="btn_stop">
-<p>
-    Last QRCode value: <span id="qrcode_result">none</span>
-</p>
+</section><!--/#terms-->
