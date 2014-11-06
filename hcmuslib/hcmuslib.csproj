@@ -378,6 +378,7 @@
     <Content Include="Images\ico\apple-touch-icon-57-precomposed.png" />
     <Content Include="Images\ico\apple-touch-icon-72-precomposed.png" />
     <Content Include="Images\ico\favicon.ico" />
+    <Content Include="Images\lib_logo.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\portfolio\full\item1.jpg" />
     <Content Include="Images\portfolio\full\item2.jpg" />
@@ -486,6 +487,7 @@
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\adapters\standalone-framework.js" />
     <Content Include="Scripts\adapters\standalone-framework.src.js" />
+    <Content Include="Scripts\ajax.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\ga.js" />
     <Content Include="Scripts\highcharts-3d.js" />

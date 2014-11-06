@@ -35,7 +35,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="@Url.Action("index","home")"><img src="~/images/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="@Url.Action("index","home")"><img src="~/images/lib_logo.png" alt="logo" style="max-height: 50px; max-width: 50px"></a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -157,6 +157,7 @@
     <script src="@Url.Content("~/Scripts/modernizr.js")"></script>
     <script src="@Url.Content("~/Scripts/main.js")"></script>
     <script src="@Url.Content("~/Scripts/highcharts.js")"></script>
+    <script src="@Url.Content("~/Scripts/ajax.js")"></script>
     @RenderSection("charts", required: false)
 </body>
 </html>
