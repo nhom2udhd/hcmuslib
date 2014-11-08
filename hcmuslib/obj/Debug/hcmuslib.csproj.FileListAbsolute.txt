@@ -162,6 +162,6 @@ D:\Study\hcmuslib\hcmuslib\bin\ko\System.Spatial.resources.dll
 D:\Study\hcmuslib\hcmuslib\bin\ru\System.Spatial.resources.dll
 D:\Study\hcmuslib\hcmuslib\bin\zh-Hans\System.Spatial.resources.dll
 D:\Study\hcmuslib\hcmuslib\bin\zh-Hant\System.Spatial.resources.dll
-D:\Study\hcmuslib\hcmuslib\obj\Debug\hcmuslib.csprojResolveAssemblyReference.cache
 D:\Study\hcmuslib\hcmuslib\obj\Debug\hcmuslib.dll
 D:\Study\hcmuslib\hcmuslib\obj\Debug\hcmuslib.pdb
+D:\Study\hcmuslib\hcmuslib\obj\Debug\hcmuslib.csprojResolveAssemblyReference.cache
