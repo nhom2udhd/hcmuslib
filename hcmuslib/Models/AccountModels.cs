@@ -18,7 +18,7 @@ namespace hcmuslib.Models
         public DbSet<UserProfile> UserProfiles { get; set; }
     }
 
-    [Table("UserProfile")]
+    [Table("USER_PASSWORD")]
     public class UserProfile
     {
         [Key]
