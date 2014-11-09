@@ -484,6 +484,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\adapters\standalone-framework.js" />
     <Content Include="Scripts\adapters\standalone-framework.src.js" />
@@ -549,7 +550,7 @@
     <Content Include="Scripts\themes\grid.js" />
     <Content Include="Scripts\themes\sand-signika.js" />
     <Content Include="Scripts\themes\skies.js" />
-    <Content Include="swf\webcamqrcode.swf" />
+    <Content Include="Librarian\swf\webcamqrcode.swf" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

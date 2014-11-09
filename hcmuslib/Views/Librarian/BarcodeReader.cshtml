@@ -1,7 +1,8 @@
 ﻿@{
     ViewBag.Title = "BarcodeReader";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
 
 <script src="@Url.Content("~/Scripts/jquery.webcamqrcode.min.js")"></script>
@@ -26,7 +27,6 @@
         });
     })(jQuery);
 </script>
-
 
 
 <section id="title" class="emerald">
@@ -62,6 +62,7 @@
                         </div>
                         <input type="button" value="Start" id="btn_start" />
                         <input type="button" value="Stop" id="btn_stop" />
+
                         <p>
                             Last QRCode value: <span id="qrcode_result">none</span>
                         </p>
