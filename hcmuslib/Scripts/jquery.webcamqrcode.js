@@ -10,13 +10,14 @@
 (function ($) {
     $.WebcamQRCode = function () { };
     $.WebcamQRCode.defaultOptions = {
-        messageNoFlash: "L'animation flash n'est pas prise en charge",
-        onQRCodeDecode: function (p_data) { console.log(p_data); },
-        onError: function (p_e) { alert(p_e); },
-        webcamOnStart: true,
-        webcamStopContent: $('<p>Capture stopped</p>'),
-        delay: 5000,
-        path: ""
+    	messageNoFlash:		"L'animation flash n'est pas prise en charge",
+        onQRCodeDecode: 	function( p_data ){ alert( "onQRCodeDecode data: " + p_data ); },
+        onError:			function( p_e ){ alert( p_e ); },
+        webcamOnStart:		true,
+        webcamStopContent:	$('<p>Camera đã tắt</p>'),
+        delay:				5000,
+        path:				"/"
+
     };
     $.WebcamQRCode.s_currentID = 1;
 
@@ -37,7 +38,18 @@
         _flash.attr('height', "100%");
         _flash.append(_messageNoFlash);
 
-        $this.html(_flash);
+<<<<<<< HEAD
+		// Set message if no flash
+		_messageNoFlash.text( __options.messageNoFlash );
+		            
+		// Set flash object information
+		_flash.attr( 'type', "application/x-shockwave-flash" );
+		_flash.attr( 'data', __options.path +"swf/webcamqrcode.swf?ID="+ $this.attr( '_webcam_qrcode_id' ) );
+		_flash.attr( 'width', "100%" );
+		_flash.attr( 'height', "100%" );
+		_flash.append( _messageNoFlash );
+		            
+		$this.html( _flash );
     };
 
     /**

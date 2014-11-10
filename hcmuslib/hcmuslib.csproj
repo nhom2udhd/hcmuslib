@@ -201,6 +201,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibrarianController.cs" />
+    <Compile Include="Controllers\LibrarianSupporterController.cs" />
+    <Compile Include="Controllers\ProvidedController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -596,17 +598,9 @@
     <Content Include="Views\Librarian\ManageReaderImage.cshtml" />
     <Content Include="Views\Librarian\BarcodeReader.cshtml" />
     <Content Include="Views\Librarian\Analytics.cshtml" />
-    <Content Include="src\com\logosware\event\QRdecoderEvent.as" />
-    <Content Include="src\com\logosware\event\QRreaderEvent.as" />
-    <Content Include="src\com\logosware\utils\LabelingClass.as" />
-    <Content Include="src\com\logosware\utils\QRcode\G4Num.as" />
-    <Content Include="src\com\logosware\utils\QRcode\G8Num.as" />
-    <Content Include="src\com\logosware\utils\QRcode\GetQRimage.as" />
-    <Content Include="src\com\logosware\utils\QRcode\GFstatic.as" />
-    <Content Include="src\com\logosware\utils\QRcode\QRCodeDetecter.as" />
-    <Content Include="src\com\logosware\utils\QRcode\QRdecode.as" />
-    <EmbeddedResource Include="src\fr\marcbuils\WebcamQRCode\WebcamQRCode.as" />
     <Content Include="Scripts\scannerdetection.jquery.json" />
+    <Content Include="Views\LibrarianSupporter\ViewMS.cshtml" />
+    <Content Include="Views\LibrarianSupporter\selectMSType.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

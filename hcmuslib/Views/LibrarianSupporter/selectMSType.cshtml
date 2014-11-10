@@ -1,0 +1,76 @@
+﻿@model IEnumerable<hcmuslib.Models.LUUHANHSACH>
+
+@{
+    ViewBag.Title = "selectMSType";
+}
+
+<h2>Theo doi Muon Sach </h2>
+
+<form id="myForm" action="/LibrarianSupporter/selectMSType" method="post">
+    <select id="mySelect" name="MSType" onchange="OnchangeMSType();">
+        <option value="0" selected="selected">All</option>
+        <option value="1">Hoan Thanh</option>
+        <option value="2">Da Hoan Thanh</option>
+        <option value="3">Gan Den Han</option>
+    </select>
+</form>
+
+<script>
+    function OnchangeMSType() {
+        $('#myForm').submit();
+    }
+</script>
+
+<table class="table table-bordered" id="ListMS">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_LUU_HANH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOC_GIA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_SACH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NGAY_MUON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.THOI_HAN_MUON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TINH_TRANG)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_LUU_HANH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOC_GIA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_SACH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAY_MUON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.THOI_HAN_MUON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TINH_TRANG)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+    }
+
+</table>
