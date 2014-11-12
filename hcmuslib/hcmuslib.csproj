@@ -201,6 +201,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibrarianController.cs" />
+    <Compile Include="Controllers\LibrarianSupporterController.cs" />
+    <Compile Include="Controllers\ProvidedController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -481,6 +483,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="build\compil.sh" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -598,6 +601,8 @@
     <Content Include="Views\Librarian\BarcodeReader.cshtml" />
     <Content Include="Views\Librarian\Analytics.cshtml" />
     <Content Include="Scripts\scannerdetection.jquery.json" />
+    <Content Include="Views\LibrarianSupporter\ViewMS.cshtml" />
+    <Content Include="Views\LibrarianSupporter\selectMSType.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -24,5 +24,7 @@ namespace hcmuslib.Models
         public Nullable<System.DateTime> NGAY_THANH_TOAN { get; set; }
     
         public virtual CT_DONHANG CT_DONHANG { get; set; }
+
+
     }
 }

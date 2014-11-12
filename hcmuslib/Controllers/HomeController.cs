@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 using hcmuslib.Models;
+
 namespace hcmuslib.Controllers
 {
     public class HomeController : Controller
@@ -40,5 +42,6 @@ namespace hcmuslib.Controllers
             oMail.SendMail("Email", email, new String[] { String.Concat(last_name, " ", first_name, " - Góp ý"), message });
             return RedirectToAction("Contact", "Home");
         }
+
     }
 }

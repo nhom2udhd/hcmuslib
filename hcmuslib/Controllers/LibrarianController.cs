@@ -30,7 +30,7 @@ namespace hcmuslib.Controllers
         public ActionResult ManageReaderImage()
         {
             var result = from p in data.DOCGIA select p;
-            var reader = result.ToList();
+            var reader = result.ToList();           
             return View(reader);
         }
 
