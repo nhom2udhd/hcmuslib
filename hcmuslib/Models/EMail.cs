@@ -43,7 +43,7 @@ namespace hcmuslib.Models
         public void SendMail(string messageId, string replytoEmail, string[] param)
         {
             XmlDocument xdoc = new XmlDocument();
-            string mailFormatxml = HttpContext.Current.Server.MapPath("\\") + "Mailformat.xml";
+            string mailFormatxml = HttpContext.Current.Server.MapPath("\\") + "App_data\\MailFormat.xml";
             string subject = "";
             string body = "";
             XmlNode mailNode = default(XmlNode);

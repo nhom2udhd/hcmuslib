@@ -61,7 +61,7 @@ namespace hcmuslib.Controllers
         public ActionResult Search(FormCollection f)
         { 
             string id = f["id-reader"];
-            var result = from p in data.DOCGIA where p.MS_THE == id select p;
+            var result = from p in data.DOCGIA where p.MS_THE == id || p.HO_TEN.Contains(id) select p;
 
             return View(result);
         }
