@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using hcmuslib.Models;
+using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
 
 namespace hcmuslib.Controllers
 {
@@ -18,52 +20,51 @@ namespace hcmuslib.Controllers
             return View();
         }
 
-        public ActionResult ViewMS(string MSType)
-        {
-                      
-            var dh = from d in data.LUUHANHSACH select d;
+        public ActionResult ViewMS(string MSType,string keySearch)
+        {        
             
+            var ms = from d in data.LUUHANHSACH select d;
+            ViewBag.MsType0 = "selected";
+            @ViewBag.keySearch = keySearch;
             
-            if (MSType == "1")
+                
+            if(MSType == "0")
             {
-                dh = from d in data.LUUHANHSACH where d.TINH_TRANG == "1" select d;
+                ms = from d in data.LUUHANHSACH where d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
+                        || d.ID_SACH.Contains(keySearch)
+                    select d;
+            }
+            else if (MSType == "1")
+            {
+                    ViewBag.MsType1 = "selected";
+                    ViewBag.MsType0 = "";
+                    ms = from d in data.LUUHANHSACH
+                         where d.TINH_TRANG == "1" && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
+                             || d.ID_SACH.Contains(keySearch))
+                         select d;
             }
             else if (MSType == "2")
             {
-                dh = from d in data.LUUHANHSACH where d.TINH_TRANG == "0" select d;
+                    ViewBag.MsType2 = "selected";
+                    ViewBag.MsType0 = "";
+                    ms = from d in data.LUUHANHSACH
+                         where (d.TINH_TRANG == "0" && d.THOI_HAN_MUON <= DateTime.Today) && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
+                             || d.ID_SACH.Contains(keySearch))
+                         select d;
             }
             else if (MSType == "3")
             {
-                dh = from d in data.LUUHANHSACH where (d.TINH_TRANG == "0") select d;
+                ViewBag.MsType3 = "selected";
+                ViewBag.MsType0 = "";
+                ms = from d in data.LUUHANHSACH
+                        where (d.TINH_TRANG == "0" && d.THOI_HAN_MUON >= DateTime.Today
+                            && DateTime.Today >= DbFunctions.AddDays(d.THOI_HAN_MUON, -2)) && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
+                        || d.ID_SACH.Contains(keySearch))
+                        select d;
             }
-            var list_dh = dh.ToList();
-            return View(list_dh,MSType);
+                          
+            var list_ms = ms.ToList();
+            return View(list_ms);
         }
-
-        private ActionResult View(List<LUUHANHSACH> list_dh, string MSType)
-        {
-            throw new NotImplementedException();
-        }
-        //public ActionResult selectMSType(string MSType)
-        //{
-        //    var dh = from d in data.LUUHANHSACH select d ;
-        //    if(MSType == "1")
-        //    {
-        //        dh = from d in data.LUUHANHSACH where d.TINH_TRANG == "1" select d;
-        //    }
-        //    else if(MSType == "2")
-        //    {
-        //        dh = from d in data.LUUHANHSACH where d.TINH_TRANG == "0" select d; 
-        //    }
-        //    else if(MSType == "3")
-        //    {
-        //        dh = from d in data.LUUHANHSACH where (d.TINH_TRANG == "0") select d;
-        //    }
-               
-
-        //    var list_dh = dh.ToList();
-        //    return View(list_dh);
-        //}
-
     }
 }
