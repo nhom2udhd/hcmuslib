@@ -37,7 +37,8 @@ namespace hcmuslib.Controllers
                 dh = from d in data.LUUHANHSACH where (d.TINH_TRANG == "0") select d;
             }
             var list_dh = dh.ToList();
-            return View(list_dh,MSType);
+
+            return View(list_dh, MSType);
         }
 
         private ActionResult View(List<LUUHANHSACH> list_dh, string MSType)
