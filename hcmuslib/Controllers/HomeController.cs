@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 using hcmuslib.Models;
+
 namespace hcmuslib.Controllers
 {
     public class HomeController : Controller
@@ -29,6 +31,7 @@ namespace hcmuslib.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult SendMail(FormCollection f)
         {
             string first_name = f["first_name"];
@@ -36,8 +39,9 @@ namespace hcmuslib.Controllers
             string message = f["message"];
             string email = f["email"];
             EMail oMail = new EMail();
-            oMail.SendMail("Email", "1112201@student.hcmus.edu.vn", new String[] { String.Concat("Ngu", " ", "nguyen", " - Góp ý"), "hello" });
-            return RedirectToAction("index", "home");
+            oMail.SendMail("Email", email, new String[] { String.Concat(last_name, " ", first_name, " - Góp ý"), message });
+            return RedirectToAction("Contact", "Home");
         }
+
     }
 }

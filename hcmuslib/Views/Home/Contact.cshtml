@@ -49,28 +49,27 @@
         <div class="col-sm-8">
             <h4>Vui lòng điền vào mẫu tin</h4>
             <div class="status alert alert-success" style="display: none"></div>
-            @using (Html.BeginForm("sendmail", "home", FormMethod.Post, new { @name = "contact-form", @class = "contact-form", @id = "main-contact-form" }))
-            {
+            <form action="/Home/SendMail" method="post" class="form-horizontal" role="form">
                 <div class="row">
                     <div class="col-sm-5">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="first_name" required="required" placeholder="First Name">
+                            <input type="text" tabindex="1" class="form-control" name="first_name" required="required" placeholder="First Name">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="last_name" required="required" placeholder="Last Name">
+                            <input type="text" tabindex="2" class="form-control" name="last_name" required="required" placeholder="Last Name">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="email" required="required" placeholder="Email address">
+                            <input type="text" tabindex="3" class="form-control" name="email" required="required" placeholder="Email address">
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-lg">Gửi tin nhắn</button>
+                            <button type="submit" tabindex="5" class="btn btn-primary btn-lg">Gửi tin nhắn</button>
                         </div>
                     </div>
                     <div class="col-sm-7">
-                        <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+                        <textarea name="message" tabindex="4" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
                     </div>
                 </div>
-            }
+            </form>
         </div><!--/.col-sm-8-->
         <div class="col-sm-4">
             <h4>Địa điểm trên Google Maps</h4>
