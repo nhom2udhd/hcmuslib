@@ -84,11 +84,29 @@ namespace hcmuslib.Controllers
                     ms = (from d in data.LUUHANHSACH select d);
                     break;
             }
+<<<<<<< HEAD
             int pageSize = 8;
             int pageNumber = (page ?? 1);
             
             var list_ms = ms.ToList();
             return View(list_ms.ToPagedList(pageNumber,pageSize));
+=======
+            else if (MSType == "3")
+            {
+                ViewBag.MsType3 = "selected";
+                ViewBag.MsType0 = "";
+                ms = from d in data.LUUHANHSACH
+                        where (d.TINH_TRANG == "0" && d.THOI_HAN_MUON >= DateTime.Today
+                            && DateTime.Today >= DbFunctions.AddDays(d.THOI_HAN_MUON, -2)) && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
+                        || d.ID_SACH.Contains(keySearch))
+                        select d;
+            }
+
+                          
+            var list_ms = ms.ToList();
+            return View(list_ms);
+
+>>>>>>> 0fb5938b2b6fc7f3d905561f31d7934bf19a5016
         }
     }
 }
