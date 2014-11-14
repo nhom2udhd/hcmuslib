@@ -80,3 +80,4 @@ D:\Study\hcmuslib\hcmuslib\obj\Debug\hcmuslib.dll
 D:\Study\hcmuslib\hcmuslib\obj\Debug\hcmuslib.pdb
 D:\Study\hcmuslib\hcmuslib\bin\EntityFramework.SqlServer.dll
 D:\Study\hcmuslib\hcmuslib\bin\EntityFramework.SqlServer.xml
+D:\Study\hcmuslib\hcmuslib\obj\Debug\hcmuslib.csprojResolveAssemblyReference.cache
