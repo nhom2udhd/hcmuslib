@@ -1,7 +1,8 @@
-﻿@model IEnumerable<hcmuslib.Models.LUUHANHSACH>
-
+﻿@model PagedList.IPagedList<hcmuslib.Models.LUUHANHSACH>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "ViewMS";
+    
 }
 <head>
     <title>Theo Doi Muon Sach - Thư viện ĐH KHTN TPHCM</title>
@@ -12,23 +13,40 @@
     <link href="/Content/main.css" rel="stylesheet">
     <link href="/Content/mystyle.css" rel="stylesheet">
 </head>
+<section id="title4" class="emerald">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Theo dõi mượn sách</h1>
+               
+            </div>
+            <div class="col-sm-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li class="active"><a href="#">Theo dõi mượn sách</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section><!--/#title-->
 <section id="theo_doi_don_hang" class="container">
     <div class="row">
-        <h4>Theo doi Muon Sach </h4>                
-        <form id="myForm" action="/LibrarianSupporter/ViewMS" method="post">
-            <input type="text" name="keySearch" class="form-control" style="width:200px;height:30px" onsubmit="OnchangeMSType();" value="@ViewBag.keySearch"  />
-            <select class="form-control" style="width:200px;height:30px" id="mySelect" name="MSType" onchange="OnchangeMSType();">
+        <h4>Danh sách  </h4>                
+        <form id="myForm1" action="/LibrarianSupporter/ViewMS" method="post">
+            Tìm Kiếm Theo Mã Độc Giả, Mã Lưu Hành, Mã Sách : <input type="text" name="keySearch" class="form-control" style="width:200px;height:30px" onsubmit="OnchangeMSType();" value="@ViewBag.CurrentFilter"  />
+            Trên : <select class="form-control" style="width:200px;height:30px" id="mySelect" name="MSType" onchange="OnchangeMSType();">
                 <option value="0" selected=@ViewBag.MsType0>All</option>
-                <option value="1" selected=@ViewBag.MsType1>Hoan Thanh</option>
-                <option value="2" selected=@ViewBag.MsType2>Chua Hoan Thanh</option>
-                <option value="3" selected=@ViewBag.MsType3>Gan Den Han</option>
+                <option value="1" selected=@ViewBag.MsType1>Đã trả</option>
+                <option value="2" selected=@ViewBag.MsType2>Đang mượn</option>
+                <option value="3" selected=@ViewBag.MsType3>Gần đến hạn</option>
             </select>
         </form>
         <br />
 
         <script>
             function OnchangeMSType() {
-                $('#myForm').submit();
+                $('#myForm1').submit();
             }
         </script>
         <div>
@@ -37,26 +55,26 @@
         <table class="table table-bordered" id="ListMS">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.ID_LUU_HANH)
+                    @Html.DisplayName("ID Lưu Hành")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.DOC_GIA)
+                    @Html.DisplayName("ID Độc giả")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.ID_SACH)
+                    @Html.DisplayName("ID Sách")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.NGAY_MUON)
+                    @Html.DisplayName("Ngày Mượn")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.THOI_HAN_MUON)
+                    @Html.DisplayName("Thời Hạn Trả")
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.TINH_TRANG)
+                    @Html.DisplayName("Tình Trạng")
                 </th>
 
             </tr>
-
+            
             @foreach (var item in Model)
             {
                 <tr>
@@ -75,12 +93,24 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.THOI_HAN_MUON)
                     </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TINH_TRANG)
+                    <td>                           
+                          @if (item.TINH_TRANG == "1")
+                          {
+                              @Html.DisplayName("Đã trả");                             
+                          }
+                          else
+                          {
+                              @Html.DisplayName("Đang mượn");
+                          }
                     </td>
                 </tr>
             }
 
         </table>
+        <br />
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("ViewMs",
+                      new { page, CurrentType = ViewBag.CurrentType, CurrentFilter = ViewBag.CurrentFilter }))
         </div>
     </section>>

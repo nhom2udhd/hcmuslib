@@ -74,7 +74,7 @@ namespace hcmuslib.Models
                 mailmessage.Subject = subject;
                 mailmessage.IsBodyHtml = true;
                 mailmessage.Body = body;
-                mailmessage.ReplyTo = new MailAddress(replytoEmail);
+                //mailmessage.ReplyTo = new MailAddress(replytoEmail);
 
                 SmtpClient smtpclient = new SmtpClient();
                 smtpclient.Host = strSmtpClient;

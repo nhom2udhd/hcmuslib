@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using hcmuslib.Models;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
-
+using PagedList;
 namespace hcmuslib.Controllers
 {
     public class LibrarianSupporterController : Controller
@@ -20,51 +20,75 @@ namespace hcmuslib.Controllers
             return View();
         }
 
-        public ActionResult ViewMS(string MSType,string keySearch)
-        {        
-            
+        public ActionResult ViewMS(string MSType,string keySearch,string sortOrder, string CurrentFilter, string CurrentType, int? page)
+        {           
             var ms = from d in data.LUUHANHSACH select d;
             ViewBag.MsType0 = "selected";
-            @ViewBag.keySearch = keySearch;
-            
-                
-            if(MSType == "0")
+            //@ViewBag.keySearch = keySearch;   
+            if(keySearch != null)
             {
-                ms = from d in data.LUUHANHSACH where d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
-                        || d.ID_SACH.Contains(keySearch)
-                    select d;
+                page = 1;
             }
-            else if (MSType == "1")
+            else
             {
+                keySearch = CurrentFilter;
+            }
+            if (MSType != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                MSType = CurrentType;
+            }
+            ViewBag.CurrentFilter = keySearch;
+            ViewBag.CurrentType = MSType;
+            if (keySearch == null)
+                keySearch = "";
+            switch (MSType)
+            {
+                case "0":
+
+                    ms = from d in data.LUUHANHSACH
+                         where d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
+                             || d.ID_SACH.Contains(keySearch)
+                         select d;
+                    break;
+                case "1":
                     ViewBag.MsType1 = "selected";
                     ViewBag.MsType0 = "";
+                    
                     ms = from d in data.LUUHANHSACH
                          where d.TINH_TRANG == "1" && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
                              || d.ID_SACH.Contains(keySearch))
                          select d;
-            }
-            else if (MSType == "2")
-            {
+                    break;
+                case "2":
                     ViewBag.MsType2 = "selected";
                     ViewBag.MsType0 = "";
                     ms = from d in data.LUUHANHSACH
                          where (d.TINH_TRANG == "0" && d.THOI_HAN_MUON <= DateTime.Today) && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
                              || d.ID_SACH.Contains(keySearch))
                          select d;
+                    break;
+                case "3":
+                    ViewBag.MsType3 = "selected";
+                    ViewBag.MsType0 = "";
+                    ms = from d in data.LUUHANHSACH
+                         where (d.TINH_TRANG == "0" && d.THOI_HAN_MUON >= DateTime.Today
+                             && DateTime.Today >= DbFunctions.AddDays(d.THOI_HAN_MUON, -2)) && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
+                         || d.ID_SACH.Contains(keySearch))
+                         select d;
+                    break;
+                default:
+                    ms = (from d in data.LUUHANHSACH select d);
+                    break;
             }
-            else if (MSType == "3")
-            {
-                ViewBag.MsType3 = "selected";
-                ViewBag.MsType0 = "";
-                ms = from d in data.LUUHANHSACH
-                        where (d.TINH_TRANG == "0" && d.THOI_HAN_MUON >= DateTime.Today
-                            && DateTime.Today >= DbFunctions.AddDays(d.THOI_HAN_MUON, -2)) && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
-                        || d.ID_SACH.Contains(keySearch))
-                        select d;
-            }
-                          
+            int pageSize = 8;
+            int pageNumber = (page ?? 1);
+            
             var list_ms = ms.ToList();
-            return View(list_ms);
+            return View(list_ms.ToPagedList(pageNumber,pageSize));
         }
     }
 }
