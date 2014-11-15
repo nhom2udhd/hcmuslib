@@ -54,9 +54,12 @@
 				</div>
 			</div>
 		  <div class="form-group">
-			<div class="col-sm-offset-3 col-sm-10">
-			  <button type="submit" class="btn btn-success">Đăng kí</button>
+			<div class="col-sm-offset-3 col-sm-10">    
+			  <button id="register-training-btn" type="submit" class="btn btn-success" data-action="@Url.Action("registertraining")">Đăng kí</button>
 			</div>
 		  </div>
 		</form>
+        <div id="register-training-message" class="message">
+
+        </div>
     </section><!--/#terms-->

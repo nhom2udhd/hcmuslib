@@ -603,6 +603,7 @@
     <Content Include="Views\LibrarianSupporter\ViewMS.cshtml" />
     <Content Include="Views\Reader\Index.cshtml" />
     <Content Include="Views\Reader\RegisterTraining.cshtml" />
+    <Content Include="Views\Reader\_RegisterTrainingMessage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
