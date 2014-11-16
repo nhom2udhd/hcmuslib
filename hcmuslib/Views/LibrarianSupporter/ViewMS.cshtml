@@ -12,8 +12,10 @@
     <link href="/Content/animate.css" rel="stylesheet">
     <link href="/Content/main.css" rel="stylesheet">
     <link href="/Content/mystyle.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 </head>
 <section id="title4" class="emerald">
+    
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
@@ -30,7 +32,7 @@
         </div>
     </div>
 </section><!--/#title-->
-<section id="theo_doi_don_hang" class="container">
+<section id="theo_doi_muon_sach" class="container">
     <div class="row">
         <h4>Danh sách  </h4>                
         <form id="myForm1" action="/LibrarianSupporter/ViewMS" method="post">
@@ -52,6 +54,16 @@
         <div>
 
         </div>
+        <script>
+            $(document).ready(function () {
+                $('select').change(function () {
+                    $("select option:selected").each(function () {
+                        if($(this).val() == "Gần đến hạn")
+                            $('#td_n').style.display = "normal"
+                    })                  
+                })
+            });
+        </script>
         <table class="table table-bordered" id="ListMS">
             <tr>
                 <th>
@@ -72,7 +84,9 @@
                 <th>
                     @Html.DisplayName("Tình Trạng")
                 </th>
-
+                <td id="td_nn" style="display:none">
+                    @Html.DisplayName("Nhắc Nhở")
+                </td>
             </tr>
             
             @foreach (var item in Model)
@@ -102,6 +116,9 @@
                           {
                               @Html.DisplayName("Đang mượn");
                           }
+                    </td>
+                    <td id="btn_nn" style="display:none">
+                        <input type="button" onclick="" value="Mail" />
                     </td>
                 </tr>
             }

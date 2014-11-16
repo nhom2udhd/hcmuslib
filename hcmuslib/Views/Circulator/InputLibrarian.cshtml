@@ -1,0 +1,94 @@
+﻿@model hcmuslib.Models.DOCGIA
+@{
+    ViewBag.Title = "BarcodeReader";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
+
+<script src="@Url.Content("~/Scripts/jquery.webcamqrcode.min.js")"></script>
+<script>
+    (function ($) {
+        $('document').ready(function () {
+
+            $('#qrcodebox').WebcamQRCode({
+                onQRCodeDecode: function (p_data) {
+
+                    $('#qrcode_result').html(p_data);
+                }
+            });
+
+            $('#btn_start').click(function () {
+                $('#qrcodebox').WebcamQRCode().start();
+            });
+
+            $('#btn_stop').click(function () {
+                $('#qrcodebox').WebcamQRCode().stop();
+            });
+        });
+    })(jQuery);
+</script>
+
+
+<section id="title" class="emerald">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Kiểm tra độc giả</h1>
+            </div>
+            <div class="col-sm-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li class="active">Kiểm tra độc giả</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section><!--/#title-->
+
+<section class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-primary" style="width:380px">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Scan QR code here: </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="camera" style="height:360px;">
+
+                        <div style="width: 350px; height: 350px;" id="qrcodebox">
+                            <object class=""></object>
+                        </div>
+                        <p>
+                            Last QRCode value: <span id="qrcode_result">none</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <form id="myForm1" action="/Circulator/InputLibrarian" method="post">
+                Mã Độc Giả: <input type="text" name="DGSearch" class="form-control" style="width:200px;height:30px" onsubmit="function onchange() { $('#myForm1').submit() };" value="@ViewBag.DGSearch" />
+            </form>
+                <br />
+                <img src="@Url.Content("~/images/team-member.jpg")" alt="" class="img-thumbnail">
+                <br />
+                <h3>Thông Tin Cá Nhân: </h3>
+                <p><strong>Họ Tên: </strong>@Model.HO_TEN</p>
+                <p><strong>Loại Độc Giả: </strong>@Model.LOAI_DOC_GIA</p>
+                <p><strong>Email: </strong> @Model.EMAIL</p>
+                <p><strong>Tình Trạng: </strong>
+                @if (Model.TINH_TRANG == "1") 
+                { 
+                    @("Hoạt Động");
+                } 
+                @if (Model.TINH_TRANG == "0")
+                {
+                    @("Vi Phạm");
+                }</p>
+
+
+</div>
+        </div>
+</section><!--/#terms-->
