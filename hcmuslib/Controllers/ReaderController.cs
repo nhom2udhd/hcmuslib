@@ -11,6 +11,7 @@ namespace hcmuslib.Controllers
     {
         //
         // GET: /Reader/
+        QLTHUVIENEntities data = new QLTHUVIENEntities();
 
         public ActionResult Index()
         {
@@ -20,8 +21,8 @@ namespace hcmuslib.Controllers
         public ActionResult RegisterTraining(string type, string number) 
         {
             if (Request.IsAjaxRequest()) {
-                ViewBag.type = type;
-                ViewBag.number = number;
+                string madocgia = "DG0000";
+                
                 return PartialView("_RegisterTrainingMessage");
             }
             return View();
