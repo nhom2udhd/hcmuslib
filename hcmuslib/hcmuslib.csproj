@@ -488,6 +488,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Scripts\html5-qrcode.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\adapters\standalone-framework.js" />
@@ -508,6 +509,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.barcodelistener-1.1-min.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.min.js" />
@@ -546,6 +548,8 @@
     <Content Include="Scripts\myscript.js" />
     <Content Include="Scripts\pygment_trac.css" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scriptcam.js" />
+    <Content Include="Scripts\swfobject.js" />
     <Content Include="Scripts\themes\dark-blue.js" />
     <Content Include="Scripts\themes\dark-green.js" />
     <Content Include="Scripts\themes\dark-unica.js" />

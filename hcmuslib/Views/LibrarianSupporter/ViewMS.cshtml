@@ -64,7 +64,9 @@
                 })
             });
         </script>
-        <table class="table table-bordered" id="ListMS">
+        @if(Model.Count() != 0)
+        {
+           <table class="table table-bordered" id="ListMS">
             <tr>
                 <th>
                     @Html.DisplayName("ID Lưu Hành")
@@ -123,7 +125,13 @@
                 </tr>
             }
 
-        </table>
+        </table> 
+        }
+        else
+        {
+            <h2>Không Tìm Thấy Kết Quả Nào Phù Hợp</h2>
+        }
+        
         <br />
         Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 

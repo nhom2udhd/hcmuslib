@@ -1,33 +1,16 @@
 ﻿@model hcmuslib.Models.DOCGIA
 @{
     ViewBag.Title = "BarcodeReader";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <title>BarcodeReader</title>
 
-<script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/html5-qrcode.min.js"></script>
+   
 
-<script src="@Url.Content("~/Scripts/jquery.webcamqrcode.min.js")"></script>
-<script>
-    (function ($) {
-        $('document').ready(function () {
-
-            $('#qrcodebox').WebcamQRCode({
-                onQRCodeDecode: function (p_data) {
-
-                    $('#qrcode_result').html(p_data);
-                }
-            });
-
-            $('#btn_start').click(function () {
-                $('#qrcodebox').WebcamQRCode().start();
-            });
-
-            $('#btn_stop').click(function () {
-                $('#qrcodebox').WebcamQRCode().stop();
-            });
-        });
-    })(jQuery);
-</script>
+</head>
 
 
 <section id="title" class="emerald">
@@ -58,10 +41,30 @@
                     <div class="camera" style="height:360px;">
 
                         <div style="width: 350px; height: 350px;" id="qrcodebox">
-                            <object class=""></object>
+                            
+                            <div id="reader" style="width:300px;height:250px">
+                                <video autoplay="autoplay" id="html5_qrcode_video" width="300" height="250"></video>
+                                <canvas id="qr-canvas" width="298" height="248" style="display:none;"></canvas>
+                            </div>
+                            <script>
+                                $('#reader').html5_qrcode(function (data) {
+                                    // do something when code is read
+                                    $("#qrcode_result").html(data);
+                                    $('#text').val(data);
+                                    $('#myForm1').submit();
+                                    },
+                                    function (error) {
+                                        //show read errors
+                                    }, function (videoError) {
+                                        //the video stream could be opened
+                                        $("#qrcode_result").html("the video stream could be opened");
+                                    }
+                                );
+                            </script>
+                            
                         </div>
                         <p>
-                            Last QRCode value: <span id="qrcode_result">none</span>
+                            <span id="qrcode_result"></span>
                         </p>
                     </div>
                 </div>
@@ -69,24 +72,37 @@
         </div>
         <div class="col-md-6">
             <form id="myForm1" action="/Circulator/InputLibrarian" method="post">
-                Mã Độc Giả: <input type="text" name="DGSearch" class="form-control" style="width:200px;height:30px" onsubmit="function onchange() { $('#myForm1').submit() };" value="@ViewBag.DGSearch" />
-            </form>
-                <br />
-                <img src="@Url.Content("~/images/team-member.jpg")" alt="" class="img-thumbnail">
-                <br />
-                <h3>Thông Tin Cá Nhân: </h3>
-                <p><strong>Họ Tên: </strong>@Model.HO_TEN</p>
-                <p><strong>Loại Độc Giả: </strong>@Model.LOAI_DOC_GIA</p>
-                <p><strong>Email: </strong> @Model.EMAIL</p>
-                <p><strong>Tình Trạng: </strong>
-                @if (Model.TINH_TRANG == "1") 
-                { 
-                    @("Hoạt Động");
-                } 
-                @if (Model.TINH_TRANG == "0")
+                Mã Độc Giả: <input id="text" type="text" name="DGSearch" class="form-control" style="width:200px;height:30px" onsubmit="function onchange() { $('#myForm1').submit() };" value="@ViewBag.DGSearch" />
+            </form>           
+            @if(ViewBag.DGSearch != null)
+            {                            
+                if(Model.MS_THE != null)
                 {
-                    @("Vi Phạm");
-                }</p>
+                    <br />
+                    <img src="@Url.Content("~/images/team-member.jpg")" alt="" class="img-thumbnail">
+                    <br />
+                    <h3>Thông Tin Cá Nhân: </h3>
+                    <p><strong>Họ Tên: </strong>@Model.HO_TEN</p>
+                    <p><strong>Loại Độc Giả: </strong>@Model.LOAI_DOC_GIA</p>
+                    <p><strong>Email: </strong> @Model.EMAIL</p>
+                    <p>
+                        <strong>Tình Trạng: </strong>
+                        @if (Model.TINH_TRANG == "1")
+                        {
+                            @("Hoạt Động");
+                        }
+                        @if (Model.TINH_TRANG == "0")
+                        {
+                            @("Vi Phạm");
+                        }
+                    </p>
+                }     
+                else
+                {
+                    <h4>Độc Giả Không Tồn Tại</h4>
+                }
+
+            }
 
 
 </div>

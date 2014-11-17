@@ -23,7 +23,9 @@ namespace hcmuslib.Controllers
             DOCGIA dg = new DOCGIA();
             if (DGSearch != null)
             {
-                dg = (from d in data.DOCGIA where d.MS_THE == DGSearch select d).First();
+                dg = (from d in data.DOCGIA where d.MS_THE == DGSearch select d).FirstOrDefault();
+                if (dg == null)
+                    dg = new DOCGIA();
                 @ViewBag.DGSearch = DGSearch;
             }
                 
