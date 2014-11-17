@@ -362,6 +362,7 @@
     <Content Include="Images\ads\ad2.png" />
     <Content Include="Images\ads\ad3.png" />
     <Content Include="Images\ads\ad4.png" />
+    <Content Include="Images\ajax-loader.gif" />
     <Content Include="Images\blog\avatar.jpg" />
     <Content Include="Images\blog\avatar1.png" />
     <Content Include="Images\blog\avatar2.png" />
@@ -610,6 +611,7 @@
     <Content Include="Views\Reader\RegisterTraining.cshtml" />
     <Content Include="Views\Reader\_RegisterTrainingMessage.cshtml" />
     <Content Include="Views\Circulator\InputLibrarian.cshtml" />
+    <Content Include="Views\Circulator\GetDG.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
