@@ -1,0 +1,87 @@
+﻿@model PagedList.IPagedList<hcmuslib.Models.LUUHANHSACH>
+@using PagedList.Mvc;
+@if(Model != null)
+{
+    if (Model.Count() != 0)
+    {
+        <table class="table table-bordered" id="ListMS">
+            <tr>
+                <th>
+                    @Html.DisplayName("ID Lưu Hành")
+                </th>
+                <th>
+                    @Html.DisplayName("ID Độc giả")
+                </th>
+                <th>
+                    @Html.DisplayName("ID Sách")
+                </th>
+                <th>
+                    @Html.DisplayName("Ngày Mượn")
+                </th>
+                <th>
+                    @Html.DisplayName("Thời Hạn Trả")
+                </th>
+                <th>
+                    @Html.DisplayName("Tình Trạng")
+                </th>
+                <td id="td_nn" style="display:none">
+                    @Html.DisplayName("Nhắc Nhở")
+                </td>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_LUU_HANH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DOC_GIA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID_SACH)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NGAY_MUON)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.THOI_HAN_MUON)
+                    </td>
+                    <td>
+                        @if (item.TINH_TRANG == "1")
+                        {
+                            @Html.DisplayName("Đã trả");
+                        }
+                        else
+                        {
+                            @Html.DisplayName("Đang mượn");
+                        }
+                    </td>
+                    <td id="btn_nn" style="display:none">
+                        <input type="button" onclick="" value="Mail" />
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+    else
+    {
+        <h2>Không Tìm Thấy Kết Quả Nào Phù Hợp</h2>
+    }
+<br />
+
+    @*@("Page") (Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of Model.PageCount;*@
+
+        @Html.PagedListPager(@Model, page => Url.Action("AjaxApi_ViewMS",
+                       new { page, CurrentType = @ViewBag.CurrentType, CurrentFilter = @ViewBag.CurrentFilter }),
+                       PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing( 
+                       new AjaxOptions(){
+                           UpdateTargetId = "content_table",
+                           HttpMethod = "Post",
+                           InsertionMode = InsertionMode.Replace,
+                           LoadingElementId = "loader"
+                       }
+                       ));
+}
+        
