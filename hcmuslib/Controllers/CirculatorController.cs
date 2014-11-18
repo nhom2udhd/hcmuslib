@@ -29,5 +29,30 @@ namespace hcmuslib.Controllers
                 
             return View(dg);
         }
+
+        public ActionResult LentBook()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SaveLentBookInfo(FormCollection f)
+        {
+            
+            int size = f.Count;
+            Random ran = new Random();
+            for (int i = 0; i < size; i++)
+            {
+                LUUHANHSACH luuhanh = new LUUHANHSACH();
+                luuhanh.DOC_GIA = f.GetValues("docgia[]")[i];
+                luuhanh.ID_SACH = f.GetValues("sach[]")[i];
+                luuhanh.ID_LUU_HANH = "LH" + ran.Next().ToString();
+                luuhanh.NGAY_MUON = DateTime.Now;
+                luuhanh.THOI_HAN_MUON = DateTime.Now.AddDays(14);
+                data.LUUHANHSACH.Add(luuhanh);
+            }
+            data.SaveChanges();
+            return RedirectToAction("LentBook");
+        }
     }
 }

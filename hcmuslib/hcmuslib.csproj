@@ -606,6 +606,7 @@
     <Content Include="Views\Reader\RegisterTraining.cshtml" />
     <Content Include="Views\Reader\_RegisterTrainingMessage.cshtml" />
     <Content Include="Views\Circulator\InputLibrarian.cshtml" />
+    <Content Include="Views\Circulator\LentBook.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
