@@ -20,11 +20,14 @@ namespace hcmuslib.Controllers
             return View();
         }
 
-        public ActionResult ViewMS(string MSType,string keySearch,string sortOrder, string CurrentFilter, string CurrentType, int? page)
-        {           
+        public ActionResult ViewMS()
+        {                      
+            return View();
+        }
+        public PartialViewResult AjaxApi_ViewMS(string MSType,string keySearch, string CurrentFilter, string CurrentType , int? page)
+        {
             var ms = from d in data.LUUHANHSACH select d;
-            ViewBag.MsType0 = "selected";
-            //@ViewBag.keySearch = keySearch;   
+            ViewBag.MsType0 = "selected";  
             if(keySearch != null)
             {
                 page = 1;
@@ -88,8 +91,7 @@ namespace hcmuslib.Controllers
             int pageNumber = (page ?? 1);
             
             var list_ms = ms.ToList();
-            return View(list_ms.ToPagedList(pageNumber,pageSize));
-
+            return PartialView("AjaxApi_ViewMS", list_ms.ToPagedList(pageNumber, pageSize));
         }
     }
 }

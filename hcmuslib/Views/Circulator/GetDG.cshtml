@@ -1,0 +1,36 @@
+﻿@model hcmuslib.Models.DOCGIA
+
+    @if (ViewBag.DGSearch != null)
+    {
+        if (Model.MS_THE != null)
+        {
+            
+            <br />
+            <img src="@Url.Content("~/images/team-member.jpg")" alt="" class="img-thumbnail">
+            <br />
+            <h3>Thông Tin Cá Nhân: </h3>
+            <p><strong>Họ Tên: </strong>@Model.HO_TEN</p>
+            <p><strong>Loại Độc Giả: </strong>@Model.LOAI_DOC_GIA</p>
+            <p><strong>Email: </strong> @Model.EMAIL</p>
+            <p>
+                <strong>Tình Trạng: </strong>
+                @if (Model.TINH_TRANG == "1")
+                {
+                    @("Hoạt Động");
+                }
+                @if (Model.TINH_TRANG == "0")
+                {
+                    @("Vi Phạm");
+                }
+            </p>
+
+        }
+        else
+        {
+            <br />
+            <br />
+            <h4>Độc Giả Không Tồn Tại</h4>
+              
+    }
+
+}

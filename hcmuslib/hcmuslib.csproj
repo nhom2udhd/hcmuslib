@@ -362,6 +362,7 @@
     <Content Include="Images\ads\ad2.png" />
     <Content Include="Images\ads\ad3.png" />
     <Content Include="Images\ads\ad4.png" />
+    <Content Include="Images\ajax-loader.gif" />
     <Content Include="Images\blog\avatar.jpg" />
     <Content Include="Images\blog\avatar1.png" />
     <Content Include="Images\blog\avatar2.png" />
@@ -488,6 +489,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Scripts\html5-qrcode.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\adapters\standalone-framework.js" />
@@ -508,6 +510,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.barcodelistener-1.1-min.js" />
     <Content Include="Scripts\jquery.isotope.min.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.min.js" />
@@ -546,6 +549,8 @@
     <Content Include="Scripts\myscript.js" />
     <Content Include="Scripts\pygment_trac.css" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scriptcam.js" />
+    <Content Include="Scripts\swfobject.js" />
     <Content Include="Scripts\themes\dark-blue.js" />
     <Content Include="Scripts\themes\dark-green.js" />
     <Content Include="Scripts\themes\dark-unica.js" />
@@ -607,6 +612,8 @@
     <Content Include="Views\Reader\_RegisterTrainingMessage.cshtml" />
     <Content Include="Views\Circulator\InputLibrarian.cshtml" />
     <Content Include="Views\Circulator\LentBook.cshtml" />
+    <Content Include="Views\Circulator\GetDG.cshtml" />
+    <Content Include="Views\LibrarianSupporter\AjaxApi_ViewMS.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

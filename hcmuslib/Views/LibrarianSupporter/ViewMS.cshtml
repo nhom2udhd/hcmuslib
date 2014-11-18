@@ -1,6 +1,4 @@
-﻿@model PagedList.IPagedList<hcmuslib.Models.LUUHANHSACH>
-@using PagedList.Mvc;
-@{
+﻿@{
     ViewBag.Title = "ViewMS";
     
 }
@@ -13,6 +11,9 @@
     <link href="/Content/main.css" rel="stylesheet">
     <link href="/Content/mystyle.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 </head>
 <section id="title4" class="emerald">
     
@@ -34,24 +35,43 @@
 </section><!--/#title-->
 <section id="theo_doi_muon_sach" class="container">
     <div class="row">
-        <h4>Danh sách  </h4>                
-        <form id="myForm1" action="/LibrarianSupporter/ViewMS" method="post">
-            Tìm Kiếm Theo Mã Độc Giả, Mã Lưu Hành, Mã Sách : <input type="text" name="keySearch" class="form-control" style="width:200px;height:30px" onsubmit="OnchangeMSType();" value="@ViewBag.CurrentFilter"  />
-            Trên : <select class="form-control" style="width:200px;height:30px" id="mySelect" name="MSType" onchange="OnchangeMSType();">
+        <h3>Danh sách  </h3>
+        @using (Ajax.BeginForm("AjaxApi_ViewMS", "LibrarianSupporter", new AjaxOptions 
+        { 
+            UpdateTargetId = "content_table", 
+            HttpMethod = "Post",
+            InsertionMode = InsertionMode.Replace,
+            LoadingElementId = "loader"
+        }))
+        {
+            string keySearch = "";
+            <h6>Tìm Kiếm Theo ID Lưu Hành, ID Độc Giả, ID Sách: </h6>
+            <div style="width:200px;height:30px">
+                @Html.TextBoxFor(m => keySearch, new { @class = "form-control" })              
+                <input id="hid_btn" type="submit" style="display:none" />
+            </div>
+            <h6>Trên: </h6>
+            <select class="form-control" style="width:200px;height:30px" id="mySelect" name="MSType" onchange="OnChangeMSType();">
+                <option value="0" selected=@ViewBag.MsType0>All</option>
+                <option value="1" selected=@ViewBag.MsType1>Đã trả</option>
+                <option value="2" selected=@ViewBag.MsType2>Đang mượn</option>
+                <option value="3" selected=@ViewBag.MsType3>Gần đến hạn</option>
+            </select>
+            <br />
+            <br />
+        }  
+                    
+        @*<form id="myForm1" action="/LibrarianSupporter/ViewMS" method="post">
+        {Tìm Kiếm Theo Mã Độc Giả, Mã Lưu Hành, Mã Sách : <input type="text" name="keySearch" class="form-control" style="width:200px;height:30px" onsubmit="OnchangeMSType();" value="@ViewBag.CurrentFilter"  />
+            Trên : <select class="form-control" style="width:200px;height:30px" id="mySelect" name="MSType" onchange="function OnchangeMSType() { $('#myForm1').submit(); };">
                 <option value="0" selected=@ViewBag.MsType0>All</option>
                 <option value="1" selected=@ViewBag.MsType1>Đã trả</option>
                 <option value="2" selected=@ViewBag.MsType2>Đang mượn</option>
                 <option value="3" selected=@ViewBag.MsType3>Gần đến hạn</option>
             </select>
         </form>
-        <br />
-
-        <script>
-            function OnchangeMSType() {
-                $('#myForm1').submit();
-            }
-        </script>
-        <div>
+        }
+        <br />*@
 
         </div>
         <script>
@@ -63,71 +83,16 @@
                     })                  
                 })
             });
-        </script>
-        <table class="table table-bordered" id="ListMS">
-            <tr>
-                <th>
-                    @Html.DisplayName("ID Lưu Hành")
-                </th>
-                <th>
-                    @Html.DisplayName("ID Độc giả")
-                </th>
-                <th>
-                    @Html.DisplayName("ID Sách")
-                </th>
-                <th>
-                    @Html.DisplayName("Ngày Mượn")
-                </th>
-                <th>
-                    @Html.DisplayName("Thời Hạn Trả")
-                </th>
-                <th>
-                    @Html.DisplayName("Tình Trạng")
-                </th>
-                <td id="td_nn" style="display:none">
-                    @Html.DisplayName("Nhắc Nhở")
-                </td>
-            </tr>
-            
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ID_LUU_HANH)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DOC_GIA)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ID_SACH)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NGAY_MUON)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.THOI_HAN_MUON)
-                    </td>
-                    <td>                           
-                          @if (item.TINH_TRANG == "1")
-                          {
-                              @Html.DisplayName("Đã trả");                             
-                          }
-                          else
-                          {
-                              @Html.DisplayName("Đang mượn");
-                          }
-                    </td>
-                    <td id="btn_nn" style="display:none">
-                        <input type="button" onclick="" value="Mail" />
-                    </td>
-                </tr>
+            function OnChangeMSType() {
+                $('#hid_btn').click();
             }
-
-        </table>
-        <br />
-        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-
-        @Html.PagedListPager(Model, page => Url.Action("ViewMs",
-                      new { page, CurrentType = ViewBag.CurrentType, CurrentFilter = ViewBag.CurrentFilter }))
+        </script>
+        <div id="content_table">
+            <div id="loader" class=" aletr" style="display:none">
+                <br />
+                <br />
+                <img src="~/Images/ajax-loader.gif" width="200" height="200" />
+            </div> 
+            @Html.Partial("AjaxApi_ViewMS")
         </div>
     </section>>

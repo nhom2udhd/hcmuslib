@@ -18,16 +18,32 @@ namespace hcmuslib.Controllers
         {
             return View();
         }
-        public ActionResult InputLibrarian(string DGSearch)
+       
+        public ActionResult InputLibrarian()
+        {
+            //DOCGIA dg = new DOCGIA();
+            //if (DGSearch != null)
+            //{
+            //    dg = (from d in data.DOCGIA where d.MS_THE == DGSearch select d).FirstOrDefault();
+            //    if (dg == null)
+            //        dg = new DOCGIA();
+            //    @ViewBag.DGSearch = DGSearch;
+            //}
+                
+            return View();
+        }
+        [HttpPost]
+        public PartialViewResult GetDG(string DG_ID = "")
         {
             DOCGIA dg = new DOCGIA();
-            if (DGSearch != null)
+            if (DG_ID != null)
             {
-                dg = (from d in data.DOCGIA where d.MS_THE == DGSearch select d).First();
-                @ViewBag.DGSearch = DGSearch;
+                dg = (from d in data.DOCGIA where d.MS_THE == DG_ID select d).FirstOrDefault();
+                if (dg == null)
+                    dg = new DOCGIA();
+                @ViewBag.DGSearch = DG_ID;
             }
-                
-            return View(dg);
+            return PartialView("GetDG",dg);
         }
 
         public ActionResult LentBook()
