@@ -2,6 +2,7 @@
     ViewBag.Title = "Độc giả mượn sách";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <section id="title" class="emerald">
     <div class="container">
         <div class="row">
@@ -28,13 +29,20 @@
                 <label for="id_reader" class="col-sm-2 control-label">Mã đọc giả</label>
                 <div class="col-sm-2">
                     <input type="text" class="form-control" name="id_reader" id="id_reader" placeholder="Nhập mã đọc giả">
+                    <p id="error-empty-reader" class="error-message text-center">
+                    </p>
                 </div>
+                    
                 <label for="id_book" class="col-sm-2 control-label">Mã sách</label>
                 <div class="col-sm-2">
                     <input type="text" class="form-control" name="id_book" id="id_book" placeholder="Nhập mã sách">
+                    <p id="error-empty-book" class="error-message text-center">
+
+                    </p>
                 </div>
+                    
                 <div class="col-sm-2 col-sm-push-1">
-                    <button type="button" class="btn btn-success" onclick="AddRow()">Xác nhận</button>
+                    <button type="button" class="btn btn-success" id="add-row" onclick="AddRow()">Xác nhận</button>
                 </div>
             </div>
         </form>
@@ -42,7 +50,7 @@
     <div class="gap"></div>
     <div class="row">
         <h4>Danh sách đọc giả yêu cầu mượn sách</h4>
-        @using (Html.BeginForm("SaveLentBookInfo", "Circulator", FormMethod.Post, new { enctype = "multipart/form-data", id="frm-cir" }))
+        @using (Html.BeginForm("SaveLentBookInfo", "Circulator", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm-cir" }))
         {
             <div class="form-group">
                 <table id="circulation" class="table table-bordered">
@@ -50,43 +58,59 @@
                         <th>Người mượn</th>
                         <th>Sách mượn</th>
                         <th>Ngày mượn</th>
+                        <th>Ngày trả</th>
                         <th>Xác nhận</th>
                     </tr>
-                    <tr>
-                        <td>DG
-                        <input type="hidden" name="docgia[]" value="DG"/></td>
-                        <td>SH
-                            <input type="hidden" name="sach[]" value="SH" /></td>
-                        <td>@DateTime.Now</td>
-                        <td><button type="button" name="cancel" class="btn btn-danger" onclick="DelRow(this)">Hủy</button></td>
-                    </tr>
+                    <tr></tr>
                 </table>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-success">Xác nhận cho mượn</button>
+                <button type="button" class="btn btn-success" onclick="">In</button>
             </div>
         }
     </div>
 </section>
+
+
 <script>
     function AddRow() {
+
         var table = document.getElementById("circulation");
         var madg = document.getElementById("id_reader");
         var masach = document.getElementById("id_book");
-        var now=new Date();
-        if (madg.value != "" && masach.value!= "") {
-            var row = table.insertRow(1);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            var cell4 = row.insertCell(3);
-            cell1.innerHTML = madg.value + '<input type="hidden" name="docgia[]" value="'+madg.value+'" />';
-            cell2.innerHTML = masach.value + '<input type="hidden" name="SH[]" value="' + masach.value + '" />';
-            cell3.innerHTML = now.toDateString();
-            cell4.innerHTML = "<button type='button' name='cancel' class='btn btn-danger' onclick='DelRow(this)'>Hủy</button>";
-        }
-    }
+        if (madg.value == "" || masach.value == "") {
+            $('#error-empty-reader').innerHTML = "Chưa nhập mã độc giả";
+            $('#error-empty-book').innerHTML = "Chưa nhập mã sách";
+        } else {
+            var tensach = "";
+            var tendocgia = "";
+            $.ajax({
+                url: '@Url.Action("getinfo")',
+                type: "POST",
+                data: { dg: madg.value, sach: masach.value },
 
+                success: function (data) {
+                    tendocgia = data.docgia;
+                    tensach = data.sach;
+                    var now = new Date();
+
+                    var row = table.insertRow(1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    cell1.innerHTML = tendocgia + '<input type="hidden" name="docgia[]" value="' + madg.value + '" />';
+                    cell2.innerHTML = tensach + '<input type="hidden" name="sach[]" value="' + masach.value + '" />';
+                    cell3.innerHTML = "@DateTime.Now";
+                    cell4.innerHTML = "@DateTime.Now.AddDays(14)";
+                    cell5.innerHTML = "<button type='button' name='cancel' class='btn btn-danger' onclick='DelRow(this)'>Hủy</button>";
+                }
+            })
+        }
+
+    }
     function DelRow(o) {
         var p = o.parentNode.parentNode;
         p.parentNode.removeChild(p);
