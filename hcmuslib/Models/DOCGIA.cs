@@ -21,6 +21,7 @@ namespace hcmuslib.Models
             this.LUUHANHSACH = new HashSet<LUUHANHSACH>();
             this.MUONPHONG = new HashSet<MUONPHONG>();
             this.MUONTAICHO = new HashSet<MUONTAICHO>();
+            this.DKTAPHUANs = new HashSet<DKTAPHUAN>();
         }
     
         public string MS_THE { get; set; }
@@ -35,5 +36,6 @@ namespace hcmuslib.Models
         public virtual ICollection<LUUHANHSACH> LUUHANHSACH { get; set; }
         public virtual ICollection<MUONPHONG> MUONPHONG { get; set; }
         public virtual ICollection<MUONTAICHO> MUONTAICHO { get; set; }
+        public virtual ICollection<DKTAPHUAN> DKTAPHUANs { get; set; }
     }
 }
