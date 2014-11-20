@@ -68,16 +68,6 @@ warning 6002: The table/view 'QLTHUVIEN.dbo.CT_DONHANG' does not have a primary 
           <Property Name="SO_LUONG" Type="int" />
           <Property Name="GHI_CHU" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <EntityType Name="DKTAPHUAN">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="MADG" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="LOAI" Type="nvarchar" MaxLength="50" />
-          <Property Name="SOLUONG" Type="int" />
-          <Property Name="TINHTRANG" Type="nvarchar" MaxLength="50" />
-        </EntityType>
         <EntityType Name="DOCGIA">
           <Key>
             <PropertyRef Name="MS_THE" />
@@ -398,18 +388,6 @@ warning 6002: The table/view 'QLTHUVIEN.dbo.CT_DONHANG' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_DKTAPHUAN_DOCGIA">
-          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="1" />
-          <End Role="DKTAPHUAN" Type="Self.DKTAPHUAN" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DOCGIA">
-              <PropertyRef Name="MS_THE" />
-            </Principal>
-            <Dependent Role="DKTAPHUAN">
-              <PropertyRef Name="MADG" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="QLTHUVIENModelStoreContainer">
           <EntitySet Name="BMNXB" EntityType="Self.BMNXB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BMNHANDECHINH" EntityType="Self.BMNHANDECHINH" Schema="dbo" store:Type="Tables" />
@@ -417,7 +395,6 @@ warning 6002: The table/view 'QLTHUVIEN.dbo.CT_DONHANG' does not have a primary 
           <EntitySet Name="BMTACGIA" EntityType="Self.BMTACGIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BMTENDEMUC" EntityType="Self.BMTENDEMUC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BOITHUONGTHIETHAI" EntityType="Self.BOITHUONGTHIETHAI" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DKTAPHUAN" EntityType="Self.DKTAPHUAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DOCGIA" EntityType="Self.DOCGIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LEARNCOMMONS" EntityType="Self.LEARNCOMMONS" Schema="dbo" store:Type="Tables" />
@@ -498,10 +475,6 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
             <End Role="BMTENDEMUC" EntitySet="BMTENDEMUC" />
             <End Role="SACH" EntitySet="SACH" />
           </AssociationSet>
-          <AssociationSet Name="FK_DKTAPHUAN_DOCGIA" Association="Self.FK_DKTAPHUAN_DOCGIA">
-            <End Role="DOCGIA" EntitySet="DOCGIA" />
-            <End Role="DKTAPHUAN" EntitySet="DKTAPHUAN" />
-          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -580,7 +553,6 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
           <NavigationProperty Name="MUONPHONG" Relationship="Self.FK__MUONPHONG__DOC_G__239E4DCF" FromRole="DOCGIA" ToRole="MUONPHONG" />
           <NavigationProperty Name="MUONTAICHO" Relationship="Self.FK__MUONTAICH__DOC_G__37A5467C" FromRole="DOCGIA" ToRole="MUONTAICHO" />
           <Property Name="IMAGE_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="DKTAPHUANs" Relationship="QLTHUVIENModel.FK_DKTAPHUAN_DOCGIA" FromRole="DOCGIA" ToRole="DKTAPHUAN" />
         </EntityType>
         <EntityType Name="DONHANG">
           <Key>
@@ -999,35 +971,7 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
             <End Role="SACH" EntitySet="SACH" />
             <End Role="MUONTAICHO" EntitySet="MUONTAICHO" />
           </AssociationSet>
-          <EntitySet Name="DKTAPHUANs" EntityType="QLTHUVIENModel.DKTAPHUAN" />
-          <AssociationSet Name="FK_DKTAPHUAN_DOCGIA" Association="QLTHUVIENModel.FK_DKTAPHUAN_DOCGIA">
-            <End Role="DOCGIA" EntitySet="DOCGIA" />
-            <End Role="DKTAPHUAN" EntitySet="DKTAPHUANs" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="DKTAPHUAN">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="MADG" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="LOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SOLUONG" Type="Int32" />
-          <Property Name="TINHTRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DOCGIA" Relationship="QLTHUVIENModel.FK_DKTAPHUAN_DOCGIA" FromRole="DKTAPHUAN" ToRole="DOCGIA" />
-        </EntityType>
-        <Association Name="FK_DKTAPHUAN_DOCGIA">
-          <End Type="QLTHUVIENModel.DOCGIA" Role="DOCGIA" Multiplicity="1" />
-          <End Type="QLTHUVIENModel.DKTAPHUAN" Role="DKTAPHUAN" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DOCGIA">
-              <PropertyRef Name="MS_THE" />
-            </Principal>
-            <Dependent Role="DKTAPHUAN">
-              <PropertyRef Name="MADG" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1251,17 +1195,6 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
                 <ScalarProperty Name="TEN_SAN_PHAM" ColumnName="TEN_SAN_PHAM" />
                 <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
                 <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DKTAPHUANs">
-            <EntityTypeMapping TypeName="QLTHUVIENModel.DKTAPHUAN">
-              <MappingFragment StoreEntitySet="DKTAPHUAN">
-                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
-                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
-                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
-                <ScalarProperty Name="MADG" ColumnName="MADG" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
