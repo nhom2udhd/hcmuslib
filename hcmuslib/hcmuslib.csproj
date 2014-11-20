@@ -228,9 +228,6 @@
     <Compile Include="Models\CT_DONHANG.cs">
       <DependentUpon>QLThuVien.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DKTAPHUAN.cs">
-      <DependentUpon>QLThuVien.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\DOCGIA.cs">
       <DependentUpon>QLThuVien.tt</DependentUpon>
     </Compile>
@@ -617,6 +614,9 @@
     <Content Include="Views\Circulator\LentBook.cshtml" />
     <Content Include="Views\Circulator\GetDG.cshtml" />
     <Content Include="Views\LibrarianSupporter\AjaxApi_ViewMS.cshtml" />
+    <Content Include="Views\Librarian\BookReturningHome.cshtml" />
+    <Content Include="Views\Librarian\_BookReturningDetail.cshtml" />
+    <Content Include="Views\Librarian\_ReturnConfirmMessage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

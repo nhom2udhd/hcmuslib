@@ -110,5 +110,28 @@ namespace hcmuslib.Controllers
             
             return RedirectToAction("ManageReaderImage");
         }
+
+        public ActionResult BookReturningHome(string maDG, string action=null) 
+        {
+            if (Request.IsAjaxRequest())
+            {
+                if (action == "confirm")
+                {
+                    return PartialView("_ReturnConfirmMessage");
+                }
+                else
+                {
+                    var lh = from l in data.LUUHANHSACH
+                             where l.DOC_GIA == maDG
+                             select l;
+                    if (lh.Any())
+                    {
+                        return PartialView("_BookReturningDetail", lh.ToList());
+                    }
+                }
+            }
+            return View();
+        }
+
     }
 }
