@@ -37,24 +37,25 @@
 			<div class="form-group">
 				<label for="status" class="col-sm-2 col-md-2 text-center">Tình trạng</label>
 				<div class="col-sm-6 col-md-6">
-					<select class="form-control" name="status">
-						<option>Bình thường</option>
-						<option>Sách bị hư hại</option>
-						<option>Sách bị mất</option>
-						<option>Trả trễ hẹn</option>
+					<select class="form-control status" name="status">
+						<option value="normal">Bình thường</option>
+						<option value="damage">Sách bị hư hại</option>
+						<option value="lost">Sách bị mất</option>
+						<option value="late">Trả trễ hẹn</option>
 
 					</select>
 				</div>
 			</div>
-				<div class="form-group">
-				<label for="punishment" class="col-sm-2 col-md-2 text-center">Tiền phạt</label>
-				<div class="col-sm-4 col-md-4">
-					<input type="punishment" class="form-control" name="punishment" id="punishment" value="Số tiền">
-				</div>
-                <div class="col-sm-3 col-md-3">
-                    <button type="button" class="btn btn-danger" id="punishment-confirm">Đã thu tiền</button>
-                </div>
-			</div>
+				<div class="form-group punishment-container" style="display:none">
+				    <label for="punishment" class="col-sm-2 col-md-2 text-center">Tiền phạt</label>
+				    <div class="col-sm-4 col-md-4">
+					    <input type="punishment" class="form-control" name="punishment"  value="Số tiền">
+				    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <button type="button" class="btn btn-danger punishment-confirm" data-bid="@item.ID_SACH">Đã thu tiền</button>
+                        <div class="punishment-message" style="display:none"></div>
+                    </div>
+			    </div>
 			<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-10">
 				<button type="button" class="btn btn-success return-confirm-btn" data-lhid="@item.ID_LUU_HANH">Xác nhận</button>
@@ -67,5 +68,4 @@
         </div>
     {i++;}
 
-}
 }

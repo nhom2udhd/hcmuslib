@@ -32,6 +32,14 @@ $(document).ready(function(){
 	}
   })
   
+  $("#return-detail-container").on("change", ".form-control.status", function (e) {
+      var status = $(e.currentTarget).val();
+      if (status != 'normal') {
+          $(e.currentTarget).closest(".form-horizontal").find(".form-group.punishment-container").fadeIn();
+      } else {
+          $(e.currentTarget).closest(".form-horizontal").find(".form-group.punishment-container").fadeOut();
+      }
+  })
 /*   $("#login-submit").on("click",function(e){
 	e.preventDefault();
 	$("#error-login-message").show();

@@ -31,6 +31,7 @@
                 url: "/librarian/bookreturninghome",
                 type: "POST",
                 data: {
+                    action: "show",
                     madg: madg, 
                 },
                 success: function (data) {
@@ -56,6 +57,28 @@
                 //$(e.currentTarget).closest(".col-sm-8.col-md-8.book-returning-form").empty();
                 //$(e.currentTarget).closest(".col-sm-8.col-md-8.book-returning-form").html(data);
                 //$(e.currentTarget).closest(".col-sm-8.col-md-8.book-returning-form").fadeIn("slow");
+            }
+        });
+    })
+
+    $("#return-detail-container").on("click", ".punishment-confirm", function (e) {
+        e.preventDefault();
+        var madg = $("#id").val();
+        var bid = $(e.currentTarget).attr("data-bid");
+        var status = $(e.currentTarget).closest(".form-horizontal").find(".status").val();
+        $.ajax({
+            url: "/librarian/bookreturninghome",
+            type: "POST",
+            data: {
+                action: "punishment",
+                madg: madg,
+                bid: bid,
+                status: status
+            },
+            success: function (data) {
+                $(e.currentTarget).fadeOut();
+                $(e.currentTarget).closest(".form-horizontal").find(".punishment-message").html(data);
+                $(e.currentTarget).closest(".form-horizontal").find(".punishment-message").fadeIn();
             }
         });
     })
