@@ -1,0 +1,71 @@
+﻿@model IEnumerable<hcmuslib.Models.LUUHANHSACH>
+@{var i = 0;}
+@foreach (var item in Model)
+{
+    if (i==0)
+    {
+    <div class="col-sm-3 col-md-3">
+	    <img src="@Url.Content("~/Images/profilePic/" + item.DOCGIA.IMAGE_URL)" alt="tm" class="img-thumbnail">
+	    <div class="gap"></div>
+	    <p><strong>Họ tên: </strong>@item.DOCGIA.HO_TEN</p>
+	    <p><strong>Email: </strong>@item.DOCGIA.EMAIL</p>
+    </div>
+    }else
+    {
+        <div class="col-sm-3 col-md-3"></div>
+    }
+    <div class="row">
+<div class="col-sm-8 col-md-8 book-returning-form">
+	<div class="row">
+		<table class="table table-bordered">
+			<tr>
+				<th>Sách</th>
+				<th>Mã sách</th>
+				<th>Tên sách</th>
+				<th>Ngày mượn</th>
+			</tr>
+			<tr>
+				<td><img src="@Url.Content("~/images/book/cover1.jpg")" alt="cover"></td>
+				<td>@item.SACH.ID_SACH</td>
+				<td>@item.SACH.NHAN_DE_CHINH</td>
+				<td>@item.NGAY_MUON</td>
+			</tr>
+		</table>
+	</div>
+	<div class="row">
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label for="status" class="col-sm-2 col-md-2 text-center">Tình trạng</label>
+				<div class="col-sm-6 col-md-6">
+					<select class="form-control" name="status">
+						<option>Bình thường</option>
+						<option>Sách bị hư hại</option>
+						<option>Sách bị mất</option>
+						<option>Trả trễ hẹn</option>
+
+					</select>
+				</div>
+			</div>
+				<div class="form-group">
+				<label for="punishment" class="col-sm-2 col-md-2 text-center">Tiền phạt</label>
+				<div class="col-sm-4 col-md-4">
+					<input type="punishment" class="form-control" name="punishment" id="punishment" value="Số tiền">
+				</div>
+                <div class="col-sm-3 col-md-3">
+                    <button type="button" class="btn btn-danger" id="punishment-confirm">Đã thu tiền</button>
+                </div>
+			</div>
+			<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="button" class="btn btn-success return-confirm-btn" data-lhid="@item.ID_LUU_HANH">Xác nhận</button>
+			</div>
+			</div>
+					 
+		</form>
+	</div>
+</div>
+        </div>
+    {i++;}
+
+}
+}

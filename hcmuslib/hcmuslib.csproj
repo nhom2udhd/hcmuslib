@@ -614,6 +614,10 @@
     <Content Include="Views\Circulator\LentBook.cshtml" />
     <Content Include="Views\Circulator\GetDG.cshtml" />
     <Content Include="Views\LibrarianSupporter\AjaxApi_ViewMS.cshtml" />
+    <Content Include="Views\Librarian\BookReturningHome.cshtml" />
+    <Content Include="Views\Librarian\_BookReturningDetail.cshtml" />
+    <Content Include="Views\Librarian\_ReturnConfirmMessage.cshtml" />
+    <Content Include="Views\Librarian\_BookReturningNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
