@@ -228,9 +228,6 @@
     <Compile Include="Models\CT_DONHANG.cs">
       <DependentUpon>QLThuVien.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DKTAPHUAN.cs">
-      <DependentUpon>QLThuVien.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\DOCGIA.cs">
       <DependentUpon>QLThuVien.tt</DependentUpon>
     </Compile>
