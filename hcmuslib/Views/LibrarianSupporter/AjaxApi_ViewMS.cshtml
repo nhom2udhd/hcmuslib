@@ -69,13 +69,13 @@
     {
         <h2>Không Tìm Thấy Kết Quả Nào Phù Hợp</h2>
     }
-<br />
+    <br />
 
-    @*@("Page") (Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of Model.PageCount;*@
+   
 
         @Html.PagedListPager(@Model, page => Url.Action("AjaxApi_ViewMS",
                        new { page, CurrentType = @ViewBag.CurrentType, CurrentFilter = @ViewBag.CurrentFilter }),
-                       PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing( 
+                       PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(
                        new AjaxOptions(){
                            UpdateTargetId = "content_table",
                            HttpMethod = "Post",
