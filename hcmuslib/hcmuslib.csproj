@@ -617,6 +617,7 @@
     <Content Include="Views\Librarian\BookReturningHome.cshtml" />
     <Content Include="Views\Librarian\_BookReturningDetail.cshtml" />
     <Content Include="Views\Librarian\_ReturnConfirmMessage.cshtml" />
+    <Content Include="Views\Librarian\_BookReturningNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
