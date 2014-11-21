@@ -63,16 +63,6 @@ warning 6002: The table/view 'QLTHUVIEN.dbo.CT_DONHANG' does not have a primary 
     <Property Name="SO_LUONG" Type="int" />
     <Property Name="GHI_CHU" Type="nvarchar" MaxLength="100" />
   </EntityType>
-  <EntityType Name="DKTAPHUAN">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="MADG" Type="varchar" MaxLength="10" Nullable="false" />
-    <Property Name="LOAI" Type="nvarchar" MaxLength="50" />
-    <Property Name="SOLUONG" Type="int" />
-    <Property Name="TINHTRANG" Type="nvarchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="DOCGIA">
     <Key>
       <PropertyRef Name="MS_THE" />
@@ -393,18 +383,6 @@ warning 6002: The table/view 'QLTHUVIEN.dbo.CT_DONHANG' does not have a primary 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_DKTAPHUAN_DOCGIA">
-    <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="1" />
-    <End Role="DKTAPHUAN" Type="Self.DKTAPHUAN" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DOCGIA">
-        <PropertyRef Name="MS_THE" />
-      </Principal>
-      <Dependent Role="DKTAPHUAN">
-        <PropertyRef Name="MADG" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="QLTHUVIENModelStoreContainer">
     <EntitySet Name="BMNXB" EntityType="Self.BMNXB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BMNHANDECHINH" EntityType="Self.BMNHANDECHINH" Schema="dbo" store:Type="Tables" />
@@ -412,7 +390,6 @@ warning 6002: The table/view 'QLTHUVIEN.dbo.CT_DONHANG' does not have a primary 
     <EntitySet Name="BMTACGIA" EntityType="Self.BMTACGIA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BMTENDEMUC" EntityType="Self.BMTENDEMUC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BOITHUONGTHIETHAI" EntityType="Self.BOITHUONGTHIETHAI" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="DKTAPHUAN" EntityType="Self.DKTAPHUAN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DOCGIA" EntityType="Self.DOCGIA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LEARNCOMMONS" EntityType="Self.LEARNCOMMONS" Schema="dbo" store:Type="Tables" />
@@ -492,10 +469,6 @@ FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
     <AssociationSet Name="FK__SACH__TEN_DE_MUC__34C8D9D1" Association="Self.FK__SACH__TEN_DE_MUC__34C8D9D1">
       <End Role="BMTENDEMUC" EntitySet="BMTENDEMUC" />
       <End Role="SACH" EntitySet="SACH" />
-    </AssociationSet>
-    <AssociationSet Name="FK_DKTAPHUAN_DOCGIA" Association="Self.FK_DKTAPHUAN_DOCGIA">
-      <End Role="DOCGIA" EntitySet="DOCGIA" />
-      <End Role="DKTAPHUAN" EntitySet="DKTAPHUAN" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

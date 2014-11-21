@@ -39,8 +39,6 @@
         <AssociationConnector Association="QLTHUVIENModel.FK__LUUHANHSA__ID_SA__3C69FB99" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__MUONPHONG__ID_PH__24927208" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__MUONTAICH__ID_SA__38996AB5" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.DKTAPHUAN" Width="1.5" PointX="5.25" PointY="19.625" />
-        <AssociationConnector Association="QLTHUVIENModel.FK_DKTAPHUAN_DOCGIA" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -73,7 +73,6 @@
     <NavigationProperty Name="MUONPHONG" Relationship="Self.FK__MUONPHONG__DOC_G__239E4DCF" FromRole="DOCGIA" ToRole="MUONPHONG" />
     <NavigationProperty Name="MUONTAICHO" Relationship="Self.FK__MUONTAICH__DOC_G__37A5467C" FromRole="DOCGIA" ToRole="MUONTAICHO" />
     <Property Name="IMAGE_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="DKTAPHUANs" Relationship="QLTHUVIENModel.FK_DKTAPHUAN_DOCGIA" FromRole="DOCGIA" ToRole="DKTAPHUAN" />
   </EntityType>
   <EntityType Name="DONHANG">
     <Key>
@@ -492,33 +491,5 @@
       <End Role="SACH" EntitySet="SACH" />
       <End Role="MUONTAICHO" EntitySet="MUONTAICHO" />
     </AssociationSet>
-    <EntitySet Name="DKTAPHUANs" EntityType="QLTHUVIENModel.DKTAPHUAN" />
-    <AssociationSet Name="FK_DKTAPHUAN_DOCGIA" Association="QLTHUVIENModel.FK_DKTAPHUAN_DOCGIA">
-      <End Role="DOCGIA" EntitySet="DOCGIA" />
-      <End Role="DKTAPHUAN" EntitySet="DKTAPHUANs" />
-    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="DKTAPHUAN">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="MADG" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="LOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="SOLUONG" Type="Int32" />
-    <Property Name="TINHTRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="DOCGIA" Relationship="QLTHUVIENModel.FK_DKTAPHUAN_DOCGIA" FromRole="DKTAPHUAN" ToRole="DOCGIA" />
-  </EntityType>
-  <Association Name="FK_DKTAPHUAN_DOCGIA">
-    <End Type="QLTHUVIENModel.DOCGIA" Role="DOCGIA" Multiplicity="1" />
-    <End Type="QLTHUVIENModel.DKTAPHUAN" Role="DKTAPHUAN" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DOCGIA">
-        <PropertyRef Name="MS_THE" />
-      </Principal>
-      <Dependent Role="DKTAPHUAN">
-        <PropertyRef Name="MADG" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

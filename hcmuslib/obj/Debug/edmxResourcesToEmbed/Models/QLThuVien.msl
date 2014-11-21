@@ -221,16 +221,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DKTAPHUANs">
-      <EntityTypeMapping TypeName="QLTHUVIENModel.DKTAPHUAN">
-        <MappingFragment StoreEntitySet="DKTAPHUAN">
-          <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
-          <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
-          <ScalarProperty Name="LOAI" ColumnName="LOAI" />
-          <ScalarProperty Name="MADG" ColumnName="MADG" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

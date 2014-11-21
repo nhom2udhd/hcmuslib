@@ -9,6 +9,7 @@ using System.Data.Entity.Core.Objects;
 
 namespace hcmuslib.Controllers
 {
+    //[Authorize(Roles = "Circulator")]
     public class CirculatorController : Controller
     {
         //
@@ -46,6 +47,7 @@ namespace hcmuslib.Controllers
             return PartialView("GetDG",dg);
         }
 
+        
         public ActionResult LentBook()
         {
             return View();
@@ -54,13 +56,22 @@ namespace hcmuslib.Controllers
         public JsonResult GetInfo(string dg, string sach)
         {
             string[] rs = new string[2];
-            var docgia = (from d in data.DOCGIA where d.MS_THE == dg select d).First();
-            rs[0] = docgia.HO_TEN;
-            var sh=(from s in data.SACH where s.ID_SACH==sach select s).First();
+            try
+            {
+                var docgia = (from d in data.DOCGIA where d.MS_THE == dg select d).First();
+                var sh = (from s in data.SACH where s.ID_SACH == sach select s).First();
+                rs[0] = docgia.HO_TEN;
 
-            string ttsach = sh.BMNHANDECHINH.NHAN_DE_CHINH + "; " + sh.BMTACGIA.BUT_DANH + "; " + sh.BMNXB.TEN_NXB;
-            rs[1] = ttsach;
-            return Json(new {docgia= rs[0], sach=rs[1]});
+
+                string ttsach = sh.BMNHANDECHINH.NHAN_DE_CHINH + "; " + sh.BMTACGIA.BUT_DANH + "; " + sh.BMNXB.TEN_NXB;
+                rs[1] = ttsach;
+                return Json(new { docgia = rs[0], sach = rs[1] });
+            }
+            catch
+            {
+                return null;
+            }
+           
         }
 
         [HttpPost]
