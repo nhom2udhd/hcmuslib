@@ -111,24 +111,68 @@ namespace hcmuslib.Controllers
             return RedirectToAction("ManageReaderImage");
         }
 
-        public ActionResult BookReturningHome(string maDG, string action=null) 
+        public ActionResult BookReturningHome() 
         {
+            string maDG = Request["madg"];
+            string action = Request["action"];
             if (Request.IsAjaxRequest())
             {
-                if (action == "confirm")
-                {
-                    return PartialView("_ReturnConfirmMessage");
-                }
-                else
-                {
-                    var lh = from l in data.LUUHANHSACH
-                             where l.DOC_GIA == maDG
+                switch (action) {
+                    case "show":
+                         var lh = from l in data.LUUHANHSACH
+                             where l.DOC_GIA == maDG && l.TINH_TRANG == "0"
                              select l;
-                    if (lh.Any())
-                    {
-                        return PartialView("_BookReturningDetail", lh.ToList());
-                    }
-                }
+                        if (lh.Any())
+                        {
+                            return PartialView("_BookReturningDetail", lh.ToList());
+                        }
+                        else {
+                            return PartialView("_BookReturningNotFound");
+                        }
+                        break;
+                    case "confirm": 
+                        string lhid = Request["lhid"];
+                        var lh1 = (from l in data.LUUHANHSACH
+                                where l.ID_LUU_HANH == lhid
+                                select l).First();
+                        lh1.TINH_TRANG = "1";
+                        data.SaveChanges();
+                        return PartialView("_ReturnConfirmMessage");
+                        break;
+                    case "punishment":
+                        string bid = Request["bid"];
+                        string status = Request["status"];
+                        Random ran = new Random(12);
+                        string str = ran.Next(0, 99999999).ToString();
+                        string id = "BT"+str.PadLeft(8, '0');
+                        var findid = (from b in data.BOITHUONGTHIETHAI
+                                     where b.ID_BOI_THUONG == id
+                                     select b).ToList();
+                        
+                        while (findid.Count != 0) {
+                           
+                            str = ran.Next(0, 99999999).ToString();
+                            id = "BT" + str.PadLeft(8, '0');
+                            findid = (from b in data.BOITHUONGTHIETHAI
+                                    where b.ID_BOI_THUONG == id
+                                    select b).ToList();
+                        }
+                        
+                        BOITHUONGTHIETHAI bt = new BOITHUONGTHIETHAI 
+                        {   
+                            ID_BOI_THUONG = id,
+                            ID_VAT_BOI_THUONG = bid,
+                            DOC_GIA = maDG,
+                            LY_DO = status,
+                            NGAY_BOI_THUONG=DateTime.Now,
+                            TINH_TRANG = "1"
+                        };
+                        data.BOITHUONGTHIETHAI.Add(bt);
+                        data.SaveChanges();
+                        return PartialView("_PunishmentConfirm");
+                        break;
+
+                }   
             }
             return View();
         }

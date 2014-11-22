@@ -39,10 +39,11 @@ namespace hcmuslib.Controllers
             DOCGIA dg = new DOCGIA();
             if (DG_ID != null)
             {
-                dg = (from d in data.DOCGIA where d.MS_THE == DG_ID select d).FirstOrDefault();
+                dg = (from d in data.DOCGIA.AsNoTracking() where d.MS_THE == DG_ID select d).FirstOrDefault();
                 if (dg == null)
                     dg = new DOCGIA();
                 @ViewBag.DGSearch = DG_ID;
+                
             }
             return PartialView("GetDG",dg);
         }

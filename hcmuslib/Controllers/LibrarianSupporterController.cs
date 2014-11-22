@@ -26,7 +26,7 @@ namespace hcmuslib.Controllers
         }
         public PartialViewResult AjaxApi_ViewMS(string MSType,string keySearch, string CurrentFilter, string CurrentType , int? page)
         {
-            var ms = from d in data.LUUHANHSACH select d;
+            var ms = from d in data.LUUHANHSACH.AsNoTracking() select d;
             ViewBag.MsType0 = "selected";  
             if(keySearch != null)
             {
@@ -52,7 +52,7 @@ namespace hcmuslib.Controllers
             {
                 case "0":
 
-                    ms = from d in data.LUUHANHSACH
+                    ms = from d in data.LUUHANHSACH.AsNoTracking()
                          where d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
                              || d.ID_SACH.Contains(keySearch)
                          select d;
@@ -61,7 +61,7 @@ namespace hcmuslib.Controllers
                     ViewBag.MsType1 = "selected";
                     ViewBag.MsType0 = "";
                     
-                    ms = from d in data.LUUHANHSACH
+                    ms = from d in data.LUUHANHSACH.AsNoTracking()
                          where d.TINH_TRANG == "1" && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
                              || d.ID_SACH.Contains(keySearch))
                          select d;
@@ -69,7 +69,7 @@ namespace hcmuslib.Controllers
                 case "2":
                     ViewBag.MsType2 = "selected";
                     ViewBag.MsType0 = "";
-                    ms = from d in data.LUUHANHSACH
+                    ms = from d in data.LUUHANHSACH.AsNoTracking()
                          where (d.TINH_TRANG == "0" && d.THOI_HAN_MUON <= DateTime.Today) && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
                              || d.ID_SACH.Contains(keySearch))
                          select d;
@@ -77,14 +77,14 @@ namespace hcmuslib.Controllers
                 case "3":
                     ViewBag.MsType3 = "selected";
                     ViewBag.MsType0 = "";
-                    ms = from d in data.LUUHANHSACH
+                    ms = from d in data.LUUHANHSACH.AsNoTracking()
                          where (d.TINH_TRANG == "0" && d.THOI_HAN_MUON >= DateTime.Today
                              && DateTime.Today >= DbFunctions.AddDays(d.THOI_HAN_MUON, -2)) && (d.ID_LUU_HANH.Contains(keySearch) || d.DOC_GIA.Contains(keySearch)
                          || d.ID_SACH.Contains(keySearch))
                          select d;
                     break;
                 default:
-                    ms = (from d in data.LUUHANHSACH select d);
+                    ms = (from d in data.LUUHANHSACH.AsNoTracking() select d);
                     break;
             }
             int pageSize = 8;

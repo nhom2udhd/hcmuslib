@@ -200,6 +200,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibrarianController.cs" />
     <Compile Include="Controllers\LibrarianSupporterController.cs" />
+    <Compile Include="Controllers\NorthwindDataContext.cs" />
     <Compile Include="Controllers\ProvidedController.cs" />
     <Compile Include="Controllers\ReaderController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -617,6 +618,8 @@
     <Content Include="Views\Librarian\BookReturningHome.cshtml" />
     <Content Include="Views\Librarian\_BookReturningDetail.cshtml" />
     <Content Include="Views\Librarian\_ReturnConfirmMessage.cshtml" />
+    <Content Include="Views\Librarian\_BookReturningNotFound.cshtml" />
+    <Content Include="Views\Librarian\_PunishmentConfirm.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

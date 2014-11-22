@@ -44,5 +44,8 @@ namespace hcmuslib.Models
         public DbSet<THIETBI_DICHVU> THIETBI_DICHVU { get; set; }
         public DbSet<USER_PASSWORD> USER_PASSWORD { get; set; }
         public DbSet<CT_DONHANG> CT_DONHANG { get; set; }
+
+        
+
     }
 }
