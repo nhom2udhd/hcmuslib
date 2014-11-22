@@ -21,7 +21,7 @@ namespace hcmuslib.Controllers
         public ActionResult RegisterTraining(string type, string number) 
         {
             if (Request.IsAjaxRequest()) {
-                string madocgia = "DG0000";
+                //string madocgia = "DG0000";
                 
                 return PartialView("_RegisterTrainingMessage");
             }

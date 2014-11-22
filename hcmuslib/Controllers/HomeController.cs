@@ -34,13 +34,19 @@ namespace hcmuslib.Controllers
         [HttpPost]
         public ActionResult SendMail(FormCollection f)
         {
+            var viewResult = Contact() as ViewResult;
+            if (viewResult != null)
+            {
+                viewResult.ViewName = "~/Views/Home/Contact.cshtml";
+            }
             string first_name = f["first_name"];
             string last_name = f["last_name"];
             string message = f["message"];
             string email = f["email"];
             EMail oMail = new EMail();
             oMail.SendMail("Email", email, new String[] { String.Concat(last_name, " ", first_name, " - Góp ý"), message });
-            return RedirectToAction("Contact", "Home");
+            viewResult.ViewBag.Result = "Gửi thư thành công!";
+            return viewResult;
         }
 
     }

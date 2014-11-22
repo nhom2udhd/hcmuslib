@@ -48,7 +48,12 @@
     <div class="row">
         <div class="col-sm-8">
             <h4>Vui lòng điền vào mẫu tin</h4>
-            <div class="status alert alert-success" style="display: none"></div>
+            @if (ViewBag.Result != null)
+            {
+                <div class="status alert alert-success">
+                    @ViewBag.Result
+                </div>
+            }
             <form action="/Home/SendMail" method="post" class="form-horizontal" role="form">
                 <div class="row">
                     <div class="col-sm-5">

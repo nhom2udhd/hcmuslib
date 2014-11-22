@@ -42,7 +42,7 @@
                     <div class="camera" style="height:250px;">
 
                         <div style="width: 300px; height: 250px;" id="qrcodebox">
-                            
+
                             <div id="reader" style="width:300px;height:250px">
                                 <video autoplay="autoplay" id="html5_qrcode_video" width="300" height="250"></video>
                                 <canvas id="qr-canvas" width="298" height="248" style="display:none;"></canvas>
@@ -52,8 +52,8 @@
                                     // do something when code is read
                                     $("#qrcode_result").html(data);
                                     $('#hid_btn').click();
-                                    
-                                    },
+
+                                },
                                     function (error) {
                                         //show read errors
                                     }, function (videoError) {
@@ -62,7 +62,7 @@
                                     }
                                 );
                             </script>
-                            
+
                         </div>
                         <p>
                             <span id="qrcode_result"></span>
@@ -71,7 +71,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">        
+        <div class="col-md-6">
             @using (Ajax.BeginForm("GetDG", "Circulator", new AjaxOptions
             {
                 InsertionMode = InsertionMode.Replace,
@@ -79,15 +79,14 @@
                 LoadingElementId = "loader",
                 HttpMethod = "Post"
             }))
-
             {
                 string DG_ID = "";
                 <div style="width:200px;height:30px">
                     @Html.TextBoxFor(m => DG_ID, new { @class = "form-control" })
                     <input id="hid_btn" type="submit" style="display:none" />
                 </div>
-                
-            }                
+
+            }
             <div id="loader" class=" aletr" style="display:none">
                 <br />
                 <br />
@@ -96,7 +95,7 @@
             <div id="thongtin">
                 @Html.Partial("GetDG")
             </div>
-            
-</div>
+
         </div>
+    </div>
 </section><!--/#terms-->
