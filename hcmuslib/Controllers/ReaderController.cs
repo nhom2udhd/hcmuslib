@@ -20,6 +20,7 @@ namespace hcmuslib.Controllers
 
         public ActionResult RegisterTraining(string type, string number) 
         {
+<<<<<<< HEAD
             if (Request.IsAjaxRequest())
             {
                 string rname = Request["rname"];
@@ -68,6 +69,11 @@ namespace hcmuslib.Controllers
                 };
                 data.TAPHUAN.Add(th);
                 data.SaveChanges();
+=======
+            if (Request.IsAjaxRequest()) {
+                //string madocgia = "DG0000";
+                
+>>>>>>> 6e8c983492be74403c077152ce50364b5dfcdf8d
                 return PartialView("_RegisterTrainingMessage");
             }
             return View();

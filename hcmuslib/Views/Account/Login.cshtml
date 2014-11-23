@@ -24,34 +24,34 @@
 
 <section id="registration" class="container">
     <h3 class="text-center">
-        Đăng nhập<br/>
+        Đăng nhập<br />
         <small>Thư viện yêu cầu bạn phải là thành viên để được sử dụng các dịch vụ của thư viện</small>
     </h3>
     <div id="login-form">
-        @using (Html.BeginForm(null, null, new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class="form-horizontal", @role="form", @id="login-form" } ))        
+        @using (Html.BeginForm(null, null, new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", @role = "form", @id = "login-form" }))
         {
             @Html.AntiForgeryToken()
             <p id="error-login-message" class="error-message text-center">
                 @Html.ValidationSummary(true)
             </p>
-
             <div class="form-group">
                 @Html.LabelFor(m => m.UserName, new { @class = "col-sm-4 control-label", @for = "username" })
                 <div class="col-sm-4">
-                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @id = "username", @placeholder = "Username", @name = "username" })   
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @id = "username", @placeholder = "Username", @name = "username" })
                 </div>
                 <div class="col-sm-4 col-sm-pull-1">
                     <p id="error-login-message" class="error-message text-center">
                         @Html.ValidationMessageFor(m => m.UserName)
+
                     </p>
                 </div>
-               
+
             </div>
 
             <div class="form-group">
                 @Html.LabelFor(m => m.Password, new { @class = "col-sm-4 control-label", @for = "password" })
-                 <div class="col-sm-4">
-                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @name="password", @id="password", @placeholder = "Password" })
+                <div class="col-sm-4">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @name = "password", @id = "password", @placeholder = "Password" })
                 </div>
                 <div class="col-sm-4 col-sm-pull-1">
                     <p id="error-login-message" class="error-message text-center">
@@ -62,13 +62,13 @@
 
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-8">
-			        <div class="checkbox">
-				        <label>
-				            @Html.CheckBoxFor(m => m.RememberMe, new { @name="remeber_me"}) Remember me
-				        </label>
-			        </div>
-			    </div>
-             </div>
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m => m.RememberMe, new { @name = "remeber_me" }) Remember me
+                        </label>
+                    </div>
+                </div>
+            </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-8">

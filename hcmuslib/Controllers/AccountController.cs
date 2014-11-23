@@ -37,7 +37,15 @@ namespace hcmuslib.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
-                return RedirectToLocal(returnUrl);
+                if (!User.Identity.IsAuthenticated)
+                {
+                    return RedirectToLocal(returnUrl);
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Bạn không đủ quyền truy cập chức năng này");
+                    return View(model);
+                }
             }
 
             // If we got this far, something failed, redisplay form

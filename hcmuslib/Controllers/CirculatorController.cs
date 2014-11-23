@@ -9,7 +9,7 @@ using System.Data.Entity.Core.Objects;
 
 namespace hcmuslib.Controllers
 {
-    //[Authorize(Roles = "Circulator")]
+    [Authorize(Roles = "Circulator")]
     public class CirculatorController : Controller
     {
         //

@@ -8,6 +8,7 @@ using hcmuslib.Models;
 
 namespace hcmuslib.Controllers
 {
+    //[Authorize(Roles = "ReaderManager")]
     public class LibrarianController : Controller
     {
         //
@@ -120,7 +121,7 @@ namespace hcmuslib.Controllers
                 switch (action) {
                     case "show":
                          var lh = from l in data.LUUHANHSACH
-                             where l.DOC_GIA == maDG && l.TINH_TRANG == "0"
+                             where l.DOC_GIA == maDG && l.TINH_TRANG.Equals("0")
                              select l;
                         if (lh.Any())
                         {
@@ -129,7 +130,6 @@ namespace hcmuslib.Controllers
                         else {
                             return PartialView("_BookReturningNotFound");
                         }
-                        break;
                     case "confirm": 
                         string lhid = Request["lhid"];
                         var lh1 = (from l in data.LUUHANHSACH
@@ -138,7 +138,6 @@ namespace hcmuslib.Controllers
                         lh1.TINH_TRANG = "1";
                         data.SaveChanges();
                         return PartialView("_ReturnConfirmMessage");
-                        break;
                     case "punishment":
                         string bid = Request["bid"];
                         string status = Request["status"];
@@ -170,7 +169,6 @@ namespace hcmuslib.Controllers
                         data.BOITHUONGTHIETHAI.Add(bt);
                         data.SaveChanges();
                         return PartialView("_PunishmentConfirm");
-                        break;
 
                 }   
             }
