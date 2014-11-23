@@ -2,7 +2,11 @@
     ViewBag.Title = "Độc giả mượn sách";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+<script type="text/javascript" src="~/Scripts/html5-qrcode.min.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+<script type="text/javascript" src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 <section id="title" class="emerald">
     <div class="container">
         <div class="row">
@@ -25,6 +29,34 @@
     <div class="row">
         <h4>Cho phép mượn sách tại thư viện</h4>
         <form class="form-horizontal" role="form">
+            <div class="camera" style="height:250px;">
+
+                <div style="width: 300px; height: 250px;" id="qrcodebox">
+
+                    <div id="reader" style="width:300px;height:250px">
+                        <video autoplay="autoplay" id="html5_qrcode_video" width="300" height="250"></video>
+                        <canvas id="qr-canvas" width="298" height="248" style="display:none;"></canvas>
+                    </div>
+                    <script>
+                        $('#reader').html5_qrcode(function (data) {
+                            // do something when code is read
+                            $("#qrcode_result").html(data);
+                            $(":focus").val(data);
+                        },
+                            function (error) {
+                                //show read errors
+                            }, function (videoError) {
+                                //the video stream could be opened
+                                $("#qrcode_result").html("the video stream could be opened");
+                            }
+                        );
+                    </script>
+                    <p>
+                        <span id="qrcode_result"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="gap"></div>
             <div class="form-group">
                 <label for="id_reader" class="col-sm-2 control-label">Mã đọc giả</label>
                 <div class="col-sm-2">
@@ -32,7 +64,7 @@
                     <p id="error-empty-reader" class="error-message text-center">
                     </p>
                 </div>
-                    
+
                 <label for="id_book" class="col-sm-2 control-label">Mã sách</label>
                 <div class="col-sm-2">
                     <input type="text" class="form-control" name="id_book" id="id_book" placeholder="Nhập mã sách">
@@ -40,7 +72,7 @@
 
                     </p>
                 </div>
-                    
+
                 <div class="col-sm-2 col-sm-push-1">
                     <button type="button" class="btn btn-success" id="add-row" onclick="AddRow()">Xác nhận</button>
                 </div>
