@@ -6,10 +6,12 @@ using System.Web.Mvc;
 using hcmuslib.Models;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
+using System.IO;
+using System.Net;
 
 namespace hcmuslib.Controllers
 {
-    [Authorize(Roles = "Circulator")]
+    //[Authorize(Roles = "Circulator")]
     public class CirculatorController : Controller
     {
         //
@@ -47,8 +49,13 @@ namespace hcmuslib.Controllers
             }
             return PartialView("GetDG",dg);
         }
-
         
+        public ActionResult QRCodeGenerate(string data)
+        {
+                
+            return View();
+        }
+
         public ActionResult LentBook()
         {
             return View();
