@@ -20,14 +20,13 @@ namespace hcmuslib.Controllers
 
         public ActionResult RegisterTraining(string type, string number) 
         {
-<<<<<<< HEAD
             if (Request.IsAjaxRequest())
             {
                 string rname = Request["rname"];
                 string rphone = Request["rphone"];
                 string rtype = Request["rtype"];
                 string rmail = Request["rmail"];
-                switch (rtype) 
+                switch (rtype)
                 {
                     case "sv":
                         rtype = "Sinh vien";
@@ -58,7 +57,7 @@ namespace hcmuslib.Controllers
                               where b.ID == id
                               select b).ToList();
                 }
-                TAPHUAN th = new TAPHUAN 
+                TAPHUAN th = new TAPHUAN
                 {
                     ID = id,
                     HO_TEN = rname,
@@ -69,12 +68,6 @@ namespace hcmuslib.Controllers
                 };
                 data.TAPHUAN.Add(th);
                 data.SaveChanges();
-=======
-            if (Request.IsAjaxRequest()) {
-                //string madocgia = "DG0000";
-                
->>>>>>> 6e8c983492be74403c077152ce50364b5dfcdf8d
-                return PartialView("_RegisterTrainingMessage");
             }
             return View();
         }
