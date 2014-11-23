@@ -201,6 +201,7 @@
     <Property Name="NGAY_DANG_KY" Type="DateTime" Precision="0" />
     <Property Name="TINH_TRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="LOAI_DOC_GIA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMAIL" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="THIETBI_DICHVU">
     <Key>

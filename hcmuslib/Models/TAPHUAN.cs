@@ -20,5 +20,6 @@ namespace hcmuslib.Models
         public Nullable<System.DateTime> NGAY_DANG_KY { get; set; }
         public string TINH_TRANG { get; set; }
         public string LOAI_DOC_GIA { get; set; }
+        public string EMAIL { get; set; }
     }
 }

@@ -93,5 +93,70 @@ namespace hcmuslib.Controllers
             var list_ms = ms.ToList();
             return PartialView("AjaxApi_ViewMS", list_ms.ToPagedList(pageNumber, pageSize));
         }
+
+        public ActionResult TrainingManagement() 
+        {
+            if (Request.IsAjaxRequest()) 
+            {
+                string action = Request["action"];
+                string tmtype = Request["tmtype"];
+                string tt = "0";
+                switch (tmtype)
+                {
+                    case "requested":
+                        tt = "0";
+                        break;
+                    case "pending":
+                        tt = "1";
+                        break;
+                    case "trained":
+                        tt = "2";
+                        break;
+                }               
+                if (action == "tmview")
+                {
+                    var tha = from t in data.TAPHUAN
+                              where t.TINH_TRANG == tt
+                              select t;
+                    if (tha.Any())
+                    {
+                        ViewBag.type = tt;
+                        return PartialView("_TrainingTableView", tha.ToList());
+                    }
+                    else
+                    {
+                        return PartialView("_TrainingNotFound");
+                    }
+                }
+                if (action == "adddate") {
+                    int day = Convert.ToInt16(Request["day"]);
+                    int month = Convert.ToInt16(Request["month"]);
+                    int year = Convert.ToInt16(Request["year"]);
+                    int number = Convert.ToInt16(Request["number"]);
+                    DateTime dt = new DateTime(year, month, day);
+                    var tha = (from t in data.TAPHUAN
+                              where t.TINH_TRANG == "0"
+                              select t);
+                    var thal = tha.Take(number);
+                    if (thal.Any())
+                    {
+                        foreach (var item in thal) 
+                        {
+                            item.NGAY_DANG_KY = dt;
+                            item.TINH_TRANG = "1";
+                        }
+                        data.SaveChanges();
+                        ViewBag.type = "0";
+                        return PartialView("_TrainingTableView", tha.ToList());
+                    }
+                    
+                }
+               
+            }
+            var th = from t in data.TAPHUAN
+                     where t.TINH_TRANG == "0"
+                     select t;           
+            return View(th.ToList());            
+        }
     }
 }

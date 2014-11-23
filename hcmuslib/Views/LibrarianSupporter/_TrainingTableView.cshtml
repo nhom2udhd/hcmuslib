@@ -1,0 +1,47 @@
+﻿@model IEnumerable<hcmuslib.Models.TAPHUAN>
+<table class="table table-bordered">
+    <tr>
+	    <th>STT</th>
+	    <th>Họ tên</th>
+	    <th>SDT</th>
+	    <th>Email</th>
+	    <th>Ngày tập huấn</th>
+	    <th>Tình trạng</th>
+    </tr>
+    @{int i = 1;}
+    @{string type = ViewBag.type;}
+    @{string tttext = "";}
+    @{string status = "";}
+    @switch (type)
+    {
+        case "0":
+            tttext = "Gửi đăng kí";
+            status = "danger";
+            break;
+        case "1":
+            tttext = "Chờ tập huấn";
+            status = "warning";
+            break;
+        case "2":
+            tttext = "Đã tập huấn";
+            status = "success";
+            break;
+    }
+    @foreach (var item in Model) 
+    {
+        
+    <tr>
+        <td>@i</td>
+	    <td>@item.HO_TEN</td>
+        <td>@item.SDT</td>
+        <td>@item.EMAIL</td>
+        @if (type == "0") {
+        <td>Chờ chọn ngày</td>
+        }else{
+        <td>@item.NGAY_DANG_KY</td>
+        }
+        <td class="@status">@tttext</td>
+    </tr>
+        i++;
+    }
+</table>

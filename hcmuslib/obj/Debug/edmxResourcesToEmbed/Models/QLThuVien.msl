@@ -182,6 +182,7 @@
     <EntitySetMapping Name="TAPHUAN">
       <EntityTypeMapping TypeName="QLTHUVIENModel.TAPHUAN">
         <MappingFragment StoreEntitySet="TAPHUAN">
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="HO_TEN" ColumnName="HO_TEN" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
