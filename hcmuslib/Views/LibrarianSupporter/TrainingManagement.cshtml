@@ -1,0 +1,125 @@
+﻿@model IEnumerable<hcmuslib.Models.TAPHUAN>
+@{
+    ViewBag.Title = "TrainingManagement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Hỗ trợ đọc giả - Đăng kí tập huấn</h1>
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Hỗ trợ đọc giả - Đăng kí tập huấn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!--/#title-->    
+
+    <section class="container" id="tm-container">
+		<div class="row">
+			<div class="col-md-3">
+				<select class="form-control" id="tm-view-type">
+					<option value="requested">Gửi yêu cầu tập huấn</option>
+					<option value="pending">Đang chờ tập huấn</option>
+					<option value="trained">Đã tập huấn</option>
+				</select>
+			</div>
+		</div>
+        <div id="request-info">
+		    <div class="row">
+				    <div class="col-md-2">
+					    <p><strong>Nhập ngày tập huấn</strong></p>
+				    </div>
+				    <div class="col-md-1">
+					    <form class="form-horizontal" role="form">
+						    <div class="col-md-12">
+							    <div class="form-group">							
+								    <input type="text" class="form-control" id="day" placeholder="Ngày">
+							    </div>
+						    </div>
+					    </form>
+				    </div>
+				    <div class="col-md-2">
+					    <form class="form-horizontal" role="form">
+						    <div class="col-md-8">
+							    <div class="form-group">
+								    <select class="form-control" id="month">
+									    <option value="1">Tháng 1</option>
+									    <option value="2">Tháng 2</option>
+									    <option value="3">Tháng 3</option>
+									    <option value="4">Tháng 4</option>
+									    <option value="5">Tháng 5</option>
+									    <option value="6">Tháng 6</option>
+									    <option value="7">Tháng 7</option>
+									    <option value="8">Tháng 8</option>
+									    <option value="9">Tháng 9</option>
+									    <option value="10">Tháng 10</option>
+									    <option value="11">Tháng 11</option>
+									    <option value="12">Tháng 12</option>
+								    </select>							
+							    </div>
+						    </div>
+					    </form>
+				    </div>
+				    <div class="col-md-1 col-md-pull-1">
+					    <form class="form-horizontal" role="form">
+						    <div class="col-md-12 col-md-push-7">
+							    <div class="form-group">							
+								      <input type="text" class="form-control" id="year" placeholder="Năm">
+							    </div>
+						    </div>
+					    </form>
+				    </div>
+				    <div class="col-md-3 col-md-push-1">
+					    <form class="form-horizontal" role="form">
+						    <div class="form-group">
+							    <label for="number" class="col-md-4 control-label">Số lượng</label>
+							    <div class="col-md-5">
+							      <input type="text" class="form-control" id="number" placeholder="Số lượng">
+							    </div>
+						    </div>
+					    </form>
+				    </div>
+				    <div class="col-md-1 col-md-push-1">
+					    <button type="button" class="btn btn-success" id="training-btn">Xác nhận</button>
+				    </div>
+		    </div>
+		    <div class="row text-center">
+			
+			    <p>Chọn "ngày tập huấn" cho "số lượng" người gửi yêu cầu đăng kí trong danh sách tính từ trên xuống</p>
+			
+		    </div>
+        </div>
+        <div id="tm-view-container">
+		    <table class="table table-bordered">
+			    <tr>
+				    <th>STT</th>
+				    <th>Họ tên</th>
+				    <th>SDT</th>
+				    <th>Email</th>
+				    <th>Ngày tập huấn</th>
+				    <th>Tình trạng</th>
+			    </tr>
+                @{int i = 1;}
+                @foreach (var item in Model) 
+                {
+			    <tr>
+                    <td>@i</td>
+				    <td>@item.HO_TEN</td>
+                    <td>@item.SDT</td>
+                    <td>@item.EMAIL</td>
+                    <td>Chờ chọn ngày</td>
+                    <td class="danger">Gửi đăng kí</td>
+			    </tr>
+                    i++;
+                }
+		    </table>
+        </div>
+    </section><!--/#terms-->

@@ -453,6 +453,7 @@
     </Content>
     <Content Include="Models\QLThuVien.edmx.diagram">
       <DependentUpon>QLThuVien.edmx</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Models\QLThuVien.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -619,6 +620,9 @@
     <Content Include="Views\Librarian\_ReturnConfirmMessage.cshtml" />
     <Content Include="Views\Librarian\_BookReturningNotFound.cshtml" />
     <Content Include="Views\Librarian\_PunishmentConfirm.cshtml" />
+    <Content Include="Views\LibrarianSupporter\TrainingManagement.cshtml" />
+    <Content Include="Views\LibrarianSupporter\_TrainingTableView.cshtml" />
+    <Content Include="Views\LibrarianSupporter\_TrainingNotFound.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

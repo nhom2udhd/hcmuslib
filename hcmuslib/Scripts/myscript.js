@@ -44,5 +44,12 @@ $(document).ready(function(){
 	e.preventDefault();
 	$("#error-login-message").show();
   }) */
-
+  $("#tm-container").on("change", "#tm-view-type", function (e) {
+      var tm_type = $("#tm-view-type").val();
+      if (tm_type != "requested") {
+          $("#request-info").fadeOut();
+      } else {
+          $("#request-info").fadeIn();
+      }
+  });
 });
