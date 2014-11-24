@@ -623,6 +623,7 @@
     <Content Include="Views\LibrarianSupporter\TrainingManagement.cshtml" />
     <Content Include="Views\LibrarianSupporter\_TrainingTableView.cshtml" />
     <Content Include="Views\LibrarianSupporter\_TrainingNotFound.cshtml" />
+    <Content Include="Views\Circulator\QRCodeGenerate.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
