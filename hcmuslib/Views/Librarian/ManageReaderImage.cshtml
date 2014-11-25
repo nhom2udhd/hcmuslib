@@ -1,4 +1,7 @@
-﻿@model IEnumerable<hcmuslib.Models.DOCGIA>
+﻿@model PagedList.IPagedList<hcmuslib.Models.DOCGIA>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
 @{
     ViewBag.Title = "Manage Reader Image";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -24,17 +27,20 @@
 <!--/#title-->
 
 <section class="container">
-    <form action="/Librarian/Search" method="post" class="form-horizontal" role="form">
+    <form action="/Librarian/ManageReaderImage" method="get"class="form-horizontal" role="form">
         <div class="form-group">
-            <label class="col-md-2 control-label" for="id-reader">Mã độc giả</label>
+            <label class="col-md-2 control-label" for="searchString">Mã độc giả</label>
             <div class="col-md-3">
-                <input type="text" class="form-control" name="id-reader" />
+                <input type="text" class="form-control" name="searchString" value="@ViewBag.CurrentFilter"/>
             </div>
             <div class="col-md-1">
-                <input type="submit" class="btn btn-success" name="action:Search" value="Tìm kiếm" />
+                <input type="submit" class="btn btn-success"  value="Tìm kiếm" />
             </div>
             <div class="col-md-1">
-                <input type="submit" class="btn btn-success" name="action:BackToAll" value="Tất cả" />
+                <button class="btn btn-danger">@Html.ActionLink("Sắp xếp", "ManageReaderImage", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })</button>
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-danger">@Html.ActionLink("Tất cả", "BackToAll")</button>
             </div>
         </div>
     </form>
@@ -81,5 +87,10 @@
         }
         i++;
     }
+    <div class="gap"></div>
+    <p>
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        @Html.PagedListPager(Model, page => Url.Action("ManageReaderImage", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    </p>
 </section>
 <!--/#terms-->
