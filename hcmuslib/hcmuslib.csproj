@@ -560,7 +560,6 @@
     <Content Include="Scripts\themes\grid.js" />
     <Content Include="Scripts\themes\sand-signika.js" />
     <Content Include="Scripts\themes\skies.js" />
-    <Content Include="Librarian\swf\webcamqrcode.swf" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -628,6 +627,8 @@
     <Content Include="Views\Circulator\Index.cshtml" />
     <Content Include="Views\LibrarianSupporter\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_librarian.cshtml" />
+    <Content Include="Views\Shared\_Layout_librariansupporter.cshtml" />
+    <Content Include="Views\Shared\_Layout_circulator.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

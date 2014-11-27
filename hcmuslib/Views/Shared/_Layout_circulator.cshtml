@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="google-site-verification" content="PvSIu_PRyAiKpq2UKa9xzKxeQbDI2-Tl27casa4KgFQ" />
+
+    <title>@ViewBag.Title - Thư viện ĐH KHTN TPHCM</title>
+    <link href="@Url.Content("~/images/ico/favicon.ico")" rel=" shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/prettyPhoto.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/animate.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/main.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/mystyle.css")" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="@Url.Content("~/images/ico/favicon.ico")">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/images/ico/apple-touch-icon-57-precomposed.png">
+
+    
+</head>
+<body>
+    <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="@Url.Action("index","home")"><img src="~/images/lib_logo.png" alt="logo" style="max-height: 50px; max-width: 50px"></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="@Url.Action("index","home")">Trang chủ</a></li>
+                    <li><a href="@Url.Action("index","circulator")">Lưu hành</a></li>
+                    <li><a href="@Url.Action("inputlibrarian","circulator")">Kiểm tra độc giả</a></li>
+                    <li><a href="@Url.Action("lentbook","circulator")">Cho mượn sách</a></li>
+                    <li><a href="@Url.Action("bookreturninghome","circulator")">Quản lý trả sách</a></li>
+                   @* <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Thư viện <i class="icon-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("index","reader")">Độc giả</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("index","librarian")">Quản lý độc giả</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("index","librariansupporter")">Hỗ trợ độc giả</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Action("index","circulator")">Lưu hành</a></li>       
+                        </ul>
+                    </li>*@
+@*                    <li><a href="@Url.Action("login","account")">Đăng nhập</a></li>
+                    <li><a href="@Url.Action("contact","home")">Liên hệ - Góp ý</a></li>*@
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    @RenderBody()
+
+
+    <section id="bottom" class="wet-asphalt">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <h4>Giới thiệu</h4>
+                    <p></p>
+                    <p></p>
+                </div><!--/.col-md-3-->
+                <div class="col-md-3 col-sm-6">
+                    <h4>Tổ chức</h4>
+                    <div>
+                        <ul class="arrow">
+                            <li><a href="#">Tổng quan</a></li>
+                            <li><a href="#">Nhân lực</a></li>
+                            <li><a href="#">Đối tác</a></li>
+                            <li><a href="#">Dịch vụ</a></li>
+                            <li><a href="#">Hỏi đáp</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                            <li><a href="#">Chính sách</a></li>
+                            <li><a href="#">Điều khoản</a></li>
+                            <li><a href="#">Bản quyền</a></li>
+                        </ul>
+                    </div>
+                </div><!--/.col-md-3-->
+                <div class="col-md-3 col-sm-6">
+                    <h4>Sách mới</h4>
+                    <div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img src="~/images/blog/thumb1.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#"> </a></span>
+                                <small class="muted">Posted 17 Aug 2013</small>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img src="~/images/blog/thumb2.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#"> </a></span>
+                                <small class="muted">Posted 13 Sep 2013</small>
+                            </div>
+                        </div>
+                        <div class="media">
+                            <div class="pull-left">
+                                <img src="~/images/blog/thumb3.jpg" alt="">
+                            </div>
+                            <div class="media-body">
+                                <span class="media-heading"><a href="#"> </a></span>
+                                <small class="muted">Posted 11 Jul 2013</small>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.col-md-3-->
+                <div class="col-md-3 col-sm-6">
+                    <h4>Địa chỉ</h4>
+                    <address>
+                        <strong>ĐH KHTN</strong><br>
+                        226 Nguyễn Văn Cừ<br>
+                        Quận 5, TP HCM<br>
+                        <abbr title="Phone">SDT:</abbr> Sdt
+                    </address>
+                    <h4>Nhận thư</h4>
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Enter your email">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </form>
+                </div> <!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Hỏi đáp</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                        <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @RenderSection("scripts", required: false)
+    <script src="@Url.Content("~/Scripts/jquery.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.prettyPhoto.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.isotope.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/myscript.js")"></script>
+    <script src="@Url.Content("~/Scripts/modernizr.js")"></script>
+    <script src="@Url.Content("~/Scripts/main.js")"></script>
+    <script src="@Url.Content("~/Scripts/highcharts.js")"></script>
+    <script src="@Url.Content("~/Scripts/ajax.js")"></script>
+    @RenderSection("charts", required: false)
+    
+</body>
+</html>

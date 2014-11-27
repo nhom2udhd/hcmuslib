@@ -1,6 +1,83 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout_circulator.cshtml";
 }
 
-<h2>Index</h2>
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Trang chủ - Lưu hành</h1>
+                    
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="@Url.Action("index","librarian")">Lưu hành</a></li>
+                        <li class="active">Trang chủ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!--/#title-->     
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="center gap">
+                        <h2>Chức năng của bộ phận Lưu hành</h2>
+                        
+                    </div>                
+                </div>
+            </div>
+            <div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="gly-link"><a href="@Url.Action("inputlibrarian","circulator")"><h3><span class="glyphicon glyphicon-send gly-bigger"></span>Kiểm tra độc giả</h3></a></div>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>                
+                </div><!--/.col-md-4-->
+				 <div class="col-md-4 col-sm-6">
+					<div class="gly-link"><a href="@Url.Action("lentbook","circulator")"><h3><span class="glyphicon glyphicon-book gly-bigger"></span>Cho mượn sách</h3></a></div>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>      
+                </div><!--/.col-md-4-->
+                <div class="col-md-4 col-sm-6">
+                    <div class="gly-link"><a href="@Url.Action("bookreturninghome","circulator")"><h3><span class="glyphicon glyphicon-th gly-bigger"></span>Quản lý trả sách</h3></a></div>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>      
+                </div><!--/.col-md-4-->
+               
+               
+            </div><!--/.row-->
+           @* <div class="gap"></div>
+             <div class="row">
+				<div class="col-md-4 col-sm-6">
+					<div class="gly-link"><a href="librarian_manage_book.html"><h3><span class="glyphicon glyphicon-info-sign gly-bigger"></span> Quản lý sách</h3></a></div>
+					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>      
+                </div><!--/.col-md-4-->*@
+                
+               
+            </div><!--/.row-->
+            <hr>
+           @* <div class="row">
+                <div class="col-lg-12">
+                    <div class="center">
+                        <h2>What our clients say</h2>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                    </div>
+                    <div class="gap"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                            </blockquote>
+                        </div>
+                        <div class="col-md-6">
+                            <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        </div>
+    </section><!--/#services-->

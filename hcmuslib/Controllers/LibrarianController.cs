@@ -130,7 +130,6 @@ namespace hcmuslib.Controllers
             
             return RedirectToAction("ManageReaderImage");
         }
-<<<<<<< HEAD
 
         //public ActionResult BookReturningHome() 
         //{
@@ -195,7 +194,6 @@ namespace hcmuslib.Controllers
         //    return View();
         //}
 
-=======
->>>>>>> fbe628db2332955608a1d1af82fa7182435a99cf
+
     }
 }
