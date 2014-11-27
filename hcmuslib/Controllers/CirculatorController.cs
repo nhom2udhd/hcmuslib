@@ -9,7 +9,7 @@ using System.Data.Entity.Core.Objects;
 
 namespace hcmuslib.Controllers
 {
-    [Authorize(Roles = "Circulator")]
+    //[Authorize(Roles = "Circulator")]
     public class CirculatorController : Controller
     {
         //
@@ -19,7 +19,7 @@ namespace hcmuslib.Controllers
         {
             return View();
         }
-       
+
         public ActionResult InputLibrarian()
         {
             //DOCGIA dg = new DOCGIA();
@@ -30,7 +30,7 @@ namespace hcmuslib.Controllers
             //        dg = new DOCGIA();
             //    @ViewBag.DGSearch = DGSearch;
             //}
-                
+
             return View();
         }
         [HttpPost]
@@ -43,12 +43,12 @@ namespace hcmuslib.Controllers
                 if (dg == null)
                     dg = new DOCGIA();
                 @ViewBag.DGSearch = DG_ID;
-                
+
             }
-            return PartialView("GetDG",dg);
+            return PartialView("GetDG", dg);
         }
 
-        
+
         public ActionResult LentBook()
         {
             return View();
@@ -64,7 +64,9 @@ namespace hcmuslib.Controllers
                 rs[0] = docgia.HO_TEN;
 
 
-                string ttsach = sh.BMNHANDECHINH.NHAN_DE_CHINH + "; " + sh.BMTACGIA.BUT_DANH + "; " + sh.BMNXB.TEN_NXB;
+                //string ttsach = sh.BMNHANDECHINH.NHAN_DE_CHINH + "\n Tác Giả" + sh.BMTACGIA.BUT_DANH + "; " + sh.BMNXB.TEN_NXB;
+                string ttsach = string.Format("Tên sách: {0}@Tác giả: {1}@NXB: {2}", sh.BMNHANDECHINH.NHAN_DE_CHINH, sh.BMTACGIA.BUT_DANH, sh.BMNXB.TEN_NXB);
+                ttsach = ttsach.Replace("@", Environment.NewLine);
                 rs[1] = ttsach;
                 return Json(new { docgia = rs[0], sach = rs[1] });
             }
@@ -72,17 +74,17 @@ namespace hcmuslib.Controllers
             {
                 return null;
             }
-           
+
         }
 
         [HttpPost]
         public ActionResult SaveLentBookInfo(FormCollection f)
         {
 
-            int size = f.GetValues("docgia[]").Length ;
+            int size = f.GetValues("docgia[]").Length;
             Random ran = new Random(12);
             string str = ran.Next(0, 99999999).ToString();
-            string id = "LH"+str.PadLeft(8, '0');
+            string id = "LH" + str.PadLeft(8, '0');
             var obj = (from p in data.LUUHANHSACH where p.ID_LUU_HANH == id select p).ToList();
             while (obj.Count != 0)
             {

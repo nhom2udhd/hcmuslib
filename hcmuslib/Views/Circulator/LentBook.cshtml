@@ -2,6 +2,7 @@
     ViewBag.Title = "Độc giả mượn sách";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<link href="@Url.Content("~/Content/print.css")" rel="stylesheet" />
 <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
 <script type="text/javascript" src="~/Scripts/html5-qrcode.min.js"></script>
 <script type="text/javascript" src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
@@ -25,7 +26,7 @@
     </div>
 </section>
 
-<section class="container">
+<section class="container printMe">
     <div class="row">
         <h4>Cho phép mượn sách tại thư viện</h4>
         <form class="form-horizontal" role="form">
@@ -80,17 +81,17 @@
         </form>
     </div>
     <div class="gap"></div>
-    <div class="row">
-        <h4>Danh sách đọc giả yêu cầu mượn sách</h4>
-        @using (Html.BeginForm("SaveLentBookInfo", "Circulator", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm-cir" }))
+    <div class="row printMe">
+        <h4 class="printMe">Danh sách đọc giả yêu cầu mượn sách</h4>
+        @using (Html.BeginForm("SaveLentBookInfo", "Circulator", FormMethod.Post, new { enctype = "multipart/form-data", id = "frm-cir", @class = "printMe" }))
         {
-            <div class="form-group">
-                <table id="circulation" class="table table-bordered">
-                    <tr>
-                        <th>Người mượn</th>
-                        <th>Sách mượn</th>
-                        <th>Ngày mượn</th>
-                        <th>Ngày trả</th>
+            <div class="form-group printMe">
+                <table id="circulation" class="table table-bordered printMe printIScroll">
+                    <tr class="printMe" style="font-weight:bold">
+                        <th class="printMe">Người mượn</th>
+                        <th class="printMe">Sách mượn</th>
+                        <th class="printMe">Ngày mượn</th>
+                        <th class="printMe">Ngày trả</th>
                         <th>Xác nhận</th>
                     </tr>
                     <tr></tr>
@@ -98,7 +99,7 @@
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-success">Xác nhận cho mượn</button>
-                <button type="button" class="btn btn-success" onclick="">In</button>
+                <button type="button" class="btn btn-success" onclick="printHandler()">In</button>
             </div>
         }
     </div>
@@ -106,41 +107,63 @@
 
 
 <script>
+    $("#id_reader").change(function () {
+        $('#error-empty-reader').html("");
+    });
+    $("#id_book").change(function () {
+        $('#error-empty-book').html("");
+    });
+
+    function printHandler() {
+        $(":not(.printMe)").addClass("hideInPrint");
+        $("html").removeClass("hideInPrint");
+        $("body").removeClass("hideInPrint");
+        $("tbody").removeClass("hideInPrint");
+        window.print()
+    }
     function AddRow() {
 
         var table = document.getElementById("circulation");
-        var madg = document.getElementById("id_reader");
-        var masach = document.getElementById("id_book");
-        if (madg.value == "" || masach.value == "") {
-            $('#error-empty-reader').innerHTML = "Chưa nhập mã độc giả";
-            $('#error-empty-book').innerHTML = "Chưa nhập mã sách";
+        var madg = $("#id_reader").val();
+        var masach = $("#id_book").val();
+        if (madg.length == 0 || masach.length == 0) {
+            if (madg == 0)
+                $('#error-empty-reader').html("Chưa nhập mã độc giả");
+            if (masach == 0)
+                $('#error-empty-book').html("Chưa nhập mã sách");
+
         } else {
             var tensach = "";
             var tendocgia = "";
             $.ajax({
                 url: '@Url.Action("getinfo")',
                 type: "POST",
-                data: { dg: madg.value, sach: masach.value },
+                data: { dg: madg.toString(), sach: masach.toString()},
 
                 success: function (data) {
-                    if (data != null) {
+                    if (!jQuery.isEmptyObject(data)) {
                         tendocgia = data.docgia;
                         tensach = data.sach;
                         var now = new Date();
 
                         var row = table.insertRow(1);
+                        row.setAttribute("class", "printMe");
                         var cell1 = row.insertCell(0);
                         var cell2 = row.insertCell(1);
                         var cell3 = row.insertCell(2);
                         var cell4 = row.insertCell(3);
                         var cell5 = row.insertCell(4);
                         cell1.innerHTML = tendocgia + '<input type="hidden" name="docgia[]" value="' + madg.value + '" />';
+                        cell1.setAttribute("class", "printMe");
                         cell2.innerHTML = tensach + '<input type="hidden" name="sach[]" value="' + masach.value + '" />';
+                        cell2.setAttribute("class", "printMe");
                         cell3.innerHTML = "@DateTime.Now";
+                        cell3.setAttribute("class", "printMe");
                         cell4.innerHTML = "@DateTime.Now.AddDays(14)";
+                        cell4.setAttribute("class", "printMe");
                         cell5.innerHTML = "<button type='button' name='cancel' class='btn btn-danger' onclick='DelRow(this)'>Hủy</button>";
                     } else {
-                        alert("Mã độc giả/mã sách nhập sai. Vui lòng nhập lại!");
+                        alert("Mã độc giả/mã sách nhập sai. Vui lòng kiểm tra lại!");
                     }
                 }
             })

@@ -2,36 +2,85 @@
 @{
     ViewBag.Title = "Register";
 }
+<section id="title" class="emerald">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>@ViewBag.Title</h1>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+            </div>
+            <div class="col-sm-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li class="active">Registration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section><!--/#title-->
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Create a new account.</h2>
-</hgroup>
+<section id="registration" class="container">
+    <h3 class="text-center">
+        Đăng ký<br />
+        <small>Tạo tài khoản cho độc giả</small>
+    </h3>
+    <div id="login-form">
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "form-horizontal", @role = "form", @id = "login-form" }))
+        {
+            @Html.AntiForgeryToken()
+            <p id="error-login-message" class="error-message text-center">
+                @Html.ValidationSummary()
+            </p>
+            <div class="form-group">
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
+                @Html.LabelFor(m => m.UserName, new { @class = "col-sm-4 control-label", @for = "username" })
+                <div class="col-sm-4">
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @id = "username", @placeholder = "Username", @name = "username" })
+                </div>
+                <div class="col-sm-4 col-sm-pull-1">
+                    <p id="error-login-message" class="error-message text-center">
+                        @Html.ValidationMessageFor(m => m.UserName)
 
-    <fieldset>
-        <legend>Registration Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                @Html.PasswordFor(m => m.ConfirmPassword)
-            </li>
-        </ol>
-        <input type="submit" value="Register" />
-    </fieldset>
-}
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
 
+                @Html.LabelFor(m => m.Password, new { @class = "col-sm-4 control-label", @for = "password" })
+                <div class="col-sm-4">
+
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @name = "password", @id = "password", @placeholder = "Password" })
+                </div>
+                <div class="col-sm-4 col-sm-pull-1">
+                    <p id="error-login-message" class="error-message text-center">
+                        @Html.ValidationMessageFor(m => m.UserName)
+
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+
+                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-sm-4 control-label", @for = "password" })
+                <div class="col-sm-4">
+
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @name = "confirm-password", @id = "confirm-password", @placeholder = "Password" })
+                </div>
+                <div class="col-sm-4 col-sm-pull-1">
+                    <p id="error-login-message" class="error-message text-center">
+                        @Html.ValidationMessageFor(m => m.UserName)
+
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-default btn-md" id="regis-submit" value="Register" />
+                </div>
+            </div>
+        }
+    </div>
+</section>
 @*@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}*@
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

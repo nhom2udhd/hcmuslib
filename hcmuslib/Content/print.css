@@ -1,0 +1,43 @@
+﻿@media print {
+
+    @page {
+        size: auto; /* auto is the initial value */
+        /* this affects the margin in the printer settings */
+        margin: 2.5cm;
+    }
+
+{
+    /* to avoid wastage of ink we do not print backgrounds */
+    background-color: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: inherit !important;
+}
+/* Black prints faster */
+
+/* attach this class to DOM elements that need to appear in the printout */
+.printMe {
+    visibility: visible;
+}
+
+/* all DOM elements that do not have the printMe class will not be printed */
+:not(.printMe) {
+    visibility:hidden;
+}
+
+.showInPrint {
+    display: block!important;
+    visibility: visible !important;
+}
+
+.hideInPrint {
+    display: none;
+}
+
+.printIScroll {
+    overflow: visible !important;
+    width: auto;
+    height: auto;
+}
+}
