@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "BarcodeReader";
-    //Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout_librarian.cshtml";
 }
 
 <script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
@@ -38,8 +38,7 @@
             </div>
             <div class="col-sm-6">
                 <ul class="breadcrumb pull-right">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Pages</a></li>
+                    <li><a href="@Url.Action("index","librarian")">Quản lý độc giả</a></li>
                     <li class="active">Đọc mã</li>
                 </ul>
             </div>

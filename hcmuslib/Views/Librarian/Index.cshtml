@@ -1,19 +1,19 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout_librarian.cshtml";
 }
 
 <section id="title" class="emerald">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>Trang chủ - Lưu hành</h1>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                    <h1>Trang chủ - Quản lý độc giả</h1>
+                    
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active">Services</li>
+                        <li><a href="@Url.Action("index","librarian")">Quản lý độc giả</a></li>
+                        <li class="active">Trang chủ</li>
                     </ul>
                 </div>
             </div>
@@ -25,38 +25,38 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="center gap">
-                        <h2>Chức năng của bộ phận Lưu hành</h2>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <h2>Chức năng của bộ phận Quản lý độc giả</h2>
+                        
                     </div>                
                 </div>
             </div>
             <div class="row">
 				<div class="col-md-4 col-sm-6">
-					<div class="gly-link"><a href="librarian_return_index.html"><h3><span class="glyphicon glyphicon-send gly-bigger"></span> Quản lý trả sách</h3></a></div>
+					<div class="gly-link"><a href="@Url.Action("analytics","librarian")"><h3><span class="glyphicon glyphicon-send gly-bigger"></span>Thống kê độc giả theo tiêu chí</h3></a></div>
 					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>                
                 </div><!--/.col-md-4-->
 				 <div class="col-md-4 col-sm-6">
-					<div class="gly-link"><a href="librarian_borrow_index.html"><h3><span class="glyphicon glyphicon-book gly-bigger"></span> Quản lý mượn sách</h3></a></div>
+					<div class="gly-link"><a href="@Url.Action("managereaderimage","librarian")"><h3><span class="glyphicon glyphicon-book gly-bigger"></span>Quản lý hình ảnh độc giả</h3></a></div>
 					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>      
                 </div><!--/.col-md-4-->
                 <div class="col-md-4 col-sm-6">
-                    <div class="gly-link"><a href="librarian_room_index.html"><h3><span class="glyphicon glyphicon-th gly-bigger"></span> Quản lý mượn phòng</h3></a></div>
+                    <div class="gly-link"><a href="@Url.Action("barcodereader","librarian")"><h3><span class="glyphicon glyphicon-th gly-bigger"></span>Độc mã vạch</h3></a></div>
 					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>      
                 </div><!--/.col-md-4-->
                
                
             </div><!--/.row-->
-            <div class="gap"></div>
+           @* <div class="gap"></div>
              <div class="row">
 				<div class="col-md-4 col-sm-6">
 					<div class="gly-link"><a href="librarian_manage_book.html"><h3><span class="glyphicon glyphicon-info-sign gly-bigger"></span> Quản lý sách</h3></a></div>
 					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>      
-                </div><!--/.col-md-4-->
+                </div><!--/.col-md-4-->*@
                 
                
             </div><!--/.row-->
             <hr>
-            <div class="row">
+           @* <div class="row">
                 <div class="col-lg-12">
                     <div class="center">
                         <h2>What our clients say</h2>
@@ -78,6 +78,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
     </section><!--/#services-->

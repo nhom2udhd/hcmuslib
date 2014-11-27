@@ -1,38 +1,19 @@
 ﻿@{
     ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <hgroup class="title">
     @*<h1>@ViewBag.Title.</h1>
         <h2>@ViewBag.Message</h2>*@
 </hgroup>
-<header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="@Url.Action("index","home")"><img src="~/images/logo.png" alt="logo"></a>
-        </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="@Url.Action("index","home")">Trang chủ</a></li>
-                <li><a href="@Url.Action("about","home")">Giới thiệu</a></li>
-                <li><a href="services.html">Thư viện</a></li>
-                <li class="active"><a href="@Url.Action("contact","home")">Liên hệ - Góp ý</a></li>
-            </ul>
-        </div>
-    </div>
-</header>
+
 <section id="title" class="emerald">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
                 <h1>Liên hệ</h1>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+                
             </div>
             <div class="col-sm-6">
                 <ul class="breadcrumb pull-right">

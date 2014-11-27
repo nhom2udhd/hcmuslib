@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<hcmuslib.Models.DOCGIA>
 @{
     ViewBag.Title = "Manage Reader Image";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout_librarian.cshtml";
 }
 
 <section id="title" class="emerald">
@@ -13,8 +13,7 @@
             </div>
             <div class="col-sm-6">
                 <ul class="breadcrumb pull-right">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Pages</a></li>
+                    <li><a href="@Url.Action("index","librarian")">Quản lý độc giả</a></li>
                     <li class="active">Quản lý hình ảnh</li>
                 </ul>
             </div>
