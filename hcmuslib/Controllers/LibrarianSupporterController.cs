@@ -21,6 +21,20 @@ namespace hcmuslib.Controllers
             return View();
         }
 
+        public ActionResult SendMail(string id_dg, string ngay_tra)
+        {
+            var viewResult = ViewMS() as ActionResult;
+            //if (viewResult != null)
+            //{
+            //    viewResult.ViewName = "~/Views/Home/Contact.cshtml";
+            //}
+            var dg = (from d in data.DOCGIA where d.MS_THE == id_dg select d).First();
+            EMail oMail = new EMail();
+            oMail.SendMail("Email", dg.EMAIL, new String[] { "Nhắc Nhở Trả Sách Thư Viện ĐH Khoa Học Tự Nhiên", "Chào bạn, hệ thống thư viện nhắc nhở bạn ngày " + ngay_tra + " là đến hạn trả sách mà bạn đang mượn vui lòng thực hiện đúng như yêu cầu. Cám ơn"});
+            
+            return viewResult;
+        }
+
         public ActionResult ViewMS()
         {                      
             return View();
@@ -92,6 +106,7 @@ namespace hcmuslib.Controllers
             int pageNumber = (page ?? 1);
             
             var list_ms = ms.ToList();
+            @ViewBag.Count = list_ms.Count;
             return PartialView("AjaxApi_ViewMS", list_ms.ToPagedList(pageNumber, pageSize));
         }
 

@@ -35,8 +35,8 @@
                     <h3 class="panel-title">Nhập Mã Vạch Ở Đây: </h3>
                 </div>
                 <div class="panel-body">
-                    <form action="/Circulator/QrCodeGenerate" method="post" id="myForm">
-                        <input type="hidden" name="img" id="img" />
+                    <form action="/Circulator/QrCodeGenerate" method="post" id="myForm" enctype="multipart/form-data">
+                        <input type="file" name="img" id="img" style="display:none"/>
                         <input class="form-group-border" type="text" name="filename" id="data" onchange="Create();" />
                     </form>
                         <script>
@@ -45,11 +45,13 @@
                                 var data = document.getElementById('data').value;
                                 document.getElementById('qrimage').innerHTML = "<img src=https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=" + data + "/>";
                                 document.getElementById('img').value = "https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=" + data;
+                                
                             }
                             function Save() {
                                 $('#myForm').submit();
                             }
                         </script>
+                    <br />
                         <input class="btn" type="button" value="Create" onclick="Create();" />
 </div>
                 </div>

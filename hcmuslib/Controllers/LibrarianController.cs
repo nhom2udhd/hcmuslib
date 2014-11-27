@@ -5,10 +5,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using hcmuslib.Models;
+using PagedList;
 
 namespace hcmuslib.Controllers
 {
-    //[Authorize(Roles = "ReaderManager")]
     public class LibrarianController : Controller
     {
         //
@@ -28,11 +28,42 @@ namespace hcmuslib.Controllers
             return View();
         }
 
-        public ActionResult ManageReaderImage()
+        public ActionResult ManageReaderImage(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            var result = from p in data.DOCGIA select p;
-            var reader = result.ToList();           
-            return View(reader);
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var docgia = from p in data.DOCGIA select p;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                docgia = docgia.Where(p => p.MS_THE.Contains(searchString));
+            }
+            
+            switch (sortOrder)
+            { 
+                case "name_desc":
+                    docgia = docgia.OrderByDescending(p => p.HO_TEN);
+                    break;
+                default:
+                    docgia = docgia.OrderBy(p => p.HO_TEN);
+                    break;
+            }
+
+            int pageSize = 20;
+            int pageNumber = (page ?? 1);
+            return View(docgia.ToPagedList(pageNumber, pageSize));
         }
 
         [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
@@ -57,18 +88,6 @@ namespace hcmuslib.Controllers
             }
         }
 
-        [HttpPost]
-        [MultipleButton(Name = "action", Argument = "Search")]
-        public ActionResult Search(FormCollection f)
-        { 
-            string id = f["id-reader"];
-            var result = from p in data.DOCGIA where p.MS_THE == id || p.HO_TEN.Contains(id) select p;
-
-            return View(result);
-        }
-
-        [HttpPost]
-        [MultipleButton(Name = "action", Argument = "BackToAll")]
         public ActionResult BackToAll()
         {
             return RedirectToAction("ManageReaderImage");
@@ -111,6 +130,7 @@ namespace hcmuslib.Controllers
             
             return RedirectToAction("ManageReaderImage");
         }
+<<<<<<< HEAD
 
         //public ActionResult BookReturningHome() 
         //{
@@ -175,5 +195,7 @@ namespace hcmuslib.Controllers
         //    return View();
         //}
 
+=======
+>>>>>>> fbe628db2332955608a1d1af82fa7182435a99cf
     }
 }
