@@ -24,15 +24,7 @@ namespace hcmuslib.Controllers
        
         public ActionResult InputLibrarian()
         {
-            //DOCGIA dg = new DOCGIA();
-            //if (DGSearch != null)
-            //{
-            //    dg = (from d in data.DOCGIA where d.MS_THE == DGSearch select d).FirstOrDefault();
-            //    if (dg == null)
-            //        dg = new DOCGIA();
-            //    @ViewBag.DGSearch = DGSearch;
-            //}
-                
+
             return View();
         }
         [HttpPost]
@@ -49,10 +41,18 @@ namespace hcmuslib.Controllers
             }
             return PartialView("GetDG",dg);
         }
-        
-        public ActionResult QRCodeGenerate(string data)
+
+        public ActionResult QRCodeGenerate(HttpPostedFileBase img)
         {
-                
+            if(img != null)
+            {
+                //dosomething
+                var fileName = img.FileName;
+                var fileContentStream = img.InputStream;
+
+                //Store the file on your webserver
+                img.SaveAs(string.Format(@"D:\Study\hcmuslib\hcmuslib\Images\QRCode\{0}", img.FileName));
+            }             
             return View();
         }
 
