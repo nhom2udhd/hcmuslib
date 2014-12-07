@@ -80,9 +80,11 @@
                 HttpMethod = "Post"
             }))
             {
+                @Html.ValidationSummary(false)
                 string DG_ID = "";
                 <div style="width:200px;height:30px">
                     @Html.TextBoxFor(m => DG_ID, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.MS_THE)
                     <input id="hid_btn" type="submit" style="display:none" />
                 </div>
 

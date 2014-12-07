@@ -6,7 +6,7 @@
 //    Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using System.ComponentModel.DataAnnotations;
 namespace hcmuslib.Models
 {
     using System;
@@ -15,7 +15,9 @@ namespace hcmuslib.Models
     public partial class LUUHANHSACH
     {
         public string ID_LUU_HANH { get; set; }
+
         public string DOC_GIA { get; set; }
+       
         public string ID_SACH { get; set; }
         public Nullable<System.DateTime> NGAY_MUON { get; set; }
         public Nullable<System.DateTime> THOI_HAN_MUON { get; set; }
