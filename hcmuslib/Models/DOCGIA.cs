@@ -6,12 +6,12 @@
 //    Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
 namespace hcmuslib.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class DOCGIA
     {
         public DOCGIA()
@@ -25,7 +25,10 @@ namespace hcmuslib.Models
             //this.DKTAPHUANs = new HashSet<DKTAPHUAN>();
 
         }
-    
+
+        [StringLength(10), Required]
+        [RegularExpression(@"DG+^[0-9]{1,8}$",
+                            ErrorMessage = "ID is not valid")]
         public string MS_THE { get; set; }
         public string HO_TEN { get; set; }
         public string TINH_TRANG { get; set; }

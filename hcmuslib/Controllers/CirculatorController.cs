@@ -24,11 +24,9 @@ namespace hcmuslib.Controllers
 
         public ActionResult InputLibrarian()
         {
-
-
             return View();
         }
-        [HttpPost]
+        [AcceptVerbs(HttpVerbs.Post)]
         public PartialViewResult GetDG(string DG_ID = "")
         {
             DOCGIA dg = new DOCGIA();
