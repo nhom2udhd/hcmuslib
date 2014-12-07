@@ -1,9 +1,11 @@
 ﻿@model PagedList.IPagedList<hcmuslib.Models.LUUHANHSACH>
 @using PagedList.Mvc;
+
 @if(Model != null)
 {
     if (Model.Count() != 0)
     {
+        <div class="status alert alert-success">Tìm thấy @ViewBag.Count kết quả phù hợp !</div>
         <table class="table table-bordered" id="ListMS">
             <tr>
                 <th>
@@ -54,11 +56,8 @@
                         }
                         else
                         {
-                            @Html.DisplayName("Đang mượn");
+                           @Html.DisplayName("Đang mượn");                           
                         }
-                    </td>
-                    <td id="btn_nn" style="display:none">
-                        <input type="button" onclick="" value="Mail" />
                     </td>
                 </tr>
             }
@@ -67,7 +66,7 @@
     }
     else
     {
-        <h2>Không Tìm Thấy Kết Quả Nào Phù Hợp</h2>
+        <div class="status alert alert-success">Không Tìm Thấy Kết Quả Nào Phù Hợp ?!</div>
     }
     <br />
 

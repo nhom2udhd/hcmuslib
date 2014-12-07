@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Trang chủ - Độc giả";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout_reader.cshtml";
 }
 
 <section id="title" class="emerald">
@@ -12,8 +12,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li class="active">Services</li>
+                        <li><a href="">Độc giả</a></li>
+                        <li class="active">Trang chủ</li>
                     </ul>
                 </div>
             </div>
@@ -26,27 +26,27 @@
                 <div class="col-md-12">
                     <div class="center gap">
                         <h2>Độc giả có thể</h2>
-                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        @*<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>*@
                     </div>                
                 </div>
             </div>
             <div class="row">
 				<div class="col-md-4 col-sm-6">
-					<div class="gly-link"><a href="reader_register_training.html"><h3><span class="glyphicon glyphicon-send gly-bigger"></span> Đăng kí tập huấn</h3></a></div>
-					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>                
+					<div class="gly-link"><a href="@Url.Action("registertraining","reader")"><h3><span class="glyphicon glyphicon-send gly-bigger"></span> Đăng kí tập huấn</h3></a></div>
+					<p>Độc giả gửi thông tin đăng kí tham dự buổi tập huấn của thư viện, là tiền đề để làm thành viên của thư viện.</p>                
                 </div><!--/.col-md-4-->
-				 <div class="col-md-4 col-sm-6">
+@*				 <div class="col-md-4 col-sm-6">
 					<div class="gly-link"><a href="reader_borrow.html"><h3><span class="glyphicon glyphicon-book gly-bigger"></span> Mượn sách</h3></a></div>
 					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>      
                 </div><!--/.col-md-4-->
                 <div class="col-md-4 col-sm-6">
                     <div class="gly-link"><a href="reader_room_booking_type.html"><h3><span class="glyphicon glyphicon-th gly-bigger"></span> Mượn phòng</h3></a></div>
 					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>      
-                </div><!--/.col-md-4-->
+                </div><!--/.col-md-4-->*@
                
                
             </div><!--/.row-->
-            <div class="gap"></div>
+@*            <div class="gap"></div>
              <div class="row">
 				<div class="col-md-4 col-sm-6">
 					<div class="gly-link"><a href="reader_info.html"><h3><span class="glyphicon glyphicon-info-sign gly-bigger"></span> Thông tin cá nhân</h3></a></div>
@@ -55,8 +55,8 @@
                 
                
             </div><!--/.row-->
-            <hr>
-            <div class="row">
+            <hr>*@
+@*            <div class="row">
                 <div class="col-lg-12">
                     <div class="center">
                         <h2>What our clients say</h2>
@@ -78,6 +78,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
     </section><!--/#services-->

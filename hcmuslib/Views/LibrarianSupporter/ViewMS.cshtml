@@ -10,7 +10,7 @@
     <link href="/Content/animate.css" rel="stylesheet">
     <link href="/Content/main.css" rel="stylesheet">
     <link href="/Content/mystyle.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
@@ -40,7 +40,7 @@
         { 
             UpdateTargetId = "content_table", 
             HttpMethod = "Post",
-            InsertionMode = InsertionMode.Replace,
+            //InsertionMode = InsertionMode.Replace,
             LoadingElementId = "loader"
         }))
         {
@@ -60,18 +60,7 @@
             <br />
             <br />
         }  
-                    
-        @*<form id="myForm1" action="/LibrarianSupporter/ViewMS" method="post">
-        {Tìm Kiếm Theo Mã Độc Giả, Mã Lưu Hành, Mã Sách : <input type="text" name="keySearch" class="form-control" style="width:200px;height:30px" onsubmit="OnchangeMSType();" value="@ViewBag.CurrentFilter"  />
-            Trên : <select class="form-control" style="width:200px;height:30px" id="mySelect" name="MSType" onchange="function OnchangeMSType() { $('#myForm1').submit(); };">
-                <option value="0" selected=@ViewBag.MsType0>All</option>
-                <option value="1" selected=@ViewBag.MsType1>Đã trả</option>
-                <option value="2" selected=@ViewBag.MsType2>Đang mượn</option>
-                <option value="3" selected=@ViewBag.MsType3>Gần đến hạn</option>
-            </select>
-        </form>
-        }
-        <br />*@
+                   
 
         </div>
         <script>
@@ -92,7 +81,12 @@
                 <br />
                 <br />
                 <img src="~/Images/ajax-loader.gif" width="200" height="200" />
-            </div> 
+            </div>
+            <div>
+
+            </div>
+            @Html.Action("AjaxApi_ViewMS")
             @Html.Partial("AjaxApi_ViewMS")
+
         </div>
-    </section>>
+</section>>

@@ -1,18 +1,18 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout_librarian.cshtml";
+    Layout = "~/Views/Shared/_Layout_librariansupporter.cshtml";
 }
 
 <section id="title" class="emerald">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h1>Trang chủ - Quản lý độc giả</h1>
+                    <h1>Trang chủ - Hỗ trợ độc giả</h1>
                     
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
-                        <li><a href="@Url.Action("index","librarian")">Quản lý độc giả</a></li>
+                        <li><a href="@Url.Action("index","librariansupporter")">Hỗ trợ độc giả</a></li>
                         <li class="active">Trang chủ</li>
                     </ul>
                 </div>
@@ -25,24 +25,24 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="center gap">
-                        <h2>Chức năng của bộ phận Quản lý độc giả</h2>
+                        <h2>Chức năng của bộ phận Hỗ trợ độc giả</h2>
                         
                     </div>                
                 </div>
             </div>
             <div class="row">
 				<div class="col-md-4 col-sm-6">
-					<div class="gly-link"><a href="@Url.Action("analytics","librarian")"><h3><span class="glyphicon glyphicon-send gly-bigger"></span>Thống kê độc giả theo tiêu chí</h3></a></div>
+					<div class="gly-link"><a href="@Url.Action("trainingmanagement","librariansupporter")"><h3><span class="glyphicon glyphicon-send gly-bigger"></span>Quản lý đăng ký tập huấn</h3></a></div>
 					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>                
                 </div><!--/.col-md-4-->
 				 <div class="col-md-4 col-sm-6">
-					<div class="gly-link"><a href="@Url.Action("managereaderimage","librarian")"><h3><span class="glyphicon glyphicon-book gly-bigger"></span>Quản lý hình ảnh độc giả</h3></a></div>
+					<div class="gly-link"><a href="@Url.Action("viewms","librariansupporter")"><h3><span class="glyphicon glyphicon-book gly-bigger"></span>Quản lý mượn sách</h3></a></div>
 					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>      
                 </div><!--/.col-md-4-->
-                <div class="col-md-4 col-sm-6">
+@*                <div class="col-md-4 col-sm-6">
                     <div class="gly-link"><a href="@Url.Action("barcodereader","librarian")"><h3><span class="glyphicon glyphicon-th gly-bigger"></span>Độc mã vạch</h3></a></div>
 					<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae.</p>      
-                </div><!--/.col-md-4-->
+                </div><!--/.col-md-4-->*@
                
                
             </div><!--/.row-->

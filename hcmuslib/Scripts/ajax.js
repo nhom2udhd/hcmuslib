@@ -53,7 +53,7 @@
             alert("Nhập mã đọc giả");
         } else {
             $.ajax({
-                url: "/librarian/bookreturninghome",
+                url: "/circulator/bookreturninghome",
                 type: "POST",
                 data: {
                     action: "show",
@@ -71,7 +71,7 @@
         e.preventDefault();
         var lhid = $(e.currentTarget).attr("data-lhid");
         $.ajax({
-            url: "/librarian/bookreturninghome",
+            url: "/circulator/bookreturninghome",
             type: "POST",
             data: {
                 action: "confirm",
@@ -92,7 +92,7 @@
         var bid = $(e.currentTarget).attr("data-bid");
         var status = $(e.currentTarget).closest(".form-horizontal").find(".status").val();
         $.ajax({
-            url: "/librarian/bookreturninghome",
+            url: "/circulator/bookreturninghome",
             type: "POST",
             data: {
                 action: "punishment",
