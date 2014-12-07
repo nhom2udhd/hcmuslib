@@ -560,7 +560,6 @@
     <Content Include="Scripts\themes\grid.js" />
     <Content Include="Scripts\themes\sand-signika.js" />
     <Content Include="Scripts\themes\skies.js" />
-    <Content Include="Librarian\swf\webcamqrcode.swf" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -615,15 +614,21 @@
     <Content Include="Views\Circulator\LentBook.cshtml" />
     <Content Include="Views\Circulator\GetDG.cshtml" />
     <Content Include="Views\LibrarianSupporter\AjaxApi_ViewMS.cshtml" />
-    <Content Include="Views\Librarian\BookReturningHome.cshtml" />
-    <Content Include="Views\Librarian\_BookReturningDetail.cshtml" />
-    <Content Include="Views\Librarian\_ReturnConfirmMessage.cshtml" />
-    <Content Include="Views\Librarian\_BookReturningNotFound.cshtml" />
-    <Content Include="Views\Librarian\_PunishmentConfirm.cshtml" />
+    <Content Include="Views\Circulator\BookReturningHome.cshtml" />
+    <Content Include="Views\Circulator\_BookReturningDetail.cshtml" />
+    <Content Include="Views\Circulator\_ReturnConfirmMessage.cshtml" />
+    <Content Include="Views\Circulator\_BookReturningNotFound.cshtml" />
+    <Content Include="Views\Circulator\_PunishmentConfirm.cshtml" />
     <Content Include="Views\LibrarianSupporter\TrainingManagement.cshtml" />
     <Content Include="Views\LibrarianSupporter\_TrainingTableView.cshtml" />
     <Content Include="Views\LibrarianSupporter\_TrainingNotFound.cshtml" />
     <Content Include="Views\Circulator\QRCodeGenerate.cshtml" />
+    <Content Include="Views\Shared\_Layout_reader.cshtml" />
+    <Content Include="Views\Circulator\Index.cshtml" />
+    <Content Include="Views\LibrarianSupporter\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout_librarian.cshtml" />
+    <Content Include="Views\Shared\_Layout_librariansupporter.cshtml" />
+    <Content Include="Views\Shared\_Layout_circulator.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
