@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="~/images/ico/apple-touch-icon-57-precomposed.png">
 
-    
+
 </head>
 <body>
     <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
@@ -42,8 +42,18 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="@Url.Action("index","home")">Trang chủ</a></li>
                     <li><a href="@Url.Action("index","reader")">Độc giả</a></li>
-                    <li><a href="@Url.Action("registertraining","reader")">Đăng kí tập huấn</a></li>                           
+                    <li><a href="@Url.Action("registertraining","reader")">Đăng kí tập huấn</a></li>
                     <li><a href="@Url.Action("contact","home")">Liên hệ - Góp ý</a></li>
+                    <li><a href="#">Đăng ký gia hạn sách</a></li>
+                    <li>
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "LogOffForm" }))
+                        {
+                            @Html.AntiForgeryToken();
+
+                            <a href="#" onclick="$('#LogOffForm').submit()">Đăng Xuất</a>
+                        }
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -160,6 +170,6 @@
     <script src="@Url.Content("~/Scripts/highcharts.js")"></script>
     <script src="@Url.Content("~/Scripts/ajax.js")"></script>
     @RenderSection("charts", required: false)
-    
+
 </body>
 </html>

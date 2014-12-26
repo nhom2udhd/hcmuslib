@@ -18,14 +18,14 @@ namespace hcmuslib.Models
         public DbSet<UserProfile> UserProfiles { get; set; }
     }
 
-    [Table("USER_PASSWORD")]
-    public class UserProfile
-    {
-        [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int UserId { get; set; }
-        public string UserName { get; set; }
-    }
+    //[Table("USER_PASSWORD")]
+    //public class UserProfile
+    //{
+    //    [Key]
+    //    [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+    //    public int UserId { get; set; }
+    //    public string UserName { get; set; }
+    //}
 
     public class RegisterExternalLoginModel
     {

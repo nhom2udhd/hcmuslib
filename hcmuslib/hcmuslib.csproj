@@ -207,6 +207,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ANPHAM.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\BMNHANDECHINH.cs">
       <DependentUpon>QLThuVien.tt</DependentUpon>
     </Compile>
@@ -222,10 +225,19 @@
     <Compile Include="Models\BMTENDEMUC.cs">
       <DependentUpon>QLThuVien.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BM_CHUONGTAPCHI.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BM_KYTAPCHI.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\BOITHUONGTHIETHAI.cs">
       <DependentUpon>QLThuVien.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CT_DONHANG.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DKTAPHUAN.cs">
       <DependentUpon>QLThuVien.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\DOCGIA.cs">
@@ -277,7 +289,19 @@
     <Compile Include="Models\THIETBI_DICHVU.cs">
       <DependentUpon>QLThuVien.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserProfile.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\USER_PASSWORD.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_Membership.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_OAuthMembership.cs">
+      <DependentUpon>QLThuVien.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\webpages_Roles.cs">
       <DependentUpon>QLThuVien.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -355,10 +379,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <EntityDeploy Include="Models\QLThuVien.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLThuVien.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <Content Include="Images\ads\ad1.png" />
     <Content Include="Images\ads\ad2.png" />
     <Content Include="Images\ads\ad3.png" />
@@ -447,20 +467,6 @@
     <Content Include="Images\slider\custom_bg2.jpg" />
     <Content Include="Images\slider\custom_bg3.jpg" />
     <Content Include="Images\team-member.jpg" />
-    <Content Include="Models\QLThuVien.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLThuVien.edmx</DependentUpon>
-      <LastGenOutput>QLThuVien.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\QLThuVien.edmx.diagram">
-      <DependentUpon>QLThuVien.edmx</DependentUpon>
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Models\QLThuVien.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLThuVien.edmx</DependentUpon>
-      <LastGenOutput>QLThuVien.cs</LastGenOutput>
-    </Content>
     <Content Include="Images\ads\desktop.ini" />
     <Content Include="Images\blog\desktop.ini" />
     <Content Include="Images\book\desktop.ini" />
@@ -487,6 +493,23 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="build\compil.sh" />
+    <EntityDeploy Include="Models\QLThuVien.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLThuVien.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QLThuVien.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLThuVien.edmx</DependentUpon>
+      <LastGenOutput>QLThuVien.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\QLThuVien.edmx.diagram">
+      <DependentUpon>QLThuVien.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\QLThuVien.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLThuVien.edmx</DependentUpon>
+      <LastGenOutput>QLThuVien.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

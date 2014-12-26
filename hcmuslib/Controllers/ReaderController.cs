@@ -7,6 +7,7 @@ using hcmuslib.Models;
 
 namespace hcmuslib.Controllers
 {
+    //[Authorize(Roles = "Reader")]
     public class ReaderController : Controller
     {
         //
@@ -18,7 +19,7 @@ namespace hcmuslib.Controllers
             return View();
         }
 
-        public ActionResult RegisterTraining(string type, string number) 
+        public ActionResult RegisterTraining(string type, string number)
         {
             if (Request.IsAjaxRequest())
             {

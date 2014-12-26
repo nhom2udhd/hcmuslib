@@ -12,18 +12,10 @@ namespace hcmuslib.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class BMSOPHANLOAI
+    public partial class webpages_OAuthMembership
     {
-        public BMSOPHANLOAI()
-        {
-            this.ANPHAM = new HashSet<ANPHAM>();
-            this.SACH = new HashSet<SACH>();
-        }
-    
-        public string ID_SPL { get; set; }
-        public string SO_PHAN_LOAI { get; set; }
-    
-        public virtual ICollection<ANPHAM> ANPHAM { get; set; }
-        public virtual ICollection<SACH> SACH { get; set; }
+        public string Provider { get; set; }
+        public string ProviderUserId { get; set; }
+        public int UserId { get; set; }
     }
 }

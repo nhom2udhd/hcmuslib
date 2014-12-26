@@ -12,18 +12,14 @@ namespace hcmuslib.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class BMSOPHANLOAI
+    public partial class DKTAPHUAN
     {
-        public BMSOPHANLOAI()
-        {
-            this.ANPHAM = new HashSet<ANPHAM>();
-            this.SACH = new HashSet<SACH>();
-        }
+        public int ID { get; set; }
+        public string MADG { get; set; }
+        public string LOAI { get; set; }
+        public Nullable<int> SOLUONG { get; set; }
+        public string TINHTRANG { get; set; }
     
-        public string ID_SPL { get; set; }
-        public string SO_PHAN_LOAI { get; set; }
-    
-        public virtual ICollection<ANPHAM> ANPHAM { get; set; }
-        public virtual ICollection<SACH> SACH { get; set; }
+        public virtual DOCGIA DOCGIA { get; set; }
     }
 }

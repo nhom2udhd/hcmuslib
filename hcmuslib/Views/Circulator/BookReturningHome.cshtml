@@ -4,39 +4,66 @@
 }
 
 <section id="title" class="emerald">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h1>Chi tiết trả sách</h1>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="breadcrumb pull-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li class="active">Chi tiết trả sách</li>
-                    </ul>
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Chi tiết trả sách</h1>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada</p>
+            </div>
+            <div class="col-sm-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li class="active">Chi tiết trả sách</li>
+                </ul>
             </div>
         </div>
-    </section><!--/#title-->    
+    </div>
+</section><!--/#title-->
 
-    <section class="container">
-		<div class="row">
-			 <form class="form-horizontal" role="form">
-				<div class="form-group">
-					<label for="id" class="col-sm-2 control-label">Mã đọc giả</label>
-					<div class="col-sm-2">
-					  <input type="text" class="form-control" name="id" id="id" placeholder="Nhập mã đọc giả">
-					</div>
-					<div class="col-sm-2">
-					  <button type="button" class="btn btn-success" id="view-returning-btn">Xem</button>
-					</div>
-				</div>
-			</form> 
-		</div>
-		<div class="gap"></div>
-		<div class="row" id="return-detail-container" style="display:none">
-		
-		</div>
-    </section><!--/#terms-->
+<section class="container">
+    <div class="row">
+        <form class="form-horizontal" role="form">
+            <div class="camera" style="height:250px;">
+
+                <div style="width: 300px; height: 250px;" id="qrcodebox">
+
+                    <div id="reader" style="width:300px;height:250px">
+                        <video autoplay="autoplay" id="html5_qrcode_video" width="300" height="250"></video>
+                        <canvas id="qr-canvas" width="298" height="248" style="display:none;"></canvas>
+                    </div>
+                    <script>
+                        $('#reader').html5_qrcode(function (data) {
+                            // do something when code is read
+                            $("#qrcode_result").html(data);
+                            $(":focus").val(data);
+                        },
+                            function (error) {
+                                //show read errors
+                            }, function (videoError) {
+                                //the video stream could be opened
+                                $("#qrcode_result").html("the video stream could be opened");
+                            }
+                        );
+                    </script>
+                    <p>
+                        <span id="qrcode_result"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="id" class="col-sm-2 control-label">Mã đọc giả</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" name="id" id="id" placeholder="Nhập mã đọc giả" autofocus>
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-success" id="view-returning-btn">Xem</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="gap"></div>
+    <div class="row" id="return-detail-container" style="display:none">
+
+    </div>
+</section><!--/#terms-->

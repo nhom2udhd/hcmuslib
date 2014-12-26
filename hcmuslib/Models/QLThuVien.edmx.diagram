@@ -4,42 +4,59 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ec4eec73d1ea4dd4a4fbf444a64e259c" Name="Diagram1" ZoomLevel="66">
-        <EntityTypeShape EntityType="QLTHUVIENModel.BMNXB" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.BMNHANDECHINH" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.BMSOPHANLOAI" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.BMTACGIA" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.BMTENDEMUC" Width="1.5" PointX="0.75" PointY="14.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.BOITHUONGTHIETHAI" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.DOCGIA" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.DONHANG" Width="1.5" PointX="10.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.LEARNCOMMONS" Width="1.5" PointX="8.25" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.LUUHANHSACH" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.MUONPHONG" Width="1.5" PointX="5.25" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.MUONTAICHO" Width="1.5" PointX="8.25" PointY="3.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.NHANVIEN" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.PHONG" Width="1.5" PointX="3" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.SACH" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.TAPHUAN" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.THIETBI_DICHVU" Width="1.5" PointX="6" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.USER_PASSWORD" Width="1.5" PointX="9.625" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLTHUVIENModel.CT_DONHANG" Width="1.5" PointX="13" PointY="1.375" IsExpanded="true" />
+      <Diagram DiagramId="73d5c68c128d41918b9d86133b1f898c" Name="Diagram1">
+        <EntityTypeShape EntityType="QLTHUVIENModel.ANPHAM" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BM_CHUONGTAPCHI" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BM_KYTAPCHI" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BMNXB" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BMNHANDECHINH" Width="1.5" PointX="3.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BMSOPHANLOAI" Width="1.5" PointX="3.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BMTACGIA" Width="1.5" PointX="3.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BMTENDEMUC" Width="1.5" PointX="3.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.BOITHUONGTHIETHAI" Width="1.5" PointX="8.25" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.CT_DONHANG" Width="1.5" PointX="11" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.DKTAPHUAN" Width="1.5" PointX="8.25" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.DOCGIA" Width="1.5" PointX="6" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.DONHANG" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.LEARNCOMMONS" Width="1.5" PointX="11.25" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.LUUHANHSACH" Width="1.5" PointX="8.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.MUONPHONG" Width="1.5" PointX="11.25" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.MUONTAICHO" Width="1.5" PointX="11.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.NHANVIEN" Width="1.5" PointX="6" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.PHONG" Width="1.5" PointX="9" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.SACH" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.TAPHUAN" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.THIETBI_DICHVU" Width="1.5" PointX="9" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.USER_PASSWORD" Width="1.5" PointX="3.125" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.UserProfile" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.webpages_Membership" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.webpages_OAuthMembership" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLTHUVIENModel.webpages_Roles" Width="1.5" PointX="3.125" PointY="30.125" IsExpanded="true" />
+        <AssociationConnector Association="QLTHUVIENModel.FK_ANPHAM_BMNXB" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK_ANPHAM_BMSOPHANLOAI" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK_ANPHAM_BMTACGIA" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK_BM_CHUONGTAPCHI_ANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK_BM_KYTAPCHI_ANPHAM" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__SACH__NHA_XUAT_B__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__SACH__NHAN_DE_CH__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__SACH__SO_PHAN_LO__33D4B598" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__SACH__TAC_GIA__31EC6D26" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__SACH__TEN_DE_MUC__34C8D9D1" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__BOITHUONG__DOC_G__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK__CT_DONHAN__ID_DO__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK_DKTAPHUAN_DOCGIA" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__LEARNCOMM__DOC_G__1FCDBCEB" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__LUUHANHSA__DOC_G__3B75D760" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__MUONPHONG__DOC_G__239E4DCF" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__MUONTAICH__DOC_G__37A5467C" ManuallyRouted="false" />
-        <AssociationConnector Association="QLTHUVIENModel.FK__CT_DONHAN__ID_DO__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.FK_DOCGIA_USER_PASSWORD" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__LEARNCOMM__ID_TH__20C1E124" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__LUUHANHSA__ID_SA__3C69FB99" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__MUONPHONG__ID_PH__24927208" ManuallyRouted="false" />
         <AssociationConnector Association="QLTHUVIENModel.FK__MUONTAICH__ID_SA__38996AB5" ManuallyRouted="false" />
-        </Diagram>
+        <AssociationConnector Association="QLTHUVIENModel.FK_NHANVIEN_USER_PASSWORD" ManuallyRouted="false" />
+        <AssociationConnector Association="QLTHUVIENModel.webpages_UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

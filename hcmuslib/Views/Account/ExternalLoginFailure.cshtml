@@ -2,7 +2,27 @@
     ViewBag.Title = "Login Failure";
 }
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Unsuccessful login with service.</h2>
-</hgroup>
+<section id="title" class="emerald">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>@ViewBag.Title</h1>
+
+            </div>
+            <div class="col-sm-6">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="@Url.Action("index","home")">Trang chủ</a></li>
+                    <li class="active">Đăng nhập</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section><!--/#title-->
+
+<section id="result" class="container">
+    <h3 class="text-center">
+        Đăng nhập<br />
+        <small>Đăng nhập thất bại</small>
+    </h3>
+    <p id="error-login-message" class="error-message text-center">@ViewBag.Message</p>
+</section>

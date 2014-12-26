@@ -4,124 +4,69 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="QLTHUVIENModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="QLTHUVIENModelStoreContainer">
-          <EntitySet Name="BMNHANDECHINH" EntityType="QLTHUVIENModel.Store.BMNHANDECHINH" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BMNXB" EntityType="QLTHUVIENModel.Store.BMNXB" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BMSOPHANLOAI" EntityType="QLTHUVIENModel.Store.BMSOPHANLOAI" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BMTACGIA" EntityType="QLTHUVIENModel.Store.BMTACGIA" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BMTENDEMUC" EntityType="QLTHUVIENModel.Store.BMTENDEMUC" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="BOITHUONGTHIETHAI" EntityType="QLTHUVIENModel.Store.BOITHUONGTHIETHAI" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CT_DONHANG" EntityType="QLTHUVIENModel.Store.CT_DONHANG" store:Type="Tables" store:Schema="dbo" store:Name="CT_DONHANG">
-            <DefiningQuery>SELECT 
-      [CT_DONHANG].[ID_DON_HANG] AS [ID_DON_HANG], 
-      [CT_DONHANG].[TEN_SAN_PHAM] AS [TEN_SAN_PHAM], 
-      [CT_DONHANG].[SO_LUONG] AS [SO_LUONG], 
-      [CT_DONHANG].[GHI_CHU] AS [GHI_CHU]
-      FROM [dbo].[CT_DONHANG] AS [CT_DONHANG]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="DOCGIA" EntityType="QLTHUVIENModel.Store.DOCGIA" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="DONHANG" EntityType="QLTHUVIENModel.Store.DONHANG" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LEARNCOMMONS" EntityType="QLTHUVIENModel.Store.LEARNCOMMONS" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="LUUHANHSACH" EntityType="QLTHUVIENModel.Store.LUUHANHSACH" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="MUONPHONG" EntityType="QLTHUVIENModel.Store.MUONPHONG" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="MUONTAICHO" EntityType="QLTHUVIENModel.Store.MUONTAICHO" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="NHANVIEN" EntityType="QLTHUVIENModel.Store.NHANVIEN" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="PHONG" EntityType="QLTHUVIENModel.Store.PHONG" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SACH" EntityType="QLTHUVIENModel.Store.SACH" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TAPHUAN" EntityType="QLTHUVIENModel.Store.TAPHUAN" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="THIETBI_DICHVU" EntityType="QLTHUVIENModel.Store.THIETBI_DICHVU" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="USER_PASSWORD" EntityType="QLTHUVIENModel.Store.USER_PASSWORD" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK__BOITHUONG__DOC_G__3F466844" Association="QLTHUVIENModel.Store.FK__BOITHUONG__DOC_G__3F466844">
-            <End Role="DOCGIA" EntitySet="DOCGIA" />
-            <End Role="BOITHUONGTHIETHAI" EntitySet="BOITHUONGTHIETHAI" />
-          </AssociationSet>
-          <AssociationSet Name="FK__CT_DONHAN__ID_DO__1B0907CE" Association="QLTHUVIENModel.Store.FK__CT_DONHAN__ID_DO__1B0907CE">
-            <End Role="DONHANG" EntitySet="DONHANG" />
-            <End Role="CT_DONHANG" EntitySet="CT_DONHANG" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LEARNCOMM__DOC_G__1FCDBCEB" Association="QLTHUVIENModel.Store.FK__LEARNCOMM__DOC_G__1FCDBCEB">
-            <End Role="DOCGIA" EntitySet="DOCGIA" />
-            <End Role="LEARNCOMMONS" EntitySet="LEARNCOMMONS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LEARNCOMM__ID_TH__20C1E124" Association="QLTHUVIENModel.Store.FK__LEARNCOMM__ID_TH__20C1E124">
-            <End Role="THIETBI_DICHVU" EntitySet="THIETBI_DICHVU" />
-            <End Role="LEARNCOMMONS" EntitySet="LEARNCOMMONS" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LUUHANHSA__DOC_G__3B75D760" Association="QLTHUVIENModel.Store.FK__LUUHANHSA__DOC_G__3B75D760">
-            <End Role="DOCGIA" EntitySet="DOCGIA" />
-            <End Role="LUUHANHSACH" EntitySet="LUUHANHSACH" />
-          </AssociationSet>
-          <AssociationSet Name="FK__LUUHANHSA__ID_SA__3C69FB99" Association="QLTHUVIENModel.Store.FK__LUUHANHSA__ID_SA__3C69FB99">
-            <End Role="SACH" EntitySet="SACH" />
-            <End Role="LUUHANHSACH" EntitySet="LUUHANHSACH" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MUONPHONG__DOC_G__239E4DCF" Association="QLTHUVIENModel.Store.FK__MUONPHONG__DOC_G__239E4DCF">
-            <End Role="DOCGIA" EntitySet="DOCGIA" />
-            <End Role="MUONPHONG" EntitySet="MUONPHONG" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MUONPHONG__ID_PH__24927208" Association="QLTHUVIENModel.Store.FK__MUONPHONG__ID_PH__24927208">
-            <End Role="PHONG" EntitySet="PHONG" />
-            <End Role="MUONPHONG" EntitySet="MUONPHONG" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MUONTAICH__DOC_G__37A5467C" Association="QLTHUVIENModel.Store.FK__MUONTAICH__DOC_G__37A5467C">
-            <End Role="DOCGIA" EntitySet="DOCGIA" />
-            <End Role="MUONTAICHO" EntitySet="MUONTAICHO" />
-          </AssociationSet>
-          <AssociationSet Name="FK__MUONTAICH__ID_SA__38996AB5" Association="QLTHUVIENModel.Store.FK__MUONTAICH__ID_SA__38996AB5">
-            <End Role="SACH" EntitySet="SACH" />
-            <End Role="MUONTAICHO" EntitySet="MUONTAICHO" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SACH__NHA_XUAT_B__32E0915F" Association="QLTHUVIENModel.Store.FK__SACH__NHA_XUAT_B__32E0915F">
-            <End Role="BMNXB" EntitySet="BMNXB" />
-            <End Role="SACH" EntitySet="SACH" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SACH__NHAN_DE_CH__30F848ED" Association="QLTHUVIENModel.Store.FK__SACH__NHAN_DE_CH__30F848ED">
-            <End Role="BMNHANDECHINH" EntitySet="BMNHANDECHINH" />
-            <End Role="SACH" EntitySet="SACH" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SACH__SO_PHAN_LO__33D4B598" Association="QLTHUVIENModel.Store.FK__SACH__SO_PHAN_LO__33D4B598">
-            <End Role="BMSOPHANLOAI" EntitySet="BMSOPHANLOAI" />
-            <End Role="SACH" EntitySet="SACH" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SACH__TAC_GIA__31EC6D26" Association="QLTHUVIENModel.Store.FK__SACH__TAC_GIA__31EC6D26">
-            <End Role="BMTACGIA" EntitySet="BMTACGIA" />
-            <End Role="SACH" EntitySet="SACH" />
-          </AssociationSet>
-          <AssociationSet Name="FK__SACH__TEN_DE_MUC__34C8D9D1" Association="QLTHUVIENModel.Store.FK__SACH__TEN_DE_MUC__34C8D9D1">
-            <End Role="BMTENDEMUC" EntitySet="BMTENDEMUC" />
-            <End Role="SACH" EntitySet="SACH" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="BMNHANDECHINH">
+      <Schema Namespace="QLTHUVIENModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ANPHAM">
           <Key>
-            <PropertyRef Name="ID_NHAN_DE" />
+            <PropertyRef Name="ID_ANPHAM" />
           </Key>
-          <Property Name="ID_NHAN_DE" Type="varchar" Nullable="false" MaxLength="10" />
-          <Property Name="NHAN_DE_CHINH" Type="nvarchar" MaxLength="100" />
+          <Property Name="ID_ANPHAM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_ANPHAM" Type="nvarchar(max)" />
+          <Property Name="TONGBT" Type="varchar" MaxLength="10" />
+          <Property Name="CQ_CHUQUAN" Type="nvarchar(max)" />
+          <Property Name="DC_TOASOAN" Type="text" />
+          <Property Name="DKXB" Type="int" />
+          <Property Name="NXB" Type="varchar" MaxLength="10" />
+          <Property Name="SOPHANLOAI" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="BM_CHUONGTAPCHI">
+          <Key>
+            <PropertyRef Name="ID_CHUONG" />
+          </Key>
+          <Property Name="ID_CHUONG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_CHUONG" Type="nvarchar" MaxLength="100" />
+          <Property Name="NOI_DUNG" Type="text" />
+          <Property Name="ANPHAM" Type="int" />
+        </EntityType>
+        <EntityType Name="BM_KYTAPCHI">
+          <Key>
+            <PropertyRef Name="ID_KY" />
+          </Key>
+          <Property Name="ID_KY" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_KY" Type="nvarchar" MaxLength="100" />
+          <Property Name="URL_HINH" Type="nvarchar(max)" />
+          <Property Name="THOI_GIAN_DANG" Type="datetime" />
+          <Property Name="LOI_GIOI_THIEU" Type="text" />
+          <Property Name="ANPHAM" Type="int" />
         </EntityType>
         <EntityType Name="BMNXB">
           <Key>
             <PropertyRef Name="ID_NXB" />
           </Key>
-          <Property Name="ID_NXB" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_NXB" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TEN_NXB" Type="nvarchar" MaxLength="50" />
           <Property Name="NGAY_THANH_LAP" Type="date" />
           <Property Name="THONG_TIN_BO_SUNG" Type="nvarchar" MaxLength="100" />
           <Property Name="TINH_TRANG" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="BMNHANDECHINH">
+          <Key>
+            <PropertyRef Name="ID_NHAN_DE" />
+          </Key>
+          <Property Name="ID_NHAN_DE" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NHAN_DE_CHINH" Type="nvarchar" MaxLength="100" />
+        </EntityType>
         <EntityType Name="BMSOPHANLOAI">
           <Key>
             <PropertyRef Name="ID_SPL" />
           </Key>
-          <Property Name="ID_SPL" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_SPL" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="SO_PHAN_LOAI" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="BMTACGIA">
           <Key>
             <PropertyRef Name="ID_TAC_GIA" />
           </Key>
-          <Property Name="ID_TAC_GIA" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_TAC_GIA" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="HO_TEN" Type="nvarchar" MaxLength="50" />
           <Property Name="BUT_DANH" Type="nvarchar" MaxLength="50" />
           <Property Name="THONG_TIN_BO_SUNG" Type="nvarchar" MaxLength="100" />
@@ -131,48 +76,57 @@
           <Key>
             <PropertyRef Name="ID_DE_MUC" />
           </Key>
-          <Property Name="ID_DE_MUC" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_DE_MUC" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TEN_DE_MUC" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="BOITHUONGTHIETHAI">
           <Key>
             <PropertyRef Name="ID_BOI_THUONG" />
           </Key>
-          <Property Name="ID_BOI_THUONG" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_BOI_THUONG" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="DOC_GIA" Type="varchar" MaxLength="10" />
           <Property Name="ID_VAT_BOI_THUONG" Type="varchar" MaxLength="10" />
           <Property Name="NGAY_BOI_THUONG" Type="date" />
           <Property Name="LY_DO" Type="nvarchar" MaxLength="50" />
           <Property Name="TINH_TRANG" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-      warning 6002: The table/view 'QLTHUVIEN.dbo.CT_DONHANG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
         <EntityType Name="CT_DONHANG">
           <Key>
-            <PropertyRef Name="ID_DON_HANG" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID_DON_HANG" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_DON_HANG" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TEN_SAN_PHAM" Type="nvarchar" MaxLength="50" />
           <Property Name="SO_LUONG" Type="int" />
           <Property Name="GHI_CHU" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DKTAPHUAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="MADG" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="LOAI" Type="nvarchar" MaxLength="50" />
+          <Property Name="SOLUONG" Type="int" />
+          <Property Name="TINHTRANG" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="DOCGIA">
           <Key>
             <PropertyRef Name="MS_THE" />
           </Key>
-          <Property Name="MS_THE" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="MS_THE" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="HO_TEN" Type="nvarchar" MaxLength="50" />
           <Property Name="TINH_TRANG" Type="nvarchar" MaxLength="50" />
           <Property Name="EMAIL" Type="varchar" MaxLength="100" />
           <Property Name="LOAI_DOC_GIA" Type="nvarchar" MaxLength="20" />
           <Property Name="IMAGE_URL" Type="varchar(max)" />
+          <Property Name="ID_USER" Type="int" />
         </EntityType>
         <EntityType Name="DONHANG">
           <Key>
             <PropertyRef Name="ID_DON_HANG" />
           </Key>
-          <Property Name="ID_DON_HANG" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_DON_HANG" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="NGAY_LAP" Type="date" />
           <Property Name="TINH_TRANG" Type="nvarchar" MaxLength="50" />
           <Property Name="DIA_CHI_GOI" Type="nvarchar" MaxLength="100" />
@@ -185,7 +139,7 @@
           <Key>
             <PropertyRef Name="ID_LC" />
           </Key>
-          <Property Name="ID_LC" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_LC" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="DOC_GIA" Type="varchar" MaxLength="10" />
           <Property Name="ID_THIET_BI" Type="varchar" MaxLength="10" />
           <Property Name="NGAY_MUON" Type="date" />
@@ -195,7 +149,7 @@
           <Key>
             <PropertyRef Name="ID_LUU_HANH" />
           </Key>
-          <Property Name="ID_LUU_HANH" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_LUU_HANH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="DOC_GIA" Type="varchar" MaxLength="10" />
           <Property Name="ID_SACH" Type="varchar" MaxLength="10" />
           <Property Name="NGAY_MUON" Type="date" />
@@ -206,7 +160,7 @@
           <Key>
             <PropertyRef Name="ID_MUON_PHONG" />
           </Key>
-          <Property Name="ID_MUON_PHONG" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_MUON_PHONG" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="DOC_GIA" Type="varchar" MaxLength="10" />
           <Property Name="ID_PHONG" Type="varchar" MaxLength="10" />
           <Property Name="NGAY_MUON" Type="date" />
@@ -216,7 +170,7 @@
           <Key>
             <PropertyRef Name="ID_MUON_TC" />
           </Key>
-          <Property Name="ID_MUON_TC" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_MUON_TC" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="DOC_GIA" Type="varchar" MaxLength="10" />
           <Property Name="ID_SACH" Type="varchar" MaxLength="10" />
           <Property Name="NGAY_MUON" Type="date" />
@@ -226,17 +180,18 @@
           <Key>
             <PropertyRef Name="MS_NV" />
           </Key>
-          <Property Name="MS_NV" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="MS_NV" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="HO_TEN" Type="nvarchar" MaxLength="50" />
           <Property Name="TINH_TRANG" Type="nvarchar" MaxLength="50" />
           <Property Name="CHUC_VU" Type="nvarchar" MaxLength="20" />
           <Property Name="LOAI_NHAN_VIEN" Type="nvarchar" MaxLength="20" />
+          <Property Name="ID_USER" Type="int" />
         </EntityType>
         <EntityType Name="PHONG">
           <Key>
             <PropertyRef Name="ID_PHONG" />
           </Key>
-          <Property Name="ID_PHONG" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_PHONG" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TEN_PHONG" Type="nvarchar" MaxLength="50" />
           <Property Name="VI_TRI" Type="nvarchar" MaxLength="50" />
           <Property Name="TINH_TRANG" Type="nvarchar" MaxLength="50" />
@@ -245,7 +200,7 @@
           <Key>
             <PropertyRef Name="ID_SACH" />
           </Key>
-          <Property Name="ID_SACH" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_SACH" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="NGAY_NHAP" Type="date" />
           <Property Name="NHAN_DE_CHINH" Type="varchar" MaxLength="10" />
           <Property Name="TAC_GIA" Type="varchar" MaxLength="10" />
@@ -272,7 +227,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="HO_TEN" Type="nvarchar" MaxLength="50" />
           <Property Name="SDT" Type="varchar" MaxLength="12" />
           <Property Name="NGAY_DANG_KY" Type="date" />
@@ -284,7 +239,7 @@
           <Key>
             <PropertyRef Name="ID_THIET_BI" />
           </Key>
-          <Property Name="ID_THIET_BI" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="ID_THIET_BI" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="TEN_THIET_BI" Type="nvarchar" MaxLength="50" />
           <Property Name="NGAY_NHAP" Type="date" />
           <Property Name="TINH_TRANG" Type="nvarchar" MaxLength="50" />
@@ -293,14 +248,61 @@
           <Key>
             <PropertyRef Name="ID_USER" />
           </Key>
-          <Property Name="ID_USER" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID_USER" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="USER_NAME" Type="varchar" MaxLength="50" />
           <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
-          <Property Name="ROLE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ROLE" Type="int" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="56" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="datetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordChangedDate" Type="datetime" />
+          <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ProviderUserId" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK__BOITHUONG__DOC_G__3F466844">
-          <End Role="DOCGIA" Type="QLTHUVIENModel.Store.DOCGIA" Multiplicity="0..1" />
-          <End Role="BOITHUONGTHIETHAI" Type="QLTHUVIENModel.Store.BOITHUONGTHIETHAI" Multiplicity="*" />
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="0..1" />
+          <End Role="BOITHUONGTHIETHAI" Type="Self.BOITHUONGTHIETHAI" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DOCGIA">
               <PropertyRef Name="MS_THE" />
@@ -311,8 +313,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__CT_DONHAN__ID_DO__1B0907CE">
-          <End Role="DONHANG" Type="QLTHUVIENModel.Store.DONHANG" Multiplicity="1" />
-          <End Role="CT_DONHANG" Type="QLTHUVIENModel.Store.CT_DONHANG" Multiplicity="0..1" />
+          <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="1" />
+          <End Role="CT_DONHANG" Type="Self.CT_DONHANG" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DONHANG">
               <PropertyRef Name="ID_DON_HANG" />
@@ -323,8 +325,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__LEARNCOMM__DOC_G__1FCDBCEB">
-          <End Role="DOCGIA" Type="QLTHUVIENModel.Store.DOCGIA" Multiplicity="0..1" />
-          <End Role="LEARNCOMMONS" Type="QLTHUVIENModel.Store.LEARNCOMMONS" Multiplicity="*" />
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="0..1" />
+          <End Role="LEARNCOMMONS" Type="Self.LEARNCOMMONS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DOCGIA">
               <PropertyRef Name="MS_THE" />
@@ -335,8 +337,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__LEARNCOMM__ID_TH__20C1E124">
-          <End Role="THIETBI_DICHVU" Type="QLTHUVIENModel.Store.THIETBI_DICHVU" Multiplicity="0..1" />
-          <End Role="LEARNCOMMONS" Type="QLTHUVIENModel.Store.LEARNCOMMONS" Multiplicity="*" />
+          <End Role="THIETBI_DICHVU" Type="Self.THIETBI_DICHVU" Multiplicity="0..1" />
+          <End Role="LEARNCOMMONS" Type="Self.LEARNCOMMONS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="THIETBI_DICHVU">
               <PropertyRef Name="ID_THIET_BI" />
@@ -347,8 +349,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__LUUHANHSA__DOC_G__3B75D760">
-          <End Role="DOCGIA" Type="QLTHUVIENModel.Store.DOCGIA" Multiplicity="0..1" />
-          <End Role="LUUHANHSACH" Type="QLTHUVIENModel.Store.LUUHANHSACH" Multiplicity="*" />
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="0..1" />
+          <End Role="LUUHANHSACH" Type="Self.LUUHANHSACH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DOCGIA">
               <PropertyRef Name="MS_THE" />
@@ -359,8 +361,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__LUUHANHSA__ID_SA__3C69FB99">
-          <End Role="SACH" Type="QLTHUVIENModel.Store.SACH" Multiplicity="0..1" />
-          <End Role="LUUHANHSACH" Type="QLTHUVIENModel.Store.LUUHANHSACH" Multiplicity="*" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="0..1" />
+          <End Role="LUUHANHSACH" Type="Self.LUUHANHSACH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SACH">
               <PropertyRef Name="ID_SACH" />
@@ -371,8 +373,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__MUONPHONG__DOC_G__239E4DCF">
-          <End Role="DOCGIA" Type="QLTHUVIENModel.Store.DOCGIA" Multiplicity="0..1" />
-          <End Role="MUONPHONG" Type="QLTHUVIENModel.Store.MUONPHONG" Multiplicity="*" />
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="0..1" />
+          <End Role="MUONPHONG" Type="Self.MUONPHONG" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DOCGIA">
               <PropertyRef Name="MS_THE" />
@@ -383,8 +385,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__MUONPHONG__ID_PH__24927208">
-          <End Role="PHONG" Type="QLTHUVIENModel.Store.PHONG" Multiplicity="0..1" />
-          <End Role="MUONPHONG" Type="QLTHUVIENModel.Store.MUONPHONG" Multiplicity="*" />
+          <End Role="PHONG" Type="Self.PHONG" Multiplicity="0..1" />
+          <End Role="MUONPHONG" Type="Self.MUONPHONG" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PHONG">
               <PropertyRef Name="ID_PHONG" />
@@ -395,8 +397,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__MUONTAICH__DOC_G__37A5467C">
-          <End Role="DOCGIA" Type="QLTHUVIENModel.Store.DOCGIA" Multiplicity="0..1" />
-          <End Role="MUONTAICHO" Type="QLTHUVIENModel.Store.MUONTAICHO" Multiplicity="*" />
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="0..1" />
+          <End Role="MUONTAICHO" Type="Self.MUONTAICHO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DOCGIA">
               <PropertyRef Name="MS_THE" />
@@ -407,8 +409,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__MUONTAICH__ID_SA__38996AB5">
-          <End Role="SACH" Type="QLTHUVIENModel.Store.SACH" Multiplicity="0..1" />
-          <End Role="MUONTAICHO" Type="QLTHUVIENModel.Store.MUONTAICHO" Multiplicity="*" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="0..1" />
+          <End Role="MUONTAICHO" Type="Self.MUONTAICHO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="SACH">
               <PropertyRef Name="ID_SACH" />
@@ -419,8 +421,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__SACH__NHA_XUAT_B__32E0915F">
-          <End Role="BMNXB" Type="QLTHUVIENModel.Store.BMNXB" Multiplicity="0..1" />
-          <End Role="SACH" Type="QLTHUVIENModel.Store.SACH" Multiplicity="*" />
+          <End Role="BMNXB" Type="Self.BMNXB" Multiplicity="0..1" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BMNXB">
               <PropertyRef Name="ID_NXB" />
@@ -431,8 +433,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__SACH__NHAN_DE_CH__30F848ED">
-          <End Role="BMNHANDECHINH" Type="QLTHUVIENModel.Store.BMNHANDECHINH" Multiplicity="0..1" />
-          <End Role="SACH" Type="QLTHUVIENModel.Store.SACH" Multiplicity="*" />
+          <End Role="BMNHANDECHINH" Type="Self.BMNHANDECHINH" Multiplicity="0..1" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BMNHANDECHINH">
               <PropertyRef Name="ID_NHAN_DE" />
@@ -443,8 +445,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__SACH__SO_PHAN_LO__33D4B598">
-          <End Role="BMSOPHANLOAI" Type="QLTHUVIENModel.Store.BMSOPHANLOAI" Multiplicity="0..1" />
-          <End Role="SACH" Type="QLTHUVIENModel.Store.SACH" Multiplicity="*" />
+          <End Role="BMSOPHANLOAI" Type="Self.BMSOPHANLOAI" Multiplicity="0..1" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BMSOPHANLOAI">
               <PropertyRef Name="ID_SPL" />
@@ -455,8 +457,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__SACH__TAC_GIA__31EC6D26">
-          <End Role="BMTACGIA" Type="QLTHUVIENModel.Store.BMTACGIA" Multiplicity="0..1" />
-          <End Role="SACH" Type="QLTHUVIENModel.Store.SACH" Multiplicity="*" />
+          <End Role="BMTACGIA" Type="Self.BMTACGIA" Multiplicity="0..1" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BMTACGIA">
               <PropertyRef Name="ID_TAC_GIA" />
@@ -467,8 +469,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__SACH__TEN_DE_MUC__34C8D9D1">
-          <End Role="BMTENDEMUC" Type="QLTHUVIENModel.Store.BMTENDEMUC" Multiplicity="0..1" />
-          <End Role="SACH" Type="QLTHUVIENModel.Store.SACH" Multiplicity="*" />
+          <End Role="BMTENDEMUC" Type="Self.BMTENDEMUC" Multiplicity="0..1" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="BMTENDEMUC">
               <PropertyRef Name="ID_DE_MUC" />
@@ -478,10 +480,301 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema></edmx:StorageModels>
+        <Association Name="FK_ANPHAM_BMNXB">
+          <End Role="BMNXB" Type="Self.BMNXB" Multiplicity="0..1" />
+          <End Role="ANPHAM" Type="Self.ANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BMNXB">
+              <PropertyRef Name="ID_NXB" />
+            </Principal>
+            <Dependent Role="ANPHAM">
+              <PropertyRef Name="NXB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANPHAM_BMSOPHANLOAI">
+          <End Role="BMSOPHANLOAI" Type="Self.BMSOPHANLOAI" Multiplicity="0..1" />
+          <End Role="ANPHAM" Type="Self.ANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BMSOPHANLOAI">
+              <PropertyRef Name="ID_SPL" />
+            </Principal>
+            <Dependent Role="ANPHAM">
+              <PropertyRef Name="SOPHANLOAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANPHAM_BMTACGIA">
+          <End Role="BMTACGIA" Type="Self.BMTACGIA" Multiplicity="0..1" />
+          <End Role="ANPHAM" Type="Self.ANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BMTACGIA">
+              <PropertyRef Name="ID_TAC_GIA" />
+            </Principal>
+            <Dependent Role="ANPHAM">
+              <PropertyRef Name="TONGBT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BM_CHUONGTAPCHI_ANPHAM">
+          <End Role="ANPHAM" Type="Self.ANPHAM" Multiplicity="0..1" />
+          <End Role="BM_CHUONGTAPCHI" Type="Self.BM_CHUONGTAPCHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANPHAM">
+              <PropertyRef Name="ID_ANPHAM" />
+            </Principal>
+            <Dependent Role="BM_CHUONGTAPCHI">
+              <PropertyRef Name="ANPHAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BM_KYTAPCHI_ANPHAM">
+          <End Role="ANPHAM" Type="Self.ANPHAM" Multiplicity="0..1" />
+          <End Role="BM_KYTAPCHI" Type="Self.BM_KYTAPCHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANPHAM">
+              <PropertyRef Name="ID_ANPHAM" />
+            </Principal>
+            <Dependent Role="BM_KYTAPCHI">
+              <PropertyRef Name="ANPHAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DKTAPHUAN_DOCGIA">
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="1" />
+          <End Role="DKTAPHUAN" Type="Self.DKTAPHUAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCGIA">
+              <PropertyRef Name="MS_THE" />
+            </Principal>
+            <Dependent Role="DKTAPHUAN">
+              <PropertyRef Name="MADG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOCGIA_USER_PASSWORD">
+          <End Role="USER_PASSWORD" Type="Self.USER_PASSWORD" Multiplicity="0..1" />
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_PASSWORD">
+              <PropertyRef Name="ID_USER" />
+            </Principal>
+            <Dependent Role="DOCGIA">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_USER_PASSWORD">
+          <End Role="USER_PASSWORD" Type="Self.USER_PASSWORD" Multiplicity="0..1" />
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_PASSWORD">
+              <PropertyRef Name="ID_USER" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_RoleId">
+          <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="webpages_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_webpages_UsersInRoles_USER_PASSWORD">
+          <End Role="USER_PASSWORD" Type="Self.USER_PASSWORD" Multiplicity="1" />
+          <End Role="webpages_UsersInRoles" Type="Self.webpages_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_PASSWORD">
+              <PropertyRef Name="ID_USER" />
+            </Principal>
+            <Dependent Role="webpages_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLTHUVIENModelStoreContainer">
+          <EntitySet Name="ANPHAM" EntityType="Self.ANPHAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BM_CHUONGTAPCHI" EntityType="Self.BM_CHUONGTAPCHI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BM_KYTAPCHI" EntityType="Self.BM_KYTAPCHI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BMNXB" EntityType="Self.BMNXB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BMNHANDECHINH" EntityType="Self.BMNHANDECHINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BMSOPHANLOAI" EntityType="Self.BMSOPHANLOAI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BMTACGIA" EntityType="Self.BMTACGIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BMTENDEMUC" EntityType="Self.BMTENDEMUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BOITHUONGTHIETHAI" EntityType="Self.BOITHUONGTHIETHAI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CT_DONHANG" EntityType="Self.CT_DONHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DKTAPHUAN" EntityType="Self.DKTAPHUAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DOCGIA" EntityType="Self.DOCGIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LEARNCOMMONS" EntityType="Self.LEARNCOMMONS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LUUHANHSACH" EntityType="Self.LUUHANHSACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MUONPHONG" EntityType="Self.MUONPHONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MUONTAICHO" EntityType="Self.MUONTAICHO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHONG" EntityType="Self.PHONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAPHUAN" EntityType="Self.TAPHUAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THIETBI_DICHVU" EntityType="Self.THIETBI_DICHVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER_PASSWORD" EntityType="Self.USER_PASSWORD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="Self.webpages_UsersInRoles" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__BOITHUONG__DOC_G__3F466844" Association="Self.FK__BOITHUONG__DOC_G__3F466844">
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
+            <End Role="BOITHUONGTHIETHAI" EntitySet="BOITHUONGTHIETHAI" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CT_DONHAN__ID_DO__1B0907CE" Association="Self.FK__CT_DONHAN__ID_DO__1B0907CE">
+            <End Role="DONHANG" EntitySet="DONHANG" />
+            <End Role="CT_DONHANG" EntitySet="CT_DONHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LEARNCOMM__DOC_G__1FCDBCEB" Association="Self.FK__LEARNCOMM__DOC_G__1FCDBCEB">
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
+            <End Role="LEARNCOMMONS" EntitySet="LEARNCOMMONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LEARNCOMM__ID_TH__20C1E124" Association="Self.FK__LEARNCOMM__ID_TH__20C1E124">
+            <End Role="THIETBI_DICHVU" EntitySet="THIETBI_DICHVU" />
+            <End Role="LEARNCOMMONS" EntitySet="LEARNCOMMONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LUUHANHSA__DOC_G__3B75D760" Association="Self.FK__LUUHANHSA__DOC_G__3B75D760">
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
+            <End Role="LUUHANHSACH" EntitySet="LUUHANHSACH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__LUUHANHSA__ID_SA__3C69FB99" Association="Self.FK__LUUHANHSA__ID_SA__3C69FB99">
+            <End Role="SACH" EntitySet="SACH" />
+            <End Role="LUUHANHSACH" EntitySet="LUUHANHSACH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MUONPHONG__DOC_G__239E4DCF" Association="Self.FK__MUONPHONG__DOC_G__239E4DCF">
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
+            <End Role="MUONPHONG" EntitySet="MUONPHONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MUONPHONG__ID_PH__24927208" Association="Self.FK__MUONPHONG__ID_PH__24927208">
+            <End Role="PHONG" EntitySet="PHONG" />
+            <End Role="MUONPHONG" EntitySet="MUONPHONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MUONTAICH__DOC_G__37A5467C" Association="Self.FK__MUONTAICH__DOC_G__37A5467C">
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
+            <End Role="MUONTAICHO" EntitySet="MUONTAICHO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MUONTAICH__ID_SA__38996AB5" Association="Self.FK__MUONTAICH__ID_SA__38996AB5">
+            <End Role="SACH" EntitySet="SACH" />
+            <End Role="MUONTAICHO" EntitySet="MUONTAICHO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SACH__NHA_XUAT_B__32E0915F" Association="Self.FK__SACH__NHA_XUAT_B__32E0915F">
+            <End Role="BMNXB" EntitySet="BMNXB" />
+            <End Role="SACH" EntitySet="SACH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SACH__NHAN_DE_CH__30F848ED" Association="Self.FK__SACH__NHAN_DE_CH__30F848ED">
+            <End Role="BMNHANDECHINH" EntitySet="BMNHANDECHINH" />
+            <End Role="SACH" EntitySet="SACH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SACH__SO_PHAN_LO__33D4B598" Association="Self.FK__SACH__SO_PHAN_LO__33D4B598">
+            <End Role="BMSOPHANLOAI" EntitySet="BMSOPHANLOAI" />
+            <End Role="SACH" EntitySet="SACH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SACH__TAC_GIA__31EC6D26" Association="Self.FK__SACH__TAC_GIA__31EC6D26">
+            <End Role="BMTACGIA" EntitySet="BMTACGIA" />
+            <End Role="SACH" EntitySet="SACH" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SACH__TEN_DE_MUC__34C8D9D1" Association="Self.FK__SACH__TEN_DE_MUC__34C8D9D1">
+            <End Role="BMTENDEMUC" EntitySet="BMTENDEMUC" />
+            <End Role="SACH" EntitySet="SACH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANPHAM_BMNXB" Association="Self.FK_ANPHAM_BMNXB">
+            <End Role="BMNXB" EntitySet="BMNXB" />
+            <End Role="ANPHAM" EntitySet="ANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANPHAM_BMSOPHANLOAI" Association="Self.FK_ANPHAM_BMSOPHANLOAI">
+            <End Role="BMSOPHANLOAI" EntitySet="BMSOPHANLOAI" />
+            <End Role="ANPHAM" EntitySet="ANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANPHAM_BMTACGIA" Association="Self.FK_ANPHAM_BMTACGIA">
+            <End Role="BMTACGIA" EntitySet="BMTACGIA" />
+            <End Role="ANPHAM" EntitySet="ANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BM_CHUONGTAPCHI_ANPHAM" Association="Self.FK_BM_CHUONGTAPCHI_ANPHAM">
+            <End Role="ANPHAM" EntitySet="ANPHAM" />
+            <End Role="BM_CHUONGTAPCHI" EntitySet="BM_CHUONGTAPCHI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BM_KYTAPCHI_ANPHAM" Association="Self.FK_BM_KYTAPCHI_ANPHAM">
+            <End Role="ANPHAM" EntitySet="ANPHAM" />
+            <End Role="BM_KYTAPCHI" EntitySet="BM_KYTAPCHI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DKTAPHUAN_DOCGIA" Association="Self.FK_DKTAPHUAN_DOCGIA">
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
+            <End Role="DKTAPHUAN" EntitySet="DKTAPHUAN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOCGIA_USER_PASSWORD" Association="Self.FK_DOCGIA_USER_PASSWORD">
+            <End Role="USER_PASSWORD" EntitySet="USER_PASSWORD" />
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_USER_PASSWORD" Association="Self.FK_NHANVIEN_USER_PASSWORD">
+            <End Role="USER_PASSWORD" EntitySet="USER_PASSWORD" />
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="fk_RoleId" Association="Self.fk_RoleId">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_webpages_UsersInRoles_USER_PASSWORD" Association="Self.FK_webpages_UsersInRoles_USER_PASSWORD">
+            <End Role="USER_PASSWORD" EntitySet="USER_PASSWORD" />
+            <End Role="webpages_UsersInRoles" EntitySet="webpages_UsersInRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLTHUVIENModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ANPHAM">
+          <Key>
+            <PropertyRef Name="ID_ANPHAM" />
+          </Key>
+          <Property Name="ID_ANPHAM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_ANPHAM" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TONGBT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CQ_CHUQUAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DC_TOASOAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DKXB" Type="Int32" />
+          <Property Name="NXB" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SOPHANLOAI" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="BMNXB" Relationship="Self.FK_ANPHAM_BMNXB" FromRole="ANPHAM" ToRole="BMNXB" />
+          <NavigationProperty Name="BMSOPHANLOAI" Relationship="Self.FK_ANPHAM_BMSOPHANLOAI" FromRole="ANPHAM" ToRole="BMSOPHANLOAI" />
+          <NavigationProperty Name="BMTACGIA" Relationship="Self.FK_ANPHAM_BMTACGIA" FromRole="ANPHAM" ToRole="BMTACGIA" />
+          <NavigationProperty Name="BM_CHUONGTAPCHI" Relationship="Self.FK_BM_CHUONGTAPCHI_ANPHAM" FromRole="ANPHAM" ToRole="BM_CHUONGTAPCHI" />
+          <NavigationProperty Name="BM_KYTAPCHI" Relationship="Self.FK_BM_KYTAPCHI_ANPHAM" FromRole="ANPHAM" ToRole="BM_KYTAPCHI" />
+        </EntityType>
+        <EntityType Name="BM_CHUONGTAPCHI">
+          <Key>
+            <PropertyRef Name="ID_CHUONG" />
+          </Key>
+          <Property Name="ID_CHUONG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_CHUONG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NOI_DUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ANPHAM" Type="Int32" />
+          <NavigationProperty Name="ANPHAM1" Relationship="Self.FK_BM_CHUONGTAPCHI_ANPHAM" FromRole="BM_CHUONGTAPCHI" ToRole="ANPHAM" />
+        </EntityType>
+        <EntityType Name="BM_KYTAPCHI">
+          <Key>
+            <PropertyRef Name="ID_KY" />
+          </Key>
+          <Property Name="ID_KY" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_KY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="URL_HINH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="THOI_GIAN_DANG" Type="DateTime" Precision="3" />
+          <Property Name="LOI_GIOI_THIEU" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ANPHAM" Type="Int32" />
+          <NavigationProperty Name="ANPHAM1" Relationship="Self.FK_BM_KYTAPCHI_ANPHAM" FromRole="BM_KYTAPCHI" ToRole="ANPHAM" />
+        </EntityType>
         <EntityType Name="BMNXB">
           <Key>
             <PropertyRef Name="ID_NXB" />
@@ -491,6 +784,7 @@
           <Property Name="NGAY_THANH_LAP" Type="DateTime" Precision="0" />
           <Property Name="THONG_TIN_BO_SUNG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="TINH_TRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ANPHAM" Relationship="Self.FK_ANPHAM_BMNXB" FromRole="BMNXB" ToRole="ANPHAM" />
           <NavigationProperty Name="SACH" Relationship="Self.FK__SACH__NHA_XUAT_B__32E0915F" FromRole="BMNXB" ToRole="SACH" />
         </EntityType>
         <EntityType Name="BMNHANDECHINH">
@@ -507,6 +801,7 @@
           </Key>
           <Property Name="ID_SPL" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SO_PHAN_LOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ANPHAM" Relationship="Self.FK_ANPHAM_BMSOPHANLOAI" FromRole="BMSOPHANLOAI" ToRole="ANPHAM" />
           <NavigationProperty Name="SACH" Relationship="Self.FK__SACH__SO_PHAN_LO__33D4B598" FromRole="BMSOPHANLOAI" ToRole="SACH" />
         </EntityType>
         <EntityType Name="BMTACGIA">
@@ -518,6 +813,7 @@
           <Property Name="BUT_DANH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="THONG_TIN_BO_SUNG" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="TINH_TRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ANPHAM" Relationship="Self.FK_ANPHAM_BMTACGIA" FromRole="BMTACGIA" ToRole="ANPHAM" />
           <NavigationProperty Name="SACH" Relationship="Self.FK__SACH__TAC_GIA__31EC6D26" FromRole="BMTACGIA" ToRole="SACH" />
         </EntityType>
         <EntityType Name="BMTENDEMUC">
@@ -540,6 +836,28 @@
           <Property Name="TINH_TRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DOCGIA" Relationship="Self.FK__BOITHUONG__DOC_G__3F466844" FromRole="BOITHUONGTHIETHAI" ToRole="DOCGIA" />
         </EntityType>
+        <EntityType Name="CT_DONHANG">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_DON_HANG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TEN_SAN_PHAM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SO_LUONG" Type="Int32" />
+          <Property Name="GHI_CHU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DONHANG" Relationship="Self.FK__CT_DONHAN__ID_DO__1B0907CE" FromRole="CT_DONHANG" ToRole="DONHANG" />
+        </EntityType>
+        <EntityType Name="DKTAPHUAN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="MADG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LOAI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SOLUONG" Type="Int32" />
+          <Property Name="TINHTRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DOCGIA" Relationship="Self.FK_DKTAPHUAN_DOCGIA" FromRole="DKTAPHUAN" ToRole="DOCGIA" />
+        </EntityType>
         <EntityType Name="DOCGIA">
           <Key>
             <PropertyRef Name="MS_THE" />
@@ -549,12 +867,15 @@
           <Property Name="TINH_TRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="LOAI_DOC_GIA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IMAGE_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ID_USER" Type="Int32" />
           <NavigationProperty Name="BOITHUONGTHIETHAI" Relationship="Self.FK__BOITHUONG__DOC_G__3F466844" FromRole="DOCGIA" ToRole="BOITHUONGTHIETHAI" />
+          <NavigationProperty Name="DKTAPHUAN" Relationship="Self.FK_DKTAPHUAN_DOCGIA" FromRole="DOCGIA" ToRole="DKTAPHUAN" />
           <NavigationProperty Name="LEARNCOMMONS" Relationship="Self.FK__LEARNCOMM__DOC_G__1FCDBCEB" FromRole="DOCGIA" ToRole="LEARNCOMMONS" />
           <NavigationProperty Name="LUUHANHSACH" Relationship="Self.FK__LUUHANHSA__DOC_G__3B75D760" FromRole="DOCGIA" ToRole="LUUHANHSACH" />
           <NavigationProperty Name="MUONPHONG" Relationship="Self.FK__MUONPHONG__DOC_G__239E4DCF" FromRole="DOCGIA" ToRole="MUONPHONG" />
           <NavigationProperty Name="MUONTAICHO" Relationship="Self.FK__MUONTAICH__DOC_G__37A5467C" FromRole="DOCGIA" ToRole="MUONTAICHO" />
-          <Property Name="IMAGE_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="USER_PASSWORD" Relationship="Self.FK_DOCGIA_USER_PASSWORD" FromRole="DOCGIA" ToRole="USER_PASSWORD" />
         </EntityType>
         <EntityType Name="DONHANG">
           <Key>
@@ -628,6 +949,8 @@
           <Property Name="TINH_TRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CHUC_VU" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="LOAI_NHAN_VIEN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ID_USER" Type="Int32" />
+          <NavigationProperty Name="USER_PASSWORD" Relationship="Self.FK_NHANVIEN_USER_PASSWORD" FromRole="NHANVIEN" ToRole="USER_PASSWORD" />
         </EntityType>
         <EntityType Name="PHONG">
           <Key>
@@ -683,7 +1006,7 @@
           <Property Name="NGAY_DANG_KY" Type="DateTime" Precision="0" />
           <Property Name="TINH_TRANG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LOAI_DOC_GIA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="EMAIL" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="THIETBI_DICHVU">
           <Key>
@@ -699,21 +1022,114 @@
           <Key>
             <PropertyRef Name="ID_USER" />
           </Key>
-          <Property Name="ID_USER" Type="Int32" Nullable="false" />
+          <Property Name="ID_USER" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="USER_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ROLE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ROLE" Type="Int32" />
+          <NavigationProperty Name="DOCGIA" Relationship="Self.FK_DOCGIA_USER_PASSWORD" FromRole="USER_PASSWORD" ToRole="DOCGIA" />
+          <NavigationProperty Name="NHANVIEN" Relationship="Self.FK_NHANVIEN_USER_PASSWORD" FromRole="USER_PASSWORD" ToRole="NHANVIEN" />
+          <NavigationProperty Name="webpages_Roles" Relationship="Self.webpages_UsersInRoles" FromRole="USER_PASSWORD" ToRole="webpages_Roles" />
         </EntityType>
-        <EntityType Name="CT_DONHANG">
+        <EntityType Name="UserProfile">
           <Key>
-            <PropertyRef Name="ID_DON_HANG" />
+            <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="ID_DON_HANG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TEN_SAN_PHAM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SO_LUONG" Type="Int32" />
-          <Property Name="GHI_CHU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DONHANG" Relationship="Self.FK__CT_DONHAN__ID_DO__1B0907CE" FromRole="CT_DONHANG" ToRole="DONHANG" />
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="56" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="IsConfirmed" Type="Boolean" />
+          <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+          <Property Name="PasswordSalt" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+          </Key>
+          <Property Name="Provider" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="USER_PASSWORD" Relationship="Self.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="USER_PASSWORD" />
+        </EntityType>
+        <Association Name="FK_ANPHAM_BMNXB">
+          <End Role="BMNXB" Type="Self.BMNXB" Multiplicity="0..1" />
+          <End Role="ANPHAM" Type="Self.ANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BMNXB">
+              <PropertyRef Name="ID_NXB" />
+            </Principal>
+            <Dependent Role="ANPHAM">
+              <PropertyRef Name="NXB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANPHAM_BMSOPHANLOAI">
+          <End Role="BMSOPHANLOAI" Type="Self.BMSOPHANLOAI" Multiplicity="0..1" />
+          <End Role="ANPHAM" Type="Self.ANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BMSOPHANLOAI">
+              <PropertyRef Name="ID_SPL" />
+            </Principal>
+            <Dependent Role="ANPHAM">
+              <PropertyRef Name="SOPHANLOAI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ANPHAM_BMTACGIA">
+          <End Role="BMTACGIA" Type="Self.BMTACGIA" Multiplicity="0..1" />
+          <End Role="ANPHAM" Type="Self.ANPHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BMTACGIA">
+              <PropertyRef Name="ID_TAC_GIA" />
+            </Principal>
+            <Dependent Role="ANPHAM">
+              <PropertyRef Name="TONGBT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BM_CHUONGTAPCHI_ANPHAM">
+          <End Role="ANPHAM" Type="Self.ANPHAM" Multiplicity="0..1" />
+          <End Role="BM_CHUONGTAPCHI" Type="Self.BM_CHUONGTAPCHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANPHAM">
+              <PropertyRef Name="ID_ANPHAM" />
+            </Principal>
+            <Dependent Role="BM_CHUONGTAPCHI">
+              <PropertyRef Name="ANPHAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BM_KYTAPCHI_ANPHAM">
+          <End Role="ANPHAM" Type="Self.ANPHAM" Multiplicity="0..1" />
+          <End Role="BM_KYTAPCHI" Type="Self.BM_KYTAPCHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ANPHAM">
+              <PropertyRef Name="ID_ANPHAM" />
+            </Principal>
+            <Dependent Role="BM_KYTAPCHI">
+              <PropertyRef Name="ANPHAM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__SACH__NHA_XUAT_B__32E0915F">
           <End Role="BMNXB" Type="Self.BMNXB" Multiplicity="0..1" />
           <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
@@ -786,6 +1202,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__CT_DONHAN__ID_DO__1B0907CE">
+          <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="1" />
+          <End Role="CT_DONHANG" Type="Self.CT_DONHANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONHANG">
+              <PropertyRef Name="ID_DON_HANG" />
+            </Principal>
+            <Dependent Role="CT_DONHANG">
+              <PropertyRef Name="ID_DON_HANG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DKTAPHUAN_DOCGIA">
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="1" />
+          <End Role="DKTAPHUAN" Type="Self.DKTAPHUAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCGIA">
+              <PropertyRef Name="MS_THE" />
+            </Principal>
+            <Dependent Role="DKTAPHUAN">
+              <PropertyRef Name="MADG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__LEARNCOMM__DOC_G__1FCDBCEB">
           <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="0..1" />
           <End Role="LEARNCOMMONS" Type="Self.LEARNCOMMONS" Multiplicity="*" />
@@ -834,15 +1274,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_DONHAN__ID_DO__1B0907CE">
-          <End Role="DONHANG" Type="Self.DONHANG" Multiplicity="1" />
-          <End Role="CT_DONHANG" Type="Self.CT_DONHANG" Multiplicity="0..1" />
+        <Association Name="FK_DOCGIA_USER_PASSWORD">
+          <End Role="USER_PASSWORD" Type="Self.USER_PASSWORD" Multiplicity="0..1" />
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="DONHANG">
-              <PropertyRef Name="ID_DON_HANG" />
+            <Principal Role="USER_PASSWORD">
+              <PropertyRef Name="ID_USER" />
             </Principal>
-            <Dependent Role="CT_DONHANG">
-              <PropertyRef Name="ID_DON_HANG" />
+            <Dependent Role="DOCGIA">
+              <PropertyRef Name="ID_USER" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -894,13 +1334,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NHANVIEN_USER_PASSWORD">
+          <End Role="USER_PASSWORD" Type="Self.USER_PASSWORD" Multiplicity="0..1" />
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER_PASSWORD">
+              <PropertyRef Name="ID_USER" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="ID_USER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="webpages_UsersInRoles">
+          <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="*" />
+          <End Role="USER_PASSWORD" Type="Self.USER_PASSWORD" Multiplicity="*" />
+        </Association>
         <EntityContainer Name="QLTHUVIENEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ANPHAM" EntityType="Self.ANPHAM" />
+          <EntitySet Name="BM_CHUONGTAPCHI" EntityType="Self.BM_CHUONGTAPCHI" />
+          <EntitySet Name="BM_KYTAPCHI" EntityType="Self.BM_KYTAPCHI" />
           <EntitySet Name="BMNXB" EntityType="Self.BMNXB" />
           <EntitySet Name="BMNHANDECHINH" EntityType="Self.BMNHANDECHINH" />
           <EntitySet Name="BMSOPHANLOAI" EntityType="Self.BMSOPHANLOAI" />
           <EntitySet Name="BMTACGIA" EntityType="Self.BMTACGIA" />
           <EntitySet Name="BMTENDEMUC" EntityType="Self.BMTENDEMUC" />
           <EntitySet Name="BOITHUONGTHIETHAI" EntityType="Self.BOITHUONGTHIETHAI" />
+          <EntitySet Name="CT_DONHANG" EntityType="Self.CT_DONHANG" />
+          <EntitySet Name="DKTAPHUAN" EntityType="Self.DKTAPHUAN" />
           <EntitySet Name="DOCGIA" EntityType="Self.DOCGIA" />
           <EntitySet Name="DONHANG" EntityType="Self.DONHANG" />
           <EntitySet Name="LEARNCOMMONS" EntityType="Self.LEARNCOMMONS" />
@@ -913,7 +1374,30 @@
           <EntitySet Name="TAPHUAN" EntityType="Self.TAPHUAN" />
           <EntitySet Name="THIETBI_DICHVU" EntityType="Self.THIETBI_DICHVU" />
           <EntitySet Name="USER_PASSWORD" EntityType="Self.USER_PASSWORD" />
-          <EntitySet Name="CT_DONHANG" EntityType="Self.CT_DONHANG" />
+          <EntitySet Name="UserProfile" EntityType="Self.UserProfile" />
+          <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" />
+          <AssociationSet Name="FK_ANPHAM_BMNXB" Association="Self.FK_ANPHAM_BMNXB">
+            <End Role="BMNXB" EntitySet="BMNXB" />
+            <End Role="ANPHAM" EntitySet="ANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANPHAM_BMSOPHANLOAI" Association="Self.FK_ANPHAM_BMSOPHANLOAI">
+            <End Role="BMSOPHANLOAI" EntitySet="BMSOPHANLOAI" />
+            <End Role="ANPHAM" EntitySet="ANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ANPHAM_BMTACGIA" Association="Self.FK_ANPHAM_BMTACGIA">
+            <End Role="BMTACGIA" EntitySet="BMTACGIA" />
+            <End Role="ANPHAM" EntitySet="ANPHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BM_CHUONGTAPCHI_ANPHAM" Association="Self.FK_BM_CHUONGTAPCHI_ANPHAM">
+            <End Role="ANPHAM" EntitySet="ANPHAM" />
+            <End Role="BM_CHUONGTAPCHI" EntitySet="BM_CHUONGTAPCHI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BM_KYTAPCHI_ANPHAM" Association="Self.FK_BM_KYTAPCHI_ANPHAM">
+            <End Role="ANPHAM" EntitySet="ANPHAM" />
+            <End Role="BM_KYTAPCHI" EntitySet="BM_KYTAPCHI" />
+          </AssociationSet>
           <AssociationSet Name="FK__SACH__NHA_XUAT_B__32E0915F" Association="Self.FK__SACH__NHA_XUAT_B__32E0915F">
             <End Role="BMNXB" EntitySet="BMNXB" />
             <End Role="SACH" EntitySet="SACH" />
@@ -938,6 +1422,14 @@
             <End Role="DOCGIA" EntitySet="DOCGIA" />
             <End Role="BOITHUONGTHIETHAI" EntitySet="BOITHUONGTHIETHAI" />
           </AssociationSet>
+          <AssociationSet Name="FK__CT_DONHAN__ID_DO__1B0907CE" Association="Self.FK__CT_DONHAN__ID_DO__1B0907CE">
+            <End Role="DONHANG" EntitySet="DONHANG" />
+            <End Role="CT_DONHANG" EntitySet="CT_DONHANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DKTAPHUAN_DOCGIA" Association="Self.FK_DKTAPHUAN_DOCGIA">
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
+            <End Role="DKTAPHUAN" EntitySet="DKTAPHUAN" />
+          </AssociationSet>
           <AssociationSet Name="FK__LEARNCOMM__DOC_G__1FCDBCEB" Association="Self.FK__LEARNCOMM__DOC_G__1FCDBCEB">
             <End Role="DOCGIA" EntitySet="DOCGIA" />
             <End Role="LEARNCOMMONS" EntitySet="LEARNCOMMONS" />
@@ -954,9 +1446,9 @@
             <End Role="DOCGIA" EntitySet="DOCGIA" />
             <End Role="MUONTAICHO" EntitySet="MUONTAICHO" />
           </AssociationSet>
-          <AssociationSet Name="FK__CT_DONHAN__ID_DO__1B0907CE" Association="Self.FK__CT_DONHAN__ID_DO__1B0907CE">
-            <End Role="DONHANG" EntitySet="DONHANG" />
-            <End Role="CT_DONHANG" EntitySet="CT_DONHANG" />
+          <AssociationSet Name="FK_DOCGIA_USER_PASSWORD" Association="Self.FK_DOCGIA_USER_PASSWORD">
+            <End Role="USER_PASSWORD" EntitySet="USER_PASSWORD" />
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
           </AssociationSet>
           <AssociationSet Name="FK__LEARNCOMM__ID_TH__20C1E124" Association="Self.FK__LEARNCOMM__ID_TH__20C1E124">
             <End Role="THIETBI_DICHVU" EntitySet="THIETBI_DICHVU" />
@@ -974,6 +1466,14 @@
             <End Role="SACH" EntitySet="SACH" />
             <End Role="MUONTAICHO" EntitySet="MUONTAICHO" />
           </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_USER_PASSWORD" Association="Self.FK_NHANVIEN_USER_PASSWORD">
+            <End Role="USER_PASSWORD" EntitySet="USER_PASSWORD" />
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="webpages_UsersInRoles" Association="Self.webpages_UsersInRoles">
+            <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+            <End Role="USER_PASSWORD" EntitySet="USER_PASSWORD" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -981,6 +1481,42 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="QLTHUVIENModelStoreContainer" CdmEntityContainer="QLTHUVIENEntities">
+          <EntitySetMapping Name="ANPHAM">
+            <EntityTypeMapping TypeName="QLTHUVIENModel.ANPHAM">
+              <MappingFragment StoreEntitySet="ANPHAM">
+                <ScalarProperty Name="ID_ANPHAM" ColumnName="ID_ANPHAM" />
+                <ScalarProperty Name="TEN_ANPHAM" ColumnName="TEN_ANPHAM" />
+                <ScalarProperty Name="TONGBT" ColumnName="TONGBT" />
+                <ScalarProperty Name="CQ_CHUQUAN" ColumnName="CQ_CHUQUAN" />
+                <ScalarProperty Name="DC_TOASOAN" ColumnName="DC_TOASOAN" />
+                <ScalarProperty Name="DKXB" ColumnName="DKXB" />
+                <ScalarProperty Name="NXB" ColumnName="NXB" />
+                <ScalarProperty Name="SOPHANLOAI" ColumnName="SOPHANLOAI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BM_CHUONGTAPCHI">
+            <EntityTypeMapping TypeName="QLTHUVIENModel.BM_CHUONGTAPCHI">
+              <MappingFragment StoreEntitySet="BM_CHUONGTAPCHI">
+                <ScalarProperty Name="ID_CHUONG" ColumnName="ID_CHUONG" />
+                <ScalarProperty Name="TEN_CHUONG" ColumnName="TEN_CHUONG" />
+                <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
+                <ScalarProperty Name="ANPHAM" ColumnName="ANPHAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BM_KYTAPCHI">
+            <EntityTypeMapping TypeName="QLTHUVIENModel.BM_KYTAPCHI">
+              <MappingFragment StoreEntitySet="BM_KYTAPCHI">
+                <ScalarProperty Name="ID_KY" ColumnName="ID_KY" />
+                <ScalarProperty Name="TEN_KY" ColumnName="TEN_KY" />
+                <ScalarProperty Name="URL_HINH" ColumnName="URL_HINH" />
+                <ScalarProperty Name="THOI_GIAN_DANG" ColumnName="THOI_GIAN_DANG" />
+                <ScalarProperty Name="LOI_GIOI_THIEU" ColumnName="LOI_GIOI_THIEU" />
+                <ScalarProperty Name="ANPHAM" ColumnName="ANPHAM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="BMNXB">
             <EntityTypeMapping TypeName="QLTHUVIENModel.BMNXB">
               <MappingFragment StoreEntitySet="BMNXB">
@@ -1039,15 +1575,38 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CT_DONHANG">
+            <EntityTypeMapping TypeName="QLTHUVIENModel.CT_DONHANG">
+              <MappingFragment StoreEntitySet="CT_DONHANG">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_DON_HANG" ColumnName="ID_DON_HANG" />
+                <ScalarProperty Name="TEN_SAN_PHAM" ColumnName="TEN_SAN_PHAM" />
+                <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DKTAPHUAN">
+            <EntityTypeMapping TypeName="QLTHUVIENModel.DKTAPHUAN">
+              <MappingFragment StoreEntitySet="DKTAPHUAN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MADG" ColumnName="MADG" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="TINHTRANG" ColumnName="TINHTRANG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DOCGIA">
             <EntityTypeMapping TypeName="QLTHUVIENModel.DOCGIA">
               <MappingFragment StoreEntitySet="DOCGIA">
-                <ScalarProperty Name="IMAGE_URL" ColumnName="IMAGE_URL" />
                 <ScalarProperty Name="MS_THE" ColumnName="MS_THE" />
                 <ScalarProperty Name="HO_TEN" ColumnName="HO_TEN" />
                 <ScalarProperty Name="TINH_TRANG" ColumnName="TINH_TRANG" />
                 <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
                 <ScalarProperty Name="LOAI_DOC_GIA" ColumnName="LOAI_DOC_GIA" />
+                <ScalarProperty Name="IMAGE_URL" ColumnName="IMAGE_URL" />
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1118,6 +1677,7 @@
                 <ScalarProperty Name="TINH_TRANG" ColumnName="TINH_TRANG" />
                 <ScalarProperty Name="CHUC_VU" ColumnName="CHUC_VU" />
                 <ScalarProperty Name="LOAI_NHAN_VIEN" ColumnName="LOAI_NHAN_VIEN" />
+                <ScalarProperty Name="ID_USER" ColumnName="ID_USER" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1162,13 +1722,13 @@
           <EntitySetMapping Name="TAPHUAN">
             <EntityTypeMapping TypeName="QLTHUVIENModel.TAPHUAN">
               <MappingFragment StoreEntitySet="TAPHUAN">
-                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="HO_TEN" ColumnName="HO_TEN" />
                 <ScalarProperty Name="SDT" ColumnName="SDT" />
                 <ScalarProperty Name="NGAY_DANG_KY" ColumnName="NGAY_DANG_KY" />
                 <ScalarProperty Name="TINH_TRANG" ColumnName="TINH_TRANG" />
                 <ScalarProperty Name="LOAI_DOC_GIA" ColumnName="LOAI_DOC_GIA" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1192,17 +1752,57 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CT_DONHANG">
-            <EntityTypeMapping TypeName="QLTHUVIENModel.CT_DONHANG">
-              <MappingFragment StoreEntitySet="CT_DONHANG">
-                <ScalarProperty Name="ID_DON_HANG" ColumnName="ID_DON_HANG" />
-                <ScalarProperty Name="TEN_SAN_PHAM" ColumnName="TEN_SAN_PHAM" />
-                <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
-                <ScalarProperty Name="GHI_CHU" ColumnName="GHI_CHU" />
+          <EntitySetMapping Name="UserProfile">
+            <EntityTypeMapping TypeName="QLTHUVIENModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          </EntityContainerMapping>
+          <EntitySetMapping Name="webpages_Membership">
+            <EntityTypeMapping TypeName="QLTHUVIENModel.webpages_Membership">
+              <MappingFragment StoreEntitySet="webpages_Membership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+                <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+                <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_OAuthMembership">
+            <EntityTypeMapping TypeName="QLTHUVIENModel.webpages_OAuthMembership">
+              <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Roles">
+            <EntityTypeMapping TypeName="QLTHUVIENModel.webpages_Roles">
+              <MappingFragment StoreEntitySet="webpages_Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="webpages_UsersInRoles" TypeName="QLTHUVIENModel.webpages_UsersInRoles" StoreEntitySet="webpages_UsersInRoles">
+            <EndProperty Name="webpages_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="USER_PASSWORD">
+              <ScalarProperty Name="ID_USER" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -1216,9 +1816,9 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

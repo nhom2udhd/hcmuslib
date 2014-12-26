@@ -26,6 +26,13 @@ namespace hcmuslib.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
+        QLTHUVIENEntities data = new QLTHUVIENEntities();
+        public String GetRole(string username, string pass)
+        {
+            USER_PASSWORD id = (from u in data.USER_PASSWORD where u.USER_NAME.Equals(username) && u.PASSWORD.Equals(pass) select u).First();
+            webpages_Roles role = data.webpages_Roles.Where(r => r.USER_PASSWORD.Any(u => u.USER_NAME.Equals(username) && u.PASSWORD.Equals(pass))).First();
+            return role.RoleName;
+        }
 
         //
         // POST: /Account/Login
@@ -37,15 +44,25 @@ namespace hcmuslib.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
-                if (!User.Identity.IsAuthenticated)
+                string role = GetRole(model.UserName, model.Password);
+                if (role.Equals("Reader"))
                 {
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("index", "reader");
                 }
-                else
+                if (role.Equals("ReaderManager"))
                 {
-                    ModelState.AddModelError("", "Bạn không đủ quyền truy cập chức năng này");
-                    return View(model);
+                    return RedirectToAction("index", "librarian");
                 }
+                if (role.Equals("ReaderSupporter"))
+                {
+                    return RedirectToAction("index", "librariansupporter");
+                }
+                if (role.Equals("Circulator"))
+                {
+                    return RedirectToAction("index", "circulator");
+                }
+                return RedirectToLocal(returnUrl);
+
             }
 
             // If we got this far, something failed, redisplay form
@@ -61,7 +78,6 @@ namespace hcmuslib.Controllers
         public ActionResult LogOff()
         {
             WebSecurity.Logout();
-
             return RedirectToAction("Index", "Home");
         }
 

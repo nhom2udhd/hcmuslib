@@ -9,6 +9,7 @@ using PagedList;
 
 namespace hcmuslib.Controllers
 {
+    [Authorize(Roles = "ReaderManager")]
     public class LibrarianController : Controller
     {
         //

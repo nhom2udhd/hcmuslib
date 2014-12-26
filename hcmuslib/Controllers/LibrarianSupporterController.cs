@@ -9,7 +9,7 @@ using System.Data.Entity.Core.Objects;
 using PagedList;
 namespace hcmuslib.Controllers
 {
-   // [Authorize(Roles = "ReaderSupporter")]
+    [Authorize(Roles = "ReaderSupporter")]
     public class LibrarianSupporterController : Controller
     {
         //

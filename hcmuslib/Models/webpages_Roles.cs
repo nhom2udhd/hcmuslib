@@ -12,18 +12,16 @@ namespace hcmuslib.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class BMSOPHANLOAI
+    public partial class webpages_Roles
     {
-        public BMSOPHANLOAI()
+        public webpages_Roles()
         {
-            this.ANPHAM = new HashSet<ANPHAM>();
-            this.SACH = new HashSet<SACH>();
+            this.USER_PASSWORD = new HashSet<USER_PASSWORD>();
         }
     
-        public string ID_SPL { get; set; }
-        public string SO_PHAN_LOAI { get; set; }
+        public int RoleId { get; set; }
+        public string RoleName { get; set; }
     
-        public virtual ICollection<ANPHAM> ANPHAM { get; set; }
-        public virtual ICollection<SACH> SACH { get; set; }
+        public virtual ICollection<USER_PASSWORD> USER_PASSWORD { get; set; }
     }
 }
