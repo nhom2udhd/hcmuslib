@@ -21,7 +21,7 @@
     </section><!--/#title-->    
 
     <section class="container">
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" id="reg-form">
 @*		  <div class="form-group">
 			<label for="training-type" class="col-sm-3 col-md-3 control-label">Chọn loại tập huấn</label>
 			<div class="col-sm-2 col-md-2">
@@ -86,6 +86,11 @@
 			</div>
 		  </div>
 		</form>
+        <div class="row">
+            <div id="ajax-loading" style="display: none" class="col-sm-4 col-sm-offset-2">
+                <p><img src="@Url.Content("~/images/ajax-loader_1.gif")" /> Đang gửi đăng kí, xin vui lòng đợi</p>
+            </div>
+        </div>
         <div id="register-training-message" class="message" style="display:none">
         </div>
     </section><!--/#terms-->

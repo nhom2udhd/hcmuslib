@@ -69,6 +69,7 @@ namespace hcmuslib.Controllers
                 };
                 data.TAPHUAN.Add(th);
                 data.SaveChanges();
+                return PartialView("_RegisterTrainingMessage");
             }
             return View();
         }

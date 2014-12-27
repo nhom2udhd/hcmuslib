@@ -1,6 +1,7 @@
 ﻿jQuery(document).ready(function ($) {
     $(".container").on("click", "#register-training-btn", function (e) {
         e.preventDefault();
+        
         var url = $(e.currentTarget).attr("data-action");
         var rname = $("#rname").val();
         var rphone = $("#rphone").val();
@@ -27,6 +28,8 @@
             $("#rtype").closest(".form-group").removeClass("has-error");
         }
         if (rname != "" && rphone != "" && rtype != "" && rmail != "") {
+            $("#reg-form").fadeTo("slow", 0.3);
+            $("#ajax-loading").show();
             $.ajax({
                 url: url,
                 type: "POST",
@@ -37,6 +40,7 @@
                     rmail: rmail
                 },
                 success: function (data) {
+                    $("#ajax-loading").hide();
                     $(".form-horizontal").fadeOut();
                     $("#register-training-message").html(data);
                     $("#register-training-message").fadeIn();

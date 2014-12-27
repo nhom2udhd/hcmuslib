@@ -384,6 +384,7 @@
     <Content Include="Images\ads\ad3.png" />
     <Content Include="Images\ads\ad4.png" />
     <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\ajax-loader_1.gif" />
     <Content Include="Images\blog\avatar.jpg" />
     <Content Include="Images\blog\avatar1.png" />
     <Content Include="Images\blog\avatar2.png" />
