@@ -9,7 +9,7 @@ using System.Data.Entity.Core.Objects;
 using PagedList;
 namespace hcmuslib.Controllers
 {
-    [Authorize(Roles = "ReaderSupporter")]
+    //[Authorize(Roles = "ReaderSupporter")]
     public class LibrarianSupporterController : Controller
     {
         //
@@ -131,9 +131,9 @@ namespace hcmuslib.Controllers
                 }               
                 if (action == "tmview")
                 {
-                    var tha = from t in data.TAPHUAN
+                    var tha = (from t in data.TAPHUAN
                               where t.TINH_TRANG == tt
-                              select t;
+                               select t).OrderByDescending(t => t.NGAY_DANG_KY);
                     if (tha.Any())
                     {
                         ViewBag.type = tt;
@@ -152,7 +152,7 @@ namespace hcmuslib.Controllers
                     DateTime dt = new DateTime(year, month, day);
                     var tha = (from t in data.TAPHUAN
                               where t.TINH_TRANG == "0"
-                              select t);
+                               select t).OrderByDescending(t => t.NGAY_DANG_KY);
                     var thal = tha.Take(number);
                     if (thal.Any())
                     {
@@ -169,9 +169,9 @@ namespace hcmuslib.Controllers
                 }
                
             }
-            var th = from t in data.TAPHUAN
+            var th = (from t in data.TAPHUAN
                      where t.TINH_TRANG == "0"
-                     select t;           
+                     select t).OrderByDescending(t => t.NGAY_DANG_KY);           
             return View(th.ToList());            
         }
     }

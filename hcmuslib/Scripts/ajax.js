@@ -105,7 +105,7 @@
                 status: status
             },
             success: function (data) {
-                $(e.currentTarget).fadeOut();
+                $(e.currentTarget).closest(".punishment-container").fadeOut();
                 $(e.currentTarget).closest(".form-horizontal").find(".punishment-message").html(data);
                 $(e.currentTarget).closest(".form-horizontal").find(".punishment-message").fadeIn();
             }

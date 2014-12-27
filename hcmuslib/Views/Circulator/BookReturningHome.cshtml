@@ -32,6 +32,8 @@
                         <video autoplay="autoplay" id="html5_qrcode_video" width="300" height="250"></video>
                         <canvas id="qr-canvas" width="298" height="248" style="display:none;"></canvas>
                     </div>
+                    @section qcode {
+                    <script type="text/javascript" src="~/Scripts/html5-qrcode.min.js"></script>
                     <script>
                         $('#reader').html5_qrcode(function (data) {
                             // do something when code is read
@@ -45,7 +47,8 @@
                                 $("#qrcode_result").html("the video stream could be opened");
                             }
                         );
-                    </script>
+                    </script> 
+                    }
                     <p>
                         <span id="qrcode_result"></span>
                     </p>
@@ -55,6 +58,7 @@
                 <label for="id" class="col-sm-2 control-label">Mã đọc giả</label>
                 <div class="col-sm-2">
                     <input type="text" class="form-control" name="id" id="id" placeholder="Nhập mã đọc giả" autofocus>
+                    <p>For Test: DG02702363</p>
                 </div>
                 <div class="col-sm-2">
                     <button type="button" class="btn btn-success" id="view-returning-btn">Xem</button>
